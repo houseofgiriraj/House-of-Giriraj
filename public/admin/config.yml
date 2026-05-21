@@ -7,44 +7,91 @@ local_backend: true
 
 media_folder: public/assets/images/products
 public_folder: /assets/images/products
-collections:
-  - name: "products"
-    label: "Products"
-    label_singular: "Product"
-    folder: products
-    create: true
-    delete: true
-    identifier_field: id
-    extension: md
-    format: yaml-frontmatter
-    slug: "{{id}}"
-    summary: "{{name}} — {{category}}"
-    sortable_fields: ["category", "name"]
+
+product_defaults: &product_defaults
+  create: true
+  delete: true
+  identifier_field: id
+  extension: md
+  format: yaml-frontmatter
+  slug: "{{id}}"
+  summary: "{{name}}"
+  sortable_fields: ["name"]
+
+product_fields: &product_fields
+  - { label: "Product ID", name: "id", widget: "string" }
+  - { label: "Product Name", name: "name", widget: "string" }
+  - { label: "Subcategory", name: "subcategory", widget: "select", options: ["chokers", "necklaces", "earrings", "bracelets", "bangles", "rings"] }
+  - { label: "Short Description", name: "shortDesc", widget: "string" }
+  - { label: "Price Range", name: "priceRange", widget: "string" }
+  - { label: "Stone", name: "stone", widget: "string" }
+  - { label: "Metal", name: "metal", widget: "string" }
+  - { label: "Weight", name: "weight", widget: "string" }
+  - { label: "Certification", name: "cert", widget: "string" }
+  - { label: "Featured", name: "featured", widget: "boolean", default: false }
+  - { label: "Description", name: "body", widget: "markdown", required: false }
+  - { label: "Main Image", name: "image", widget: "image", required: false }
+  - label: "Image Gallery"
+    name: "gallery"
+    widget: "list"
+    required: false
     fields:
-      - { label: "Product ID", name: "id", widget: "string" }
-      - { label: "Product Name", name: "name", widget: "string" }
-      - { label: "Category", name: "category", widget: "select", options: ["chokers", "necklaces", "chandeliers", "bracelets", "bangles", "rings", "studs"] }
-      - { label: "Subcategory", name: "subcategory", widget: "select", options: ["chokers", "necklaces", "earrings", "bracelets", "bangles", "rings"] }
-      - { label: "Short Description", name: "shortDesc", widget: "string" }
-      - { label: "Price Range", name: "priceRange", widget: "string" }
-      - { label: "Stone", name: "stone", widget: "string" }
-      - { label: "Metal", name: "metal", widget: "string" }
-      - { label: "Weight", name: "weight", widget: "string" }
-      - { label: "Certification", name: "cert", widget: "string" }
-      - { label: "Featured", name: "featured", widget: "boolean", default: false }
-      - { label: "Description", name: "body", widget: "markdown", required: false }
-      - { label: "Main Image", name: "image", widget: "image", required: false }
-      - label: "Image Gallery"
-        name: "gallery"
-        widget: "list"
-        required: false
-        fields:
-          - { label: "Image", name: "image", widget: "image" }
-          - { label: "Caption", name: "caption", widget: "string", required: false }
-      - label: "Videos"
-        name: "videos"
-        widget: "list"
-        required: false
-        fields:
-          - { label: "Video File", name: "video", widget: "file" }
-          - { label: "Poster Image", name: "poster", widget: "image", required: false }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Caption", name: "caption", widget: "string", required: false }
+  - label: "Videos"
+    name: "videos"
+    widget: "list"
+    required: false
+    fields:
+      - { label: "Video File", name: "video", widget: "file" }
+      - { label: "Poster Image", name: "poster", widget: "image", required: false }
+
+collections:
+  - name: "chokers"
+    label: "Chokers"
+    label_singular: "Choker"
+    <<: *product_defaults
+    folder: products/chokers
+    fields: *product_fields
+
+  - name: "necklaces"
+    label: "Necklaces"
+    label_singular: "Necklace"
+    <<: *product_defaults
+    folder: products/necklaces
+    fields: *product_fields
+
+  - name: "chandeliers"
+    label: "Chandeliers"
+    label_singular: "Chandelier"
+    <<: *product_defaults
+    folder: products/chandeliers
+    fields: *product_fields
+
+  - name: "bracelets"
+    label: "Bracelets"
+    label_singular: "Bracelet"
+    <<: *product_defaults
+    folder: products/bracelets
+    fields: *product_fields
+
+  - name: "bangles"
+    label: "Bangles"
+    label_singular: "Bangle"
+    <<: *product_defaults
+    folder: products/bangles
+    fields: *product_fields
+
+  - name: "rings"
+    label: "Rings"
+    label_singular: "Ring"
+    <<: *product_defaults
+    folder: products/rings
+    fields: *product_fields
+
+  - name: "studs"
+    label: "Studs"
+    label_singular: "Stud"
+    <<: *product_defaults
+    folder: products/studs
+    fields: *product_fields

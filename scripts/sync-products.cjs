@@ -24,49 +24,54 @@ function readAllProducts() {
 
   if (!fs.existsSync(PRODUCTS_DIR)) return products;
 
-  const files = fs.readdirSync(PRODUCTS_DIR).filter(f => f.endsWith(".md"));
+  const catOrder = ["chokers", "necklaces", "chandeliers", "bracelets", "bangles", "rings", "studs"];
+  const categories = fs.readdirSync(PRODUCTS_DIR, { withFileTypes: true })
+    .filter(d => d.isDirectory() && catOrder.includes(d.name));
 
-  for (const file of files) {
-    const content = fs.readFileSync(path.join(PRODUCTS_DIR, file), "utf-8");
-    const data = parseFrontmatter(content);
-    if (!data) {
-      console.warn(`  ⚠ Skipping ${file} — invalid frontmatter`);
-      continue;
+  for (const cat of categories) {
+    const catPath = path.join(PRODUCTS_DIR, cat.name);
+    const files = fs.readdirSync(catPath).filter(f => f.endsWith(".md"));
+
+    for (const file of files) {
+      const content = fs.readFileSync(path.join(catPath, file), "utf-8");
+      const data = parseFrontmatter(content);
+      if (!data) {
+        console.warn(`  ⚠ Skipping ${cat.name}/${file} — invalid frontmatter`);
+        continue;
+      }
+
+      const gallery = Array.isArray(data.gallery) ? data.gallery.map(g => ({
+        image: resolveImage(g.image),
+        caption: g.caption || ""
+      })) : [];
+      const imageUrl = data.image ? resolveImage(data.image) : (gallery.length > 0 ? gallery[0].image : (data.imagePath ? `/assets/images/${data.imagePath}` : ""));
+      const videos = Array.isArray(data.videos) ? data.videos.map(v => ({
+        video: v.video || "",
+        poster: v.poster ? resolveImage(v.poster) : ""
+      })) : [];
+
+      products.push({
+        id: data.id,
+        name: data.name,
+        category: cat.name,
+        subcategory: data.subcategory || "",
+        priceRange: data.priceRange || "",
+        shortDesc: data.shortDesc || "",
+        description: data.body || data.description || "",
+        image: imageUrl,
+        gallery,
+        videos,
+        specs: {
+          stone: data.stone || "",
+          metal: data.metal || "",
+          weight: data.weight || "",
+          cert: data.cert || "",
+        },
+        featured: data.featured === true,
+      });
     }
-
-    const gallery = Array.isArray(data.gallery) ? data.gallery.map(g => ({
-      image: resolveImage(g.image),
-      caption: g.caption || ""
-    })) : [];
-    const imageUrl = data.image ? resolveImage(data.image) : (gallery.length > 0 ? gallery[0].image : (data.imagePath ? `/assets/images/${data.imagePath}` : ""));
-    const videos = Array.isArray(data.videos) ? data.videos.map(v => ({
-      video: v.video || "",
-      poster: v.poster ? resolveImage(v.poster) : ""
-    })) : [];
-
-    products.push({
-      id: data.id,
-      name: data.name,
-      category: data.category,
-      subcategory: data.subcategory,
-      priceRange: data.priceRange || "",
-      shortDesc: data.shortDesc || "",
-      description: data.body || data.description || "",
-      image: imageUrl,
-      gallery,
-      videos,
-      specs: {
-        stone: data.stone || "",
-        metal: data.metal || "",
-        weight: data.weight || "",
-        cert: data.cert || "",
-      },
-      featured: data.featured === true,
-    });
   }
 
-  // Sort by category order then by id
-  const catOrder = ["chokers", "necklaces", "chandeliers", "bracelets", "bangles", "rings", "studs"];
   products.sort((a, b) => {
     const ci = catOrder.indexOf(a.category) - catOrder.indexOf(b.category);
     if (ci !== 0) return ci;
