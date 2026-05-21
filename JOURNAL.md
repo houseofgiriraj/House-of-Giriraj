@@ -146,3 +146,60 @@
 4. Copy Client ID and generate Client Secret
 5. Add to Vercel env vars: `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`
 6. Redeploy
+
+## 2026-05-21 (later)
+
+### CMS "No Entry" Bug — Depth Fix
+
+- Products were stored in `products/{category}/{id}.md` (2 levels deep).
+- The CMS backend proxy (`entriesByFolder`) sent `depth: 1`, which only returned
+  category directories, not the .md files inside them.
+- **Fix:** Flattened files to `products/{id}.md` and removed `{{category}}/` from
+  the CMS slug config. This let the CMS find all files at depth 1.
+
+### Image Management in CMS
+
+- Added `image` widget (widget: `image`) to the CMS config for uploading product images.
+- `media_folder: public/assets/images/products` — CMS saves uploads here.
+- `public_folder: /assets/images/products` — public URL path for images.
+- **Issue:** The CMS stores image paths as absolute URLs (`/assets/images/products/...`)
+  rather than relative paths. Fixed `sync-products.cjs` to handle both formats.
+- **Fallback order:** `image` (CMS Main Image) > first gallery image > legacy `imagePath`.
+
+### Gallery and Video Support
+
+- Added **Image Gallery** (list of image+caption) and **Videos** (list of video+poster)
+  to the CMS config.
+- Updated `product.html` with a thumbnail strip below the main image. Clicking a
+  thumbnail swaps the main display (image or video).
+- Gallery uses `js-yaml` for proper YAML frontmatter parsing (supports lists/objects).
+
+### File Watcher for Auto-Sync
+
+- Added `npm run dev:sync` — uses nodemon to watch `products/*.md` and auto-run
+  `sync-products.cjs` on every CMS save.
+- Keeps `src/data.js` in sync without manual script runs.
+
+### Per-Category CMS Collections
+
+- Restructured from a single flat "Products" collection into 7 category-specific
+  collections: Chokers, Necklaces, Chandeliers, Bracelets, Bangles, Rings, Studs.
+- Each collection appears as its own section in the CMS sidebar.
+- Files moved back to `products/{category}/{id}.md` (subdirectories).
+- Category is now inferred from the directory path in `sync-products.cjs`, not
+  from the frontmatter field.
+- The CMS editor no longer shows a category selector — it's implicit from which
+  collection the product lives in.
+
+### Current Terminal Workflow
+
+| Terminal | Command |
+|---|---|
+| 1 | `npx decap-server` |
+| 2 | `npm run dev` |
+| 3 | `npm run dev:sync` |
+
+### Known Caveats
+
+- `main` variable name conflicted with page-scoped `main` in product.html gallery
+  JS — renamed to `galleryMain`.

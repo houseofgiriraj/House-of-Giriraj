@@ -20,14 +20,74 @@ existing multi-page production funnel.
 ## Commands
 
 ```bash
-npm run dev
+npm run dev               # Vite dev server (localhost:5173)
+npm run dev:sync          # Watches products/*.md → regenerates src/data.js
 npm run build
 npm run preview
-npm run optimize:images
+npm run optimize:images   # Generate responsive AVIF/WebP variants
 ```
 
 PowerShell may block `npm.ps1`; use `cmd /c npm run build` or
 `cmd /c npm run dev` when that happens.
+
+## Decap CMS (Admin UI)
+
+The site has Decap CMS at `/admin` for client-friendly product editing.
+
+### Local Development
+
+Run three terminals:
+
+| Terminal | Command |
+|---|---|
+| 1 | `npx decap-server` |
+| 2 | `npm run dev` |
+| 3 | `npm run dev:sync` |
+
+Then open `http://localhost:5173/admin/`.
+
+### Collections
+
+Products are organized into 7 category-specific collections in the CMS sidebar:
+**Chokers**, **Necklaces**, **Chandeliers**, **Bracelets**, **Bangles**, **Rings**, **Studs**.
+
+Each product has these fields in the editor:
+- Product ID, Name, Subcategory, Short Description, Price Range
+- Stone, Metal, Weight, Certification
+- Featured toggle
+- Description (markdown editor)
+- Main Image (upload)
+- Image Gallery (add multiple images with captions)
+- Videos (add multiple videos with poster images)
+
+Images are stored in `public/assets/images/products/`. The path is auto-managed.
+
+### Data Flow
+
+```
+CMS edits → products/{category}/{id}.md  (written by Decap CMS)
+                              ↓
+              sync-products.cjs  (triggered by dev:sync watcher)
+                              ↓
+                       src/data.js  (read by website pages)
+```
+
+### Production Deployment
+
+1. Create a GitHub OAuth App:
+   - Homepage URL: `https://houseofgiriraj.vercel.app`
+   - Callback URL: `https://houseofgiriraj.vercel.app/api/oauth?provider=github`
+2. Set Vercel env vars: `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`
+3. Redeploy
+
+### CSV Import
+
+The master catalog is at `product-inventory.csv`. To regenerate all .md files from CSV:
+
+```bash
+node scripts/csv-to-md.cjs
+node scripts/sync-products.cjs
+```
 
 ## Routing
 
