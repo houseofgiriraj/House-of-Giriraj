@@ -180,9 +180,29 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
               <!-- Gallery -->
               <div class="space-y-4">
-                <div class="aspect-square bg-surface-container overflow-hidden img-zoom">
+                <div class="aspect-square bg-surface-container overflow-hidden img-zoom" id="gallery-main">
                   <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover" loading="lazy" />
                 </div>
+                ${(product.gallery && product.gallery.length > 0) || (product.videos && product.videos.length > 0) ? `
+                <div class="flex gap-2 overflow-x-auto pb-2" id="gallery-thumbs">
+                  <button class="gallery-thumb w-20 h-20 flex-shrink-0 overflow-hidden border-2 border-primary" data-type="image" data-src="${product.image}">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover" />
+                  </button>
+                  ${(product.gallery || []).map((item, i) => `
+                  <button class="gallery-thumb w-20 h-20 flex-shrink-0 overflow-hidden border-2 border-transparent hover:border-primary/50" data-type="image" data-src="${item.image}">
+                    <img src="${item.image}" alt="${item.caption || product.name}" class="w-full h-full object-cover" />
+                  </button>
+                  `).join("")}
+                  ${(product.videos || []).map((v, i) => `
+                  <button class="gallery-thumb w-20 h-20 flex-shrink-0 overflow-hidden border-2 border-transparent hover:border-primary/50 relative" data-type="video" data-src="${v.video}" data-poster="${v.poster || product.image}">
+                    <img src="${v.poster || product.image}" alt="Video" class="w-full h-full object-cover" />
+                    <span class="absolute inset-0 flex items-center justify-center bg-black/30">
+                      <span class="material-symbols-outlined text-white text-2xl">play_circle</span>
+                    </span>
+                  </button>
+                  `).join("")}
+                </div>
+                ` : ""}
               </div>
 
               <!-- Product Details -->
@@ -286,6 +306,26 @@
           </div>
         </section>
       `;
+
+      // Gallery thumb click handler
+      const thumbs = document.getElementById("gallery-thumbs");
+      const main = document.getElementById("gallery-main");
+      if (thumbs && main) {
+        thumbs.addEventListener("click", (e) => {
+          const btn = e.target.closest(".gallery-thumb");
+          if (!btn) return;
+          thumbs.querySelectorAll(".gallery-thumb").forEach(t => t.classList.remove("border-primary"));
+          btn.classList.add("border-primary");
+          const type = btn.dataset.type;
+          const src = btn.dataset.src;
+          if (type === "image") {
+            main.innerHTML = `<img src="${src}" alt="${product.name}" class="w-full h-full object-cover" loading="lazy" />`;
+          } else if (type === "video") {
+            const poster = btn.dataset.poster || "";
+            main.innerHTML = `<video controls autoplay class="w-full h-full object-cover" poster="${poster}"><source src="${src}" type="video/mp4"></video>`;
+          }
+        });
+      }
 
       // Re-init WhatsApp funnel after DOM injection
       WhatsAppFunnel.init();

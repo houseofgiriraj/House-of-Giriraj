@@ -11,6 +11,8 @@ export const products = [
     "shortDesc": "High Jewelry • 3ct",
     "description": "A bold statement piece featuring 3 carats of carefully selected diamonds in a contemporary collar design.",
     "image": "/assets/images/products/chokers/diamond-collar/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond",
       "metal": "Platinum",
@@ -28,6 +30,8 @@ export const products = [
     "shortDesc": "Heritage & Classic",
     "description": "Timeless pearls woven with delicate gold, creating a piece that bridges generations.",
     "image": "/assets/images/products/chokers/pearl-choker/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "South Sea Pearl",
       "metal": "22k Gold",
@@ -45,6 +49,8 @@ export const products = [
     "shortDesc": "Heritage & Classic",
     "description": "A regal choker crafted with exceptional diamonds, designed for the modern queen who honors tradition.",
     "image": "/assets/images/products/chokers/royal-choker/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond",
       "metal": "18k Gold",
@@ -62,6 +68,8 @@ export const products = [
     "shortDesc": "Masterpiece • Rubies",
     "description": "A profound exploration of deep reds and structural platinum, echoing the intensity of a blood moon.",
     "image": "/assets/images/products/emerald-grand-bridal-set-h-12294-.jpeg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Burmese Rubies",
       "metal": "Platinum",
@@ -78,7 +86,9 @@ export const products = [
     "priceRange": "₹12L - ₹20L",
     "shortDesc": "Masterpiece • Emerald",
     "description": "Regal emeralds set in 18k gold, inspired by the grandeur of Indian royalty.",
-    "image": "/assets/images/products/necklaces/raj-tilak-emerald/hero.jpg",
+    "image": "/assets/images/products/product_image-34-.jpeg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Zambian Emerald",
       "metal": "18k Gold",
@@ -96,6 +106,8 @@ export const products = [
     "shortDesc": "Classic • Diamonds",
     "description": "A stunning strand of solitaire diamonds, each individually set for maximum brilliance.",
     "image": "/assets/images/products/necklaces/solitaire-strand/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond",
       "metal": "18k White Gold",
@@ -113,6 +125,8 @@ export const products = [
     "shortDesc": "Statement • 5ct",
     "description": "Dramatic chandelier earrings that cascade with 5 carats of brilliant diamonds.",
     "image": "/assets/images/products/chandeliers/celestial-chandelier/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond",
       "metal": "Platinum",
@@ -130,6 +144,8 @@ export const products = [
     "shortDesc": "Statement • Emerald",
     "description": "Cascading emeralds create a waterfall of green, framed by delicate diamond settings.",
     "image": "/assets/images/products/chandeliers/emerald-cascade/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Emerald + Diamond",
       "metal": "Platinum",
@@ -147,6 +163,8 @@ export const products = [
     "shortDesc": "Statement • Ruby",
     "description": "Elegant drop earrings featuring vivid rubies surrounded by a halo of diamonds.",
     "image": "/assets/images/products/chandeliers/royal-drops/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Ruby + Diamond",
       "metal": "18k Gold",
@@ -164,6 +182,8 @@ export const products = [
     "shortDesc": "Classic • 3ct",
     "description": "The timeless tennis bracelet reimagined with 3 carats of perfectly matched diamonds.",
     "image": "/assets/images/products/bracelets/diamond-tennis/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond",
       "metal": "18k White Gold",
@@ -181,6 +201,8 @@ export const products = [
     "shortDesc": "High Jewelry • 12ct D-Flawless",
     "description": "A breathtaking bracelet featuring a cascade of 12 carats of D-Flawless diamonds in a heritage legacy setting.",
     "image": "/assets/images/products/bracelets/ekta-lineage/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond",
       "metal": "Platinum",
@@ -198,6 +220,8 @@ export const products = [
     "shortDesc": "Heritage • Gold",
     "description": "A vintage-inspired bangle with intricate gold work and subtle diamond accents.",
     "image": "/assets/images/products/bracelets/vintage-bangle/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond Accent",
       "metal": "22k Gold",
@@ -215,6 +239,8 @@ export const products = [
     "shortDesc": "Bridal • Gold",
     "description": "Traditional bridal chooda bangles reimagined with modern elegance and diamond embellishments.",
     "image": "/assets/images/products/product_image-4-.jpeg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond + Enamel",
       "metal": "22k Gold",
@@ -232,6 +258,8 @@ export const products = [
     "shortDesc": "Bridal • Diamond",
     "description": "An exquisite set of diamond kangan bangles, each handcrafted with meticulous attention to detail.",
     "image": "/assets/images/products/bangles/kangan-set/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond",
       "metal": "18k Gold",
@@ -249,6 +277,8 @@ export const products = [
     "shortDesc": "Bridal • Gold",
     "description": "A pair of ornate bangles inspired by royal Indian craftsmanship, perfect for bridal occasions.",
     "image": "/assets/images/products/bangles/raj-bangles/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Ruby + Diamond",
       "metal": "22k Gold",
@@ -266,6 +296,8 @@ export const products = [
     "shortDesc": "Solitaire • 2.5ct",
     "description": "A magnificent 2.5 carat solitaire set in platinum, designed to capture light from every angle.",
     "image": "/assets/images/products/rings/celestial-solitaire/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond 2.5ct",
       "metal": "Platinum",
@@ -283,6 +315,8 @@ export const products = [
     "shortDesc": "Fashion • 1.5ct",
     "description": "A delicate halo ring with a 1.5 carat center stone surrounded by a ring of brilliant diamonds.",
     "image": "/assets/images/products/rings/halo-ring/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond 1.5ct",
       "metal": "18k White Gold",
@@ -300,6 +334,8 @@ export const products = [
     "shortDesc": "Statement • 3ct",
     "description": "A powerful three-stone design representing past, present, and future — 3 carats of pure brilliance.",
     "image": "/assets/images/products/rings/three-stone-ring/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond 3ct total",
       "metal": "Platinum",
@@ -317,6 +353,8 @@ export const products = [
     "shortDesc": "Fashion • 2ct",
     "description": "Elegant drop studs with 2 carats of diamonds, designed for the woman who appreciates understated luxury.",
     "image": "/assets/images/products/studs/diamond-drops/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond",
       "metal": "Platinum",
@@ -334,6 +372,8 @@ export const products = [
     "shortDesc": "Daily Wear • 1ct",
     "description": "Classic princess-cut diamond studs that pair effortlessly with any look.",
     "image": "/assets/images/products/studs/princess-studs/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond (Princess Cut)",
       "metal": "18k White Gold",
@@ -351,6 +391,8 @@ export const products = [
     "shortDesc": "Daily Wear • 1.8ct",
     "description": "Everyday elegance with 1.8 carats of brilliant diamond studs, perfect for any occasion.",
     "image": "/assets/images/products/studs/stardust-studs/hero.jpg",
+    "gallery": [],
+    "videos": [],
     "specs": {
       "stone": "Diamond",
       "metal": "18k White Gold",

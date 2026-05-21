@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const yaml = require("js-yaml");
 
 const PRODUCTS_DIR = path.join(__dirname, "..", "products");
 const OUTPUT_PATH = path.join(__dirname, "..", "src", "data.js");
@@ -8,21 +9,14 @@ function parseFrontmatter(content) {
   const match = content.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
   if (!match) return null;
 
-  const yaml = match[1];
+  const fields = yaml.load(match[1]) || {};
   const body = match[2].trim();
-
-  const fields = {};
-  for (const line of yaml.split("\n")) {
-    const idx = line.indexOf(": ");
-    if (idx === -1) continue;
-    let key = line.slice(0, idx).trim();
-    let val = line.slice(idx + 2).trim();
-    if (val.startsWith('"') && val.endsWith('"')) val = val.slice(1, -1);
-    if (val === "true") val = true;
-    else if (val === "false") val = false;
-    fields[key] = val;
-  }
   return { ...fields, body };
+}
+
+function resolveImage(path) {
+  if (!path) return "";
+  return path.startsWith("/") ? path : `/assets/images/products/${path}`;
 }
 
 function readAllProducts() {
@@ -40,12 +34,15 @@ function readAllProducts() {
       continue;
     }
 
-    let imageUrl = "";
-    if (data.image) {
-      imageUrl = data.image.startsWith("/") ? data.image : `/assets/images/products/${data.image}`;
-    } else if (data.imagePath) {
-      imageUrl = `/assets/images/${data.imagePath}`;
-    }
+    const imageUrl = data.image ? resolveImage(data.image) : (data.imagePath ? `/assets/images/${data.imagePath}` : "");
+    const gallery = Array.isArray(data.gallery) ? data.gallery.map(g => ({
+      image: resolveImage(g.image),
+      caption: g.caption || ""
+    })) : [];
+    const videos = Array.isArray(data.videos) ? data.videos.map(v => ({
+      video: v.video || "",
+      poster: v.poster ? resolveImage(v.poster) : ""
+    })) : [];
 
     products.push({
       id: data.id,
@@ -56,6 +53,8 @@ function readAllProducts() {
       shortDesc: data.shortDesc || "",
       description: data.body || data.description || "",
       image: imageUrl,
+      gallery,
+      videos,
       specs: {
         stone: data.stone || "",
         metal: data.metal || "",
