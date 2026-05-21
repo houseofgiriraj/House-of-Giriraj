@@ -61,7 +61,7 @@ export const products = [
     "priceRange": "₹15L - ₹25L",
     "shortDesc": "Masterpiece • Rubies",
     "description": "A profound exploration of deep reds and structural platinum, echoing the intensity of a blood moon.",
-    "image": "/assets/images/products/necklaces/maharani-viraasat/hero.jpg",
+    "image": "/assets/images/products/emerald-grand-bridal-set-h-12294-.jpeg",
     "specs": {
       "stone": "Burmese Rubies",
       "metal": "Platinum",

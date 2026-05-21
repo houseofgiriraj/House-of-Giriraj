@@ -42,7 +42,7 @@ function readAllProducts() {
 
     let imageUrl = "";
     if (data.image) {
-      imageUrl = `/assets/images/products/${data.image}`;
+      imageUrl = data.image.startsWith("/") ? data.image : `/assets/images/products/${data.image}`;
     } else if (data.imagePath) {
       imageUrl = `/assets/images/${data.imagePath}`;
     }
