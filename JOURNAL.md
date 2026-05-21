@@ -108,3 +108,17 @@
   - styled `archive-search-text` to match the approved search control intent
 - Updated `src/main.js` so theme icons sync between light and dark modes and
   header text updates through the same `data-i18n` mechanism.
+
+### Product Management System
+
+- Created a CSV-driven product management workflow.
+- **Folder structure:** `products/{category}/{product-id}/` — 7 categories,
+  21 products, each with a dedicated folder for images and videos.
+- **Master catalog:** `product-inventory.csv` — single source of truth with
+  columns: id, category, subcategory, name, shortDesc, description, priceRange,
+  stone, metal, weight, cert, featured, imagePath, videoPath.
+- **Sync script:** `scripts/sync-products.cjs` — reads the CSV and regenerates
+  `src/data.js` automatically.
+- **Workflow:** Edit CSV in Excel → drop real product images into product
+  folders → run `node scripts/sync-products.cjs` → `npm run build`.
+- Verified build passes after CSV-to-JS sync.
