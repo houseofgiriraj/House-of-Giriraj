@@ -19,7 +19,8 @@ export const products = [
       "weight": "3ct total",
       "cert": "GIA Certified"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "pearl-choker",
@@ -38,7 +39,8 @@ export const products = [
       "weight": "35ct total",
       "cert": "BIS Hallmarked"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "royal-choker",
@@ -57,7 +59,8 @@ export const products = [
       "weight": "2.5ct total",
       "cert": "BIS Hallmarked"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "maharani-viraasat",
@@ -76,7 +79,8 @@ export const products = [
       "weight": "45ct total",
       "cert": "GIA Certified"
     },
-    "featured": true
+    "featured": true,
+    "collectionId": ""
   },
   {
     "id": "raj-tilak-emerald",
@@ -95,7 +99,8 @@ export const products = [
       "weight": "38ct total",
       "cert": "GIA Certified"
     },
-    "featured": true
+    "featured": true,
+    "collectionId": ""
   },
   {
     "id": "solitaire-strand",
@@ -114,7 +119,8 @@ export const products = [
       "weight": "8ct total",
       "cert": "GIA Certified"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "celestial-chandelier",
@@ -133,7 +139,8 @@ export const products = [
       "weight": "5ct total",
       "cert": "GIA Certified"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "emerald-cascade",
@@ -152,7 +159,8 @@ export const products = [
       "weight": "6ct total",
       "cert": "GIA Certified"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "royal-drops",
@@ -171,7 +179,8 @@ export const products = [
       "weight": "4ct total",
       "cert": "GIA Certified"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "diamond-tennis",
@@ -190,7 +199,8 @@ export const products = [
       "weight": "3ct total",
       "cert": "GIA Certified"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "ekta-lineage",
@@ -209,7 +219,8 @@ export const products = [
       "weight": "12ct total",
       "cert": "GIA Certified"
     },
-    "featured": true
+    "featured": true,
+    "collectionId": ""
   },
   {
     "id": "vintage-bangle",
@@ -228,7 +239,8 @@ export const products = [
       "weight": "28g",
       "cert": "BIS Hallmarked"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "bridal-chooda",
@@ -247,7 +259,8 @@ export const products = [
       "weight": "55g set",
       "cert": "BIS Hallmarked"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "kangan-set",
@@ -266,7 +279,8 @@ export const products = [
       "weight": "4.5ct total",
       "cert": "GIA Certified"
     },
-    "featured": true
+    "featured": true,
+    "collectionId": ""
   },
   {
     "id": "raj-bangles",
@@ -285,7 +299,8 @@ export const products = [
       "weight": "65g pair",
       "cert": "BIS Hallmarked"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "celestial-solitaire",
@@ -304,7 +319,8 @@ export const products = [
       "weight": "2.5ct",
       "cert": "GIA Certified"
     },
-    "featured": true
+    "featured": true,
+    "collectionId": ""
   },
   {
     "id": "halo-ring",
@@ -323,7 +339,8 @@ export const products = [
       "weight": "1.5ct + 0.5ct halo",
       "cert": "GIA Certified"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "three-stone-ring",
@@ -342,7 +359,8 @@ export const products = [
       "weight": "3ct total",
       "cert": "GIA Certified"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "diamond-drops",
@@ -361,7 +379,8 @@ export const products = [
       "weight": "2ct pair",
       "cert": "GIA Certified"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "princess-studs",
@@ -380,7 +399,8 @@ export const products = [
       "weight": "1ct pair",
       "cert": "GIA Certified"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   },
   {
     "id": "stardust-studs",
@@ -399,7 +419,8 @@ export const products = [
       "weight": "1.8ct pair",
       "cert": "GIA Certified"
     },
-    "featured": false
+    "featured": false,
+    "collectionId": ""
   }
 ];
 

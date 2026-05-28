@@ -10,6 +10,8 @@ metal: 18k Gold
 weight: 4.5ct total
 cert: GIA Certified
 featured: true
+collectionId:
+
 ---
 
 An exquisite set of diamond kangan bangles, each handcrafted with meticulous attention to detail.

@@ -10,6 +10,8 @@ metal: Platinum
 weight: 6ct total
 cert: GIA Certified
 featured: false
+collectionId:
+
 ---
 
 Cascading emeralds create a waterfall of green, framed by delicate diamond settings.

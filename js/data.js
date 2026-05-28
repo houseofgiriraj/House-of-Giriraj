@@ -13,7 +13,8 @@ const products = [
     description: "A regal choker crafted with exceptional diamonds, designed for the modern queen who honors tradition.",
     image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800",
     specs: { stone: "Diamond", metal: "18k Gold", weight: "2.5ct total", cert: "BIS Hallmarked" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
   {
     id: "pearl-choker",
@@ -25,7 +26,8 @@ const products = [
     description: "Timeless pearls woven with delicate gold, creating a piece that bridges generations.",
     image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800",
     specs: { stone: "South Sea Pearl", metal: "22k Gold", weight: "35ct total", cert: "BIS Hallmarked" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
   {
     id: "diamond-collar",
@@ -37,7 +39,8 @@ const products = [
     description: "A bold statement piece featuring 3 carats of carefully selected diamonds in a contemporary collar design.",
     image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800",
     specs: { stone: "Diamond", metal: "Platinum", weight: "3ct total", cert: "GIA Certified" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
 
   // NECKLACES
@@ -51,7 +54,8 @@ const products = [
     description: "A profound exploration of deep reds and structural platinum, echoing the intensity of a blood moon.",
     image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800",
     specs: { stone: "Burmese Rubies", metal: "Platinum", weight: "45ct total", cert: "GIA Certified" },
-    featured: true
+    featured: true,
+    collectionId: ""
   },
   {
     id: "raj-tilak-emerald",
@@ -63,7 +67,8 @@ const products = [
     description: "Regal emeralds set in 18k gold, inspired by the grandeur of Indian royalty.",
     image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800",
     specs: { stone: "Zambian Emerald", metal: "18k Gold", weight: "38ct total", cert: "GIA Certified" },
-    featured: true
+    featured: true,
+    collectionId: ""
   },
   {
     id: "solitaire-strand",
@@ -75,7 +80,8 @@ const products = [
     description: "A stunning strand of solitaire diamonds, each individually set for maximum brilliance.",
     image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800",
     specs: { stone: "Diamond", metal: "18k White Gold", weight: "8ct total", cert: "GIA Certified" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
 
   // CHANDELIERS
@@ -89,7 +95,8 @@ const products = [
     description: "Dramatic chandelier earrings that cascade with 5 carats of brilliant diamonds.",
     image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800",
     specs: { stone: "Diamond", metal: "Platinum", weight: "5ct total", cert: "GIA Certified" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
   {
     id: "royal-drops",
@@ -101,7 +108,8 @@ const products = [
     description: "Elegant drop earrings featuring vivid rubies surrounded by a halo of diamonds.",
     image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800",
     specs: { stone: "Ruby + Diamond", metal: "18k Gold", weight: "4ct total", cert: "GIA Certified" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
   {
     id: "emerald-cascade",
@@ -113,7 +121,8 @@ const products = [
     description: "Cascading emeralds create a waterfall of green, framed by delicate diamond settings.",
     image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800",
     specs: { stone: "Emerald + Diamond", metal: "Platinum", weight: "6ct total", cert: "GIA Certified" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
 
   // BRACELETS
@@ -127,7 +136,8 @@ const products = [
     description: "A breathtaking bracelet featuring a cascade of 5 carats of diamonds in a flowing design.",
     image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800",
     specs: { stone: "Diamond", metal: "Platinum", weight: "5ct total", cert: "GIA Certified" },
-    featured: true
+    featured: true,
+    collectionId: ""
   },
   {
     id: "diamond-tennis",
@@ -139,7 +149,8 @@ const products = [
     description: "The timeless tennis bracelet reimagined with 3 carats of perfectly matched diamonds.",
     image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800",
     specs: { stone: "Diamond", metal: "18k White Gold", weight: "3ct total", cert: "GIA Certified" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
   {
     id: "vintage-bangle",
@@ -151,7 +162,8 @@ const products = [
     description: "A vintage-inspired bangle with intricate gold work and subtle diamond accents.",
     image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800",
     specs: { stone: "Diamond Accent", metal: "22k Gold", weight: "28g", cert: "BIS Hallmarked" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
 
   // BANGLES
@@ -165,7 +177,8 @@ const products = [
     description: "A pair of ornate bangles inspired by royal Indian craftsmanship, perfect for bridal occasions.",
     image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800",
     specs: { stone: "Ruby + Diamond", metal: "22k Gold", weight: "65g pair", cert: "BIS Hallmarked" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
   {
     id: "kangan-set",
@@ -177,7 +190,8 @@ const products = [
     description: "An exquisite set of diamond kangan bangles, each handcrafted with meticulous attention to detail.",
     image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800",
     specs: { stone: "Diamond", metal: "18k Gold", weight: "4.5ct total", cert: "GIA Certified" },
-    featured: true
+    featured: true,
+    collectionId: ""
   },
   {
     id: "bridal-chooda",
@@ -189,7 +203,8 @@ const products = [
     description: "Traditional bridal chooda bangles reimagined with modern elegance and diamond embellishments.",
     image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800",
     specs: { stone: "Diamond + Enamel", metal: "22k Gold", weight: "55g set", cert: "BIS Hallmarked" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
 
   // RINGS
@@ -203,7 +218,8 @@ const products = [
     description: "A magnificent 2.5 carat solitaire set in platinum, designed to capture light from every angle.",
     image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800",
     specs: { stone: "Diamond 2.5ct", metal: "Platinum", weight: "2.5ct", cert: "GIA Certified" },
-    featured: true
+    featured: true,
+    collectionId: ""
   },
   {
     id: "halo-ring",
@@ -215,7 +231,8 @@ const products = [
     description: "A delicate halo ring with a 1.5 carat center stone surrounded by a ring of brilliant diamonds.",
     image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800",
     specs: { stone: "Diamond 1.5ct", metal: "18k White Gold", weight: "1.5ct + 0.5ct halo", cert: "GIA Certified" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
   {
     id: "three-stone-ring",
@@ -227,7 +244,8 @@ const products = [
     description: "A powerful three-stone design representing past, present, and future — 3 carats of pure brilliance.",
     image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800",
     specs: { stone: "Diamond 3ct total", metal: "Platinum", weight: "3ct total", cert: "GIA Certified" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
 
   // STUDS
@@ -241,7 +259,8 @@ const products = [
     description: "Everyday elegance with 1.8 carats of brilliant diamond studs, perfect for any occasion.",
     image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800",
     specs: { stone: "Diamond", metal: "18k White Gold", weight: "1.8ct pair", cert: "GIA Certified" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
   {
     id: "princess-studs",
@@ -253,7 +272,8 @@ const products = [
     description: "Classic princess-cut diamond studs that pair effortlessly with any look.",
     image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800",
     specs: { stone: "Diamond (Princess Cut)", metal: "18k White Gold", weight: "1ct pair", cert: "GIA Certified" },
-    featured: false
+    featured: false,
+    collectionId: ""
   },
   {
     id: "diamond-drops",
@@ -265,7 +285,8 @@ const products = [
     description: "Elegant drop studs with 2 carats of diamonds, designed for the woman who appreciates understated luxury.",
     image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800",
     specs: { stone: "Diamond", metal: "Platinum", weight: "2ct pair", cert: "GIA Certified" },
-    featured: false
+    featured: false,
+    collectionId: ""
   }
 ];
 

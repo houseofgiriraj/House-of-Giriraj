@@ -10,6 +10,8 @@ metal: 18k White Gold
 weight: 8ct total
 cert: GIA Certified
 featured: false
+collectionId:
+
 ---
 
 A stunning strand of solitaire diamonds, each individually set for maximum brilliance.

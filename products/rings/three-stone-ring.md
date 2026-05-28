@@ -10,6 +10,8 @@ metal: Platinum
 weight: 3ct total
 cert: GIA Certified
 featured: false
+collectionId:
+
 ---
 
 A powerful three-stone design representing past, present, and future — 3 carats of pure brilliance.

@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Complete House Collection | House of Giriraj</title>
+    <meta http-equiv="refresh" content="0; url=/collections.html" />
     <meta
       name="description"
       content="The complete archive of high jewellery masterpieces from the House of Giriraj collection."
     />
-    <meta property="og:title" content="Complete House Collection | House of Giriraj" />
+    <meta property="og:title" content="Collections | House of Giriraj" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/assets/images/global/hero.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,10 +38,9 @@
           />
         </a>
         <nav class="desktop-nav" aria-label="Desktop navigation">
-          <a class="nav-link" href="/collections.html" data-i18n="nav_collections">Collections</a>
-          <a class="nav-link" href="/bespoke.html" data-i18n="nav_bespoke">Bespoke</a>
-          <a class="nav-link" href="/heritage.html" data-i18n="nav_heritage">Heritage</a>
-          <a class="nav-link" href="/contact.html" data-i18n="nav_contact">Contact</a>
+          <a class="nav-link" href="/heritage.html" data-i18n="nav_heritage_page">The House</a>
+          <a class="nav-link" href="/collections.html" data-i18n="nav_collections_page">Collections</a>
+          <a class="nav-link" href="/bespoke.html" data-i18n="nav_private_viewing_page">Private Viewing</a>
         </nav>
         <div class="nav-actions">
           <button class="archive-search" type="button" data-search-open>
@@ -54,7 +54,7 @@
           <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">
             <span class="material-symbols-outlined" id="theme-icon" aria-hidden="true">light_mode</span>
           </button>
-          <a class="button button-secondary" href="/bespoke.html" data-i18n="the_inquiry">The Inquiry</a>
+          <a class="button button-secondary" href="/bespoke.html" data-i18n="private_viewing_cta">Private Viewing</a>
           <button class="icon-button menu-trigger" type="button" data-menu-open aria-label="Open menu" aria-expanded="false">
             <span class="material-symbols-outlined" aria-hidden="true">menu</span>
           </button>
@@ -74,10 +74,9 @@
           </div>
           <div class="menu-links">
             <a class="menu-link" href="/">Home</a>
-            <a class="menu-link" href="/collections.html" data-i18n="nav_collections">Collections</a>
-            <a class="menu-link" href="/bespoke.html" data-i18n="nav_bespoke">Bespoke</a>
-            <a class="menu-link" href="/heritage.html" data-i18n="nav_heritage">Heritage</a>
-            <a class="menu-link" href="/contact.html" data-i18n="nav_contact">Contact</a>
+            <a class="menu-link" href="/heritage.html" data-i18n="nav_heritage_page">The House</a>
+            <a class="menu-link" href="/collections.html" data-i18n="nav_collections_page">Collections</a>
+            <a class="menu-link" href="/bespoke.html" data-i18n="nav_private_viewing_page">Private Viewing</a>
           </div>
         </div>
         <div>
@@ -96,27 +95,43 @@
       </div>
     </div>
 
-    <main id="main-content" class="utility-page">
-      <div class="utility-content">
-        <span class="eyebrow" data-reveal>The Archive</span>
-        <h1 class="page-title" data-reveal>Complete House Collection</h1>
-        <p class="lead mb-10" data-reveal>
-          The full breadth of the house's high jewellery mastery. Each piece
-          represents a dialogue between the rarest gemstones and the finest
-          craftsmanship.
-        </p>
+    <main id="main-content">
+      <!-- Editorial Hero -->
+      <section class="hero-section hero-compact" aria-label="Collections introduction">
+        <picture class="media-fallback">
+          <source type="image/avif" srcset="/assets/images/global/hero-640.avif 640w, /assets/images/global/hero-960.avif 960w, /assets/images/global/hero-1280.avif 1280w" sizes="100vw" />
+          <source type="image/webp" srcset="/assets/images/global/hero-640.webp 640w, /assets/images/global/hero-960.webp 960w, /assets/images/global/hero-1280.webp 1280w" sizes="100vw" />
+          <img class="hero-bg" src="/assets/images/global/hero.jpg" alt="" aria-hidden="true" loading="eager" />
+        </picture>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <span class="eyebrow" data-reveal>The House of Giriraj</span>
+          <h1 class="hero-title" data-reveal>Collections</h1>
+          <p class="hero-subtitle" data-reveal>
+            Each collection is a narrative — a dialogue between the rarest
+            natural gemstones and the finest craftsmanship, preserved for
+            generations.
+          </p>
+        </div>
+      </section>
 
-        <div class="house-grid" id="house-grid-full"></div>
-      </div>
+      <!-- Combined Masterpieces Gallery -->
+      <section class="px-6 md:px-12 py-12 md:py-20">
+        <div class="max-w-[1440px] mx-auto">
+          <!-- Filter tabs injected by JS -->
+          <div class="flex flex-wrap justify-center gap-3 mb-12" id="combined-filter-tabs"></div>
+          <!-- Grid injected by JS -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="combined-grid"></div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
       <img class="footer-logo" src="/assets/images/global/House_of_Giriraj.svg" alt="Shree Giriraj Gems and Jewels" width="280" height="64" />
       <nav class="footer-links" aria-label="Footer navigation">
-        <a class="nav-link" href="/heritage.html">Heritage</a>
+        <a class="nav-link" href="/heritage.html">The House</a>
         <a class="nav-link" href="/collections.html">Collections</a>
-        <a class="nav-link" href="/bespoke.html">Bespoke</a>
-        <a class="nav-link" href="/contact.html">Contact</a>
+        <a class="nav-link" href="/bespoke.html">Private Viewing</a>
       </nav>
       <p class="footer-note">&copy; 2026 Shree Giriraj Gems and Jewels. All Rights Reserved.</p>
     </footer>

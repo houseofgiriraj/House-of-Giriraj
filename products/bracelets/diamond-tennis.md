@@ -10,6 +10,8 @@ metal: 18k White Gold
 weight: 3ct total
 cert: GIA Certified
 featured: false
+collectionId:
+
 ---
 
 The timeless tennis bracelet reimagined with 3 carats of perfectly matched diamonds.

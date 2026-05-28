@@ -1,5 +1,6 @@
 import "../../css/style.css";
 import houseCollection from "../data/house-collection.js";
+import { products } from "../data.js";
 
 function esc(str) {
   return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
@@ -74,7 +75,8 @@ function initHousePiece() {
       price: "Upon Request",
       priceCurrency: "INR",
       availability: "https://schema.org/InStock"
-    }
+    },
+    collection: piece.title
   };
 
   main.innerHTML = `
@@ -211,6 +213,32 @@ function initHousePiece() {
       </div>
     </section>
     ` : ""}
+
+    ${(() => {
+      const collProducts = products.filter(p => p.collectionId === piece.id);
+      if (collProducts.length === 0) return "";
+      return `
+    <section class="px-6 md:px-12 py-16 md:py-24 bg-surface-container">
+      <div class="max-w-[1440px] mx-auto">
+        <h3 class="font-serif text-2xl md:text-3xl text-on-surface mb-8">Masterpieces in This Collection</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          ${collProducts.map((p) => `
+          <a href="product.html?id=${encodeURIComponent(p.id)}" class="group bg-surface-container-low block">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" />
+            </div>
+            <div class="p-5 text-center border-t border-surface-variant/30 group-hover:border-primary/30 transition-colors">
+              <span class="text-[9px] tracking-[0.3em] uppercase text-primary">${esc(p.subcategory)}</span>
+              <h4 class="font-serif text-base text-on-surface mt-1 group-hover:text-primary transition-colors">${esc(p.name)}</h4>
+              <p class="text-xs text-on-surface-variant mt-1 line-clamp-2">${esc(p.shortDesc)}</p>
+            </div>
+          </a>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+      `;
+    })()}
 
     <section class="px-6 py-16 md:py-24 bg-stone-950 text-center">
       <div class="max-w-2xl mx-auto">

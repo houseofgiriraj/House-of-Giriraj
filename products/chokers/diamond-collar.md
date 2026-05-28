@@ -10,6 +10,8 @@ metal: Platinum
 weight: 3ct total
 cert: GIA Certified
 featured: false
+collectionId:
+
 ---
 
 A bold statement piece featuring 3 carats of carefully selected diamonds in a contemporary collar design.

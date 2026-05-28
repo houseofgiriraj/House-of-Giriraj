@@ -10,6 +10,8 @@ metal: 22k Gold
 weight: 55g set
 cert: BIS Hallmarked
 featured: false
+collectionId:
+
 ---
 
 Traditional bridal chooda bangles reimagined with modern elegance and diamond embellishments.

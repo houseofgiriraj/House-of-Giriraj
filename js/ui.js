@@ -4,12 +4,11 @@
 /* ===== TRANSLATIONS ===== */
 const translations = {
   en: {
-    nav_collections: "Collections",
-    nav_bespoke: "Bespoke",
-    nav_heritage: "Heritage",
-    nav_contact: "Contact",
+    nav_heritage_page: "The House",
+    nav_collections_page: "Collections",
+    nav_private_viewing_page: "Private Viewing",
     search_placeholder: "SEARCH ARCHIVE",
-    the_inquiry: "The Inquiry",
+    private_viewing_cta: "Private Viewing",
     hero_tagline: "Established 1995",
     hero_headline: "Where Value Takes Form.",
     hero_subtitle: "Fine jewelry crafted to preserve beauty, rarity, and legacy.",
@@ -40,12 +39,11 @@ const translations = {
     footer_rights: "© 2026 Shree Giriraj Gems and Jewels. All Rights Reserved.",
   },
   hi: {
-    nav_collections: "संग्रह",
-    nav_bespoke: "कस्टम",
-    nav_heritage: "विरासत",
-    nav_contact: "संपर्क",
+    nav_heritage_page: "द हाउस",
+    nav_collections_page: "संग्रह",
+    nav_private_viewing_page: "निजी प्रदर्शन",
     search_placeholder: "खोजें",
-    the_inquiry: "पूछताछ",
+    private_viewing_cta: "निजी प्रदर्शन",
     hero_tagline: "स्थापित 1995",
     hero_headline: "जहाँ मूल्य रूप लेता है।",
     hero_subtitle: "सौंदर्य, दुर्लभता और विरासत को संरक्षित करने के लिए तैयार किए गए उत्कृष्ट गहने।",

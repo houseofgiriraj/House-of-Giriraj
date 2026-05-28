@@ -10,6 +10,8 @@ metal: Platinum
 weight: 12ct total
 cert: GIA Certified
 featured: true
+collectionId:
+
 ---
 
 A breathtaking bracelet featuring a cascade of 12 carats of D-Flawless diamonds in a heritage legacy setting.

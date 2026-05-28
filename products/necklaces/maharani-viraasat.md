@@ -10,6 +10,8 @@ metal: Platinum
 weight: 45ct total
 cert: GIA Certified
 featured: true
+collectionId:
+
 ---
 
 A profound exploration of deep reds and structural platinum, echoing the intensity of a blood moon.

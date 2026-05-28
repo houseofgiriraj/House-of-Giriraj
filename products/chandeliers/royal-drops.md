@@ -10,6 +10,8 @@ metal: 18k Gold
 weight: 4ct total
 cert: GIA Certified
 featured: false
+collectionId:
+
 ---
 
 Elegant drop earrings featuring vivid rubies surrounded by a halo of diamonds.

@@ -10,6 +10,8 @@ metal: Platinum
 weight: 2.5ct
 cert: GIA Certified
 featured: true
+collectionId:
+
 ---
 
 A magnificent 2.5 carat solitaire set in platinum, designed to capture light from every angle.

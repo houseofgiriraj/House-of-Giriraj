@@ -10,6 +10,8 @@ metal: 18k Gold
 weight: 38ct total
 cert: GIA Certified
 featured: true
+collectionId:
+
 ---
 
 Regal emeralds set in 18k gold, inspired by the grandeur of Indian royalty.

@@ -70,6 +70,7 @@ function readAllProducts() {
           cert: data.cert || "",
         },
         featured: data.featured === true,
+        collectionId: data.collectionId || "",
       });
     }
   }

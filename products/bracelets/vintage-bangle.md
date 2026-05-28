@@ -10,6 +10,8 @@ metal: 22k Gold
 weight: 28g
 cert: BIS Hallmarked
 featured: false
+collectionId:
+
 ---
 
 A vintage-inspired bangle with intricate gold work and subtle diamond accents.

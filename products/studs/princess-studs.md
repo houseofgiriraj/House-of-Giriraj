@@ -10,6 +10,8 @@ metal: 18k White Gold
 weight: 1ct pair
 cert: GIA Certified
 featured: false
+collectionId:
+
 ---
 
 Classic princess-cut diamond studs that pair effortlessly with any look.

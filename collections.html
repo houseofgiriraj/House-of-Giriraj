@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Collections | Giriraj Jewellery</title>
-  <meta name="description" content="Explore our curated collections of fine diamond jewelry." />
-  <meta property="og:title" content="Collections | Giriraj Jewellery" />
-  <meta property="og:description" content="Explore our curated collections of fine diamond jewelry." />
-  <meta property="og:type" content="website" />
+  <title>Masterpieces | House of Giriraj</title>
+  <meta name="description" content="An archive of high jewellery masterpieces from the House of Giriraj. Each piece is a dialogue between the rarest gemstones and the finest craftsmanship." />
+  <meta property="og:title" content="Masterpieces | House of Giriraj" />
+  <meta property="og:description" content="An archive of high jewellery masterpieces from the House of Giriraj." />
+  <meta property="og:type" content="content" />
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
@@ -24,10 +24,9 @@
         <img class="h-8 md:h-10 w-auto" src="images/House_of_Giriraj.svg" alt="Giriraj Jewellery" />
       </a>
       <div class="hidden lg:flex gap-8 items-center">
-        <a class="text-[#8d743b] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="collections.html" data-i18n="nav_collections">Collections</a>
-        <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="bespoke.html" data-i18n="nav_bespoke">Bespoke</a>
-        <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="heritage.html" data-i18n="nav_heritage">Heritage</a>
-        <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="contact.html" data-i18n="nav_contact">Contact</a>
+        <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="heritage.html" data-i18n="nav_heritage_page">The House</a>
+        <a class="text-[#8d743b] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="collections.html" data-i18n="nav_collections_page">Collections</a>
+        <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="bespoke.html" data-i18n="nav_private_viewing_page">Private Viewing</a>
       </div>
       <div class="flex items-center gap-3 md:gap-4">
         <div class="hidden lg:flex items-center gap-2 border-b border-[#4d463a] pb-1 cursor-pointer" onclick="searchSystem.openSearchModal()">
@@ -42,7 +41,7 @@
         <button class="theme-toggle hidden md:flex" onclick="toggleTheme()" aria-label="Toggle theme">
           <span class="material-symbols-outlined text-xl" id="theme-icon">light_mode</span>
         </button>
-        <a href="bespoke.html" class="px-4 md:px-6 py-2 bg-transparent border border-primary text-primary text-[10px] tracking-[0.2em] uppercase hover:bg-primary hover:text-on-primary transition-all duration-500 hidden md:block btn-fade" data-i18n="the_inquiry">The Inquiry</a>
+        <a href="bespoke.html" class="px-4 md:px-6 py-2 bg-transparent border border-primary text-primary text-[10px] tracking-[0.2em] uppercase hover:bg-primary hover:text-on-primary transition-all duration-500 hidden md:block btn-fade" data-i18n="private_viewing_cta">Private Viewing</a>
         <button class="lg:hidden w-10 h-10 flex items-center justify-center text-[#7b7670]" aria-label="Menu" onclick="document.getElementById('mobile-menu').classList.add('active')">
           <span class="material-symbols-outlined text-2xl">menu</span>
         </button>
@@ -63,12 +62,11 @@
       </div>
       <div class="menu-links">
         <a class="menu-link" href="index.html">Home</a>
-        <a class="menu-link" href="collections.html" data-i18n="nav_collections" style="color: var(--accent-gold)">Collections</a>
-        <a class="menu-link" href="bespoke.html" data-i18n="nav_bespoke">Bespoke</a>
-        <a class="menu-link" href="heritage.html" data-i18n="nav_heritage">Heritage</a>
-        <a class="menu-link" href="contact.html" data-i18n="nav_contact">Contact</a>
+        <a class="menu-link" href="heritage.html" data-i18n="nav_heritage_page">The House</a>
+        <a class="menu-link" href="collections.html" data-i18n="nav_collections_page" style="color: var(--accent-gold)">Collections</a>
+        <a class="menu-link" href="bespoke.html" data-i18n="nav_private_viewing_page">Private Viewing</a>
       </div>
-      <a href="bespoke.html" class="menu-cta" data-i18n="the_inquiry">The Inquiry</a>
+      <a href="bespoke.html" class="menu-cta" data-i18n="private_viewing_cta">Private Viewing</a>
       <div class="menu-controls">
         <select id="lang-selector-mobile" onchange="setLanguage(this.value)">
           <option value="en" selected>EN</option>
@@ -83,11 +81,15 @@
 
   <main id="main-content">
     <!-- Hero -->
-    <section class="relative pt-24 pb-20 md:pt-32 md:pb-24 overflow-hidden bg-surface-container-low">
-      <div class="max-w-[1440px] mx-auto px-6 md:px-12 text-center">
-        <span class="font-label text-xs tracking-[0.3em] uppercase text-[#e3c484] mb-4 block fade-in-up">The Portfolio</span>
-        <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl text-on-surface mb-6 fade-in-up" style="animation-delay: 0.1s">Curated Collections</h1>
-        <p class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed fade-in-up" style="animation-delay: 0.2s">Each piece is a testament to our 25-year journey of craftsmanship, featuring exceptional natural diamonds set in gold and platinum.</p>
+    <section class="relative pt-24 pb-20 md:pt-32 md:pb-24 overflow-hidden">
+      <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+        <source src="/assets/videos/collections-hero.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 text-center">
+        <span class="font-label text-xs tracking-[0.3em] uppercase text-[#e3c484] mb-4 block fade-in-up">The House of Giriraj</span>
+        <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-6 fade-in-up" style="animation-delay: 0.1s">Collections</h1>
+        <p class="text-white/80 max-w-2xl mx-auto text-lg leading-relaxed fade-in-up" style="animation-delay: 0.2s">Each collection is a narrative — a dialogue between the rarest natural gemstones and the finest craftsmanship, preserved for generations.</p>
       </div>
     </section>
 
@@ -98,16 +100,16 @@
       </div>
     </section>
 
-    <!-- Products Grid -->
+    <!-- Masterpieces Grid -->
     <section class="px-6 md:px-12 py-12 md:py-20">
       <div class="max-w-[1440px] mx-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8" id="products-grid">
-          <!-- Products injected by JS -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="products-grid">
+          <!-- Pieces injected by JS -->
         </div>
         <!-- Empty state -->
         <div id="empty-state" class="hidden text-center py-20">
           <span class="material-symbols-outlined text-6xl text-[#999081] mb-4">search_off</span>
-          <p class="text-on-surface-variant">No products found in this category.</p>
+          <p class="text-on-surface-variant">No masterpieces found in this category.</p>
         </div>
       </div>
     </section>
@@ -115,9 +117,9 @@
     <!-- CTA -->
     <section class="px-6 py-16 md:py-24 bg-surface-container">
       <div class="max-w-[1440px] mx-auto text-center">
-        <h3 class="font-serif text-3xl md:text-4xl text-on-surface mb-4">Can't find what you're looking for?</h3>
-        <p class="text-on-surface-variant mb-8">Our artisans can create bespoke pieces tailored to your vision.</p>
-        <a href="bespoke.html" class="inline-block px-10 md:px-12 py-3 md:py-4 bg-primary text-on-primary font-label text-sm tracking-[0.2em] uppercase hover:translate-y-[-4px] transition-all duration-500">Start Your Commission</a>
+        <h3 class="font-serif text-3xl md:text-4xl text-on-surface mb-4">Seeking something extraordinary?</h3>
+        <p class="text-on-surface-variant mb-8">Our master craftsmen await your vision. Commission a piece that transcends generations.</p>
+        <a href="bespoke.html" class="inline-block px-10 md:px-12 py-3 md:py-4 bg-primary text-on-primary font-label text-sm tracking-[0.2em] uppercase hover:translate-y-[-4px] transition-all duration-500">Request Private Viewing</a>
       </div>
     </section>
   </main>
@@ -135,10 +137,9 @@
           <img class="h-8 md:h-10 w-auto" src="images/House_of_Giriraj.svg" alt="Giriraj Jewellery" />
         </a>
         <div class="flex flex-wrap justify-center gap-6 md:gap-8">
-          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="heritage.html" data-i18n="nav_heritage">Heritage</a>
-          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="collections.html" data-i18n="nav_collections">Collections</a>
-          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="bespoke.html" data-i18n="nav_bespoke">Bespoke</a>
-          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="contact.html" data-i18n="nav_contact">Contact</a>
+          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="heritage.html" data-i18n="nav_heritage_page">The House</a>
+          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="collections.html" data-i18n="nav_collections_page">Collections</a>
+          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="bespoke.html" data-i18n="nav_private_viewing_page">Private Viewing</a>
         </div>
       </div>
       <div class="flex gap-6 md:gap-8 mt-4">
@@ -156,7 +157,7 @@
   <script src="js/whatsapp.js"></script>
   <script src="js/analytics.js"></script>
 
-  <!-- Search stub (nav uses it; collections page is the search destination) -->
+  <!-- Search stub (nav uses it) -->
   <script>
     const searchSystem = {
       openSearchModal: function () {
@@ -165,65 +166,6 @@
       },
       closeSearchModal: function () {}
     };
-  </script>
-
-  <!-- Collections Rendering Logic -->
-  <script>
-    function esc(str) {
-      return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const filterContainer = document.getElementById("filter-buttons");
-      const grid = document.getElementById("products-grid");
-      const emptyState = document.getElementById("empty-state");
-
-      // Build filter buttons
-      const categories = [{ id: "all", name: "All", count: products.length }, ...getAllCategories()];
-      filterContainer.innerHTML = categories.map((cat, i) => `
-        <button class="filter-btn px-6 md:px-8 py-3 border border-surface-variant text-[10px] tracking-[0.2em] uppercase hover:border-primary transition-all ${i === 0 ? 'active' : ''}" data-filter="${cat.id}">
-          ${esc(cat.name)}
-        </button>
-      `).join("");
-
-      // Render products
-      function renderProducts(filter = "all") {
-        const filtered = getProductsByCategory(filter);
-        if (filtered.length === 0) {
-          grid.innerHTML = "";
-          emptyState.classList.remove("hidden");
-          return;
-        }
-        emptyState.classList.add("hidden");
-        grid.innerHTML = filtered.map((p) => `
-          <a href="product.html?id=${encodeURIComponent(p.id)}" class="product-card-link product-card group bg-surface-container block">
-            <div class="aspect-square overflow-hidden mb-4">
-              <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" />
-            </div>
-            <div class="p-4 text-center border-t border-surface-variant/30 group-hover:border-primary/30 transition-colors">
-              <h4 class="font-serif text-lg text-on-surface mb-1 product-name transition-colors">${esc(p.name)}</h4>
-              <p class="text-[10px] tracking-widest uppercase text-outline mb-3">${esc(p.shortDesc)}</p>
-              <span class="text-xs tracking-widest text-primary">${esc(p.priceRange)}</span>
-            </div>
-          </a>
-        `).join("");
-      }
-
-      // Initial render
-      renderProducts("all");
-
-      // Filter click handlers
-      filterContainer.addEventListener("click", function (e) {
-        const btn = e.target.closest(".filter-btn");
-        if (!btn) return;
-        filterContainer.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        renderProducts(btn.dataset.filter);
-      });
-
-      // Re-init WhatsApp after DOM injection
-      WhatsAppFunnel.init();
-    });
   </script>
 </body>
 </html>

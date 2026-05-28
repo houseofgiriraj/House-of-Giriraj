@@ -10,6 +10,8 @@ metal: Platinum
 weight: 2ct pair
 cert: GIA Certified
 featured: false
+collectionId:
+
 ---
 
 Elegant drop studs with 2 carats of diamonds, designed for the woman who appreciates understated luxury.

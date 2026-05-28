@@ -2,6 +2,7 @@ import "./styles.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import houseCollection from "./data/house-collection.js";
+import { products } from "./data.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,20 +10,18 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
 
 const translations = {
   en: {
-    nav_collections: "Collections",
-    nav_bespoke: "Bespoke",
-    nav_heritage: "Heritage",
-    nav_contact: "Contact",
+    nav_heritage_page: "The House",
+    nav_collections_page: "Collections",
+    nav_private_viewing_page: "Private Viewing",
     search_placeholder: "Search Archive",
-    the_inquiry: "The Inquiry"
+    private_viewing_cta: "Private Viewing"
   },
   hi: {
-    nav_collections: "Collections",
-    nav_bespoke: "Bespoke",
-    nav_heritage: "Heritage",
-    nav_contact: "Contact",
+    nav_heritage_page: "द हाउस",
+    nav_collections_page: "Collections",
+    nav_private_viewing_page: "Private Viewing",
     search_placeholder: "Search Archive",
-    the_inquiry: "The Inquiry"
+    private_viewing_cta: "Private Viewing"
   }
 };
 
@@ -588,7 +587,6 @@ function init() {
   initVideoFallbacks();
   initNavHide();
   renderHouseCollection("#house-grid");
-  renderHouseCollection("#house-grid-full");
   initHouseSlideshow();
 }
 

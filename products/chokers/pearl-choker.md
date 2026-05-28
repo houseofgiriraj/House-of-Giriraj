@@ -10,6 +10,8 @@ metal: 22k Gold
 weight: 35ct total
 cert: BIS Hallmarked
 featured: false
+collectionId:
+
 ---
 
 Timeless pearls woven with delicate gold, creating a piece that bridges generations.

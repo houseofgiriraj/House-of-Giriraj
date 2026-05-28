@@ -10,6 +10,8 @@ metal: 18k White Gold
 weight: 1.8ct pair
 cert: GIA Certified
 featured: false
+collectionId:
+
 ---
 
 Everyday elegance with 1.8 carats of brilliant diamond studs, perfect for any occasion.

@@ -24,10 +24,9 @@
         <img class="h-8 md:h-10 w-auto" src="images/House_of_Giriraj.svg" alt="Giriraj Jewellery" />
       </a>
       <div class="hidden lg:flex gap-8 items-center">
-        <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="collections.html" data-i18n="nav_collections">Collections</a>
-        <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="bespoke.html" data-i18n="nav_bespoke">Bespoke</a>
-        <a class="text-[#8d743b] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="heritage.html" data-i18n="nav_heritage">Heritage</a>
-        <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="contact.html" data-i18n="nav_contact">Contact</a>
+        <a class="text-[#8d743b] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="heritage.html" data-i18n="nav_heritage_page">The House</a>
+        <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="collections.html" data-i18n="nav_collections_page">Collections</a>
+        <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-xs uppercase tracking-widest nav-link link-reveal" href="bespoke.html" data-i18n="nav_private_viewing_page">Private Viewing</a>
       </div>
       <div class="flex items-center gap-3 md:gap-4">
         <div class="hidden lg:flex items-center gap-2 border-b border-[#4d463a] pb-1 cursor-pointer" onclick="searchSystem.openSearchModal()">
@@ -42,7 +41,7 @@
         <button class="theme-toggle hidden md:flex" onclick="toggleTheme()" aria-label="Toggle theme">
           <span class="material-symbols-outlined text-xl" id="theme-icon">light_mode</span>
         </button>
-        <a href="bespoke.html" class="px-4 md:px-6 py-2 bg-transparent border border-primary text-primary text-[10px] tracking-[0.2em] uppercase hover:bg-primary hover:text-on-primary transition-all duration-500 hidden md:block btn-fade" data-i18n="the_inquiry">The Inquiry</a>
+        <a href="bespoke.html" class="px-4 md:px-6 py-2 bg-transparent border border-primary text-primary text-[10px] tracking-[0.2em] uppercase hover:bg-primary hover:text-on-primary transition-all duration-500 hidden md:block btn-fade" data-i18n="private_viewing_cta">Private Viewing</a>
         <button class="lg:hidden w-10 h-10 flex items-center justify-center text-[#7b7670]" aria-label="Menu" onclick="document.getElementById('mobile-menu').classList.add('active')">
           <span class="material-symbols-outlined text-2xl">menu</span>
         </button>
@@ -63,12 +62,11 @@
       </div>
       <div class="menu-links">
         <a class="menu-link" href="index.html">Home</a>
-        <a class="menu-link" href="collections.html" data-i18n="nav_collections">Collections</a>
-        <a class="menu-link" href="bespoke.html" data-i18n="nav_bespoke">Bespoke</a>
-        <a class="menu-link" href="heritage.html" data-i18n="nav_heritage" style="color: var(--accent-gold)">Heritage</a>
-        <a class="menu-link" href="contact.html" data-i18n="nav_contact">Contact</a>
+        <a class="menu-link" href="heritage.html" data-i18n="nav_heritage_page" style="color: var(--accent-gold)">The House</a>
+        <a class="menu-link" href="collections.html" data-i18n="nav_collections_page">Collections</a>
+        <a class="menu-link" href="bespoke.html" data-i18n="nav_private_viewing_page">Private Viewing</a>
       </div>
-      <a href="bespoke.html" class="menu-cta" data-i18n="the_inquiry">The Inquiry</a>
+      <a href="bespoke.html" class="menu-cta" data-i18n="private_viewing_cta">Private Viewing</a>
       <div class="menu-controls">
         <select id="lang-selector-mobile" onchange="setLanguage(this.value)">
           <option value="en" selected>EN</option>
@@ -322,10 +320,9 @@
           <img class="h-8 md:h-10 w-auto" src="images/House_of_Giriraj.svg" alt="Giriraj Jewellery" />
         </a>
         <div class="flex flex-wrap justify-center gap-6 md:gap-8">
-          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="heritage.html" data-i18n="nav_heritage">Heritage</a>
-          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="collections.html" data-i18n="nav_collections">Collections</a>
-          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="bespoke.html" data-i18n="nav_bespoke">Bespoke</a>
-          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="contact.html" data-i18n="nav_contact">Contact</a>
+          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="heritage.html" data-i18n="nav_heritage_page">The House</a>
+          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="collections.html" data-i18n="nav_collections_page">Collections</a>
+          <a class="text-[#7b7670] hover:text-[#8d743b] transition-colors duration-400 font-label text-[10px] uppercase tracking-[0.1em] link-reveal" href="bespoke.html" data-i18n="nav_private_viewing_page">Private Viewing</a>
         </div>
       </div>
       <div class="flex gap-6 md:gap-8 mt-4">

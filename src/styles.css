@@ -1185,17 +1185,6 @@ button {
   text-align: center;
 }
 
-.utility-page {
-  min-height: 100svh;
-  display: grid;
-  place-items: center;
-  padding: 8rem var(--space-page) 4rem;
-}
-
-.utility-content {
-  width: min(100%, 58rem);
-}
-
 .page-title {
   font-size: clamp(3rem, 8vw, 7rem);
   max-width: 12ch;

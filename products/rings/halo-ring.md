@@ -10,6 +10,8 @@ metal: 18k White Gold
 weight: 1.5ct + 0.5ct halo
 cert: GIA Certified
 featured: false
+collectionId:
+
 ---
 
 A delicate halo ring with a 1.5 carat center stone surrounded by a ring of brilliant diamonds.
