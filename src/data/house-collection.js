@@ -8,7 +8,7 @@ const houseCollection = [
     "hero": "Full-width hero piece on homepage",
     "images": [
       "celestial-cascade-1.png",
-      "celestial-cascade-2.png",
+      "celestial-cascade-2.jpg",
       "celestial-cascade-3.png"
     ],
     "onHomepage": true,

@@ -11,7 +11,7 @@ description: |
 hero: Full-width hero piece on homepage
 images:
   - image: /assets/images/collection/celestial-cascade/celestial-cascade-1.png
-  - image: /assets/images/collection/celestial-cascade/celestial-cascade-2.png
+  - image: /assets/images/collection/celestial-cascade/celestial-cascade-2.jpg
   - image: /assets/images/collection/celestial-cascade/celestial-cascade-3.png
 onHomepage: true
 row: 0
