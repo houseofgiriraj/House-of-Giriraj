@@ -1,5 +1,5 @@
 ---
-id: celestial-cascade
+id: maharani-cascade
 title: Maharani Cascade Necklace
 category: High Jewellery · Diamond
 description: |
@@ -10,9 +10,9 @@ description: |
   Crafted for weddings, couture occasions, and collectors of exceptional jewellery.
 hero: Full-width hero piece on homepage
 images:
-  - image: /assets/images/collection/celestial-cascade/celestial-cascade-1.png
-  - image: /assets/images/collection/celestial-cascade/celestial-cascade-2.jpg
-  - image: /assets/images/collection/celestial-cascade/celestial-cascade-3.png
+  - image: /assets/images/collection/maharani-cascade/celestial-cascade-1.png
+  - image: /assets/images/collection/maharani-cascade/celestial-cascade-2.jpg
+  - image: /assets/images/collection/maharani-cascade/celestial-cascade-3.png
 onHomepage: true
 row: 0
 homepageOrder: 0

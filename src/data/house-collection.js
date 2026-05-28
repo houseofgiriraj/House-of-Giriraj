@@ -1,7 +1,7 @@
 const houseCollection = [
   {
-    "id": "celestial-cascade",
-    "slug": "celestial-cascade",
+    "id": "maharani-cascade",
+    "slug": "maharani-cascade",
     "title": "Maharani Cascade Necklace",
     "category": "High Jewellery · Diamond",
     "description": "A statement of regal craftsmanship and architectural brilliance, the Maharani Cascade Necklace is designed for moments that demand presence. Handcrafted with layered diamond formations, cascading pear drops, and intricate symmetry, this masterpiece draws inspiration from royal ceremonial jewellery while embracing contemporary luxury.\n\nIts dramatic silhouette frames the neckline with extraordinary brilliance, transforming light into movement and elegance into authority.\n\nCrafted for weddings, couture occasions, and collectors of exceptional jewellery.\n",

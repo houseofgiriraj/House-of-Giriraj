@@ -249,3 +249,4 @@
   producing `null` and `1` instead. Changed `||` to `!= null` checks.
 - **Count updated**: "Eight curated high jewellery masterpieces" → "Nine" in `index.html`.
 - **Image fix**: Second image changed from `.png` to `.jpg` — updated markdown entry to match.
+- **ID rename**: Directory renamed from `celestial-cascade` to `maharani-cascade` — updated markdown id and image paths to match; renamed markdown file to `maharani-cascade.md`.
