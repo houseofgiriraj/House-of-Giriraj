@@ -384,9 +384,22 @@ function initVideoFallbacks() {
   }
 
   document.querySelectorAll("video").forEach((video) => {
-    video.addEventListener("error", () => {
-      video.closest(".media-frame, .portfolio-media, .hero-media")?.classList.add("media-error");
-    });
+    const fallback = () => {
+      if (video.closest(".hero-media") && document.querySelector("[data-hero-video]")) {
+        document.querySelector("[data-hero-video]")?.remove();
+      }
+      const poster = video.poster || video.getAttribute("poster");
+      if (poster && video.parentNode) {
+        const img = document.createElement("img");
+        img.src = poster;
+        img.className = video.className;
+        img.alt = "";
+        video.parentNode.replaceChild(img, video);
+      }
+    };
+    video.addEventListener("error", fallback);
+    video.addEventListener("stalled", fallback);
+    video.play().catch(fallback);
   });
 }
 
