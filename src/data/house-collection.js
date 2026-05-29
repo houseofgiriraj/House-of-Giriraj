@@ -84,7 +84,7 @@ const houseCollection = [
     "hero": "Distinct silhouette. Strong luxury identity.",
     "images": [
       "dynasty-bloom-h-12695 (1).png",
-      "dynasty-bloom-h-12695 (2).jpg",
+      "dynasty-bloom-h-12695 (2).png",
       "dynasty-bloom-h-12695 (3).png"
     ],
     "onHomepage": true,
