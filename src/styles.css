@@ -1505,6 +1505,15 @@ button {
   background: #000;
 }
 
+.bw-to-color {
+  filter: grayscale(1);
+  transition: filter 0.7s var(--ease-luxury);
+}
+
+.media-frame:hover .bw-to-color {
+  filter: grayscale(0);
+}
+
 .slide-btn {
   position: absolute;
   top: 50%;
