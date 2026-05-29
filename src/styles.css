@@ -374,7 +374,6 @@ button {
 
 .hero-title {
   font-size: clamp(2.8rem, 6.5vw, 7.5rem);
-  max-width: 12ch;
   margin: 0 0 1.5rem;
 }
 
