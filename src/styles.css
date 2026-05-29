@@ -1712,7 +1712,8 @@ button {
   }
 
   .hero-title {
-    font-size: clamp(3.15rem, 16vw, 4.9rem);
+    font-size: clamp(2.4rem, 12vw, 3.8rem);
+    max-width: none;
   }
 
   .hero-actions,
