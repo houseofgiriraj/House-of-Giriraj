@@ -10,6 +10,7 @@ metal: Platinum
 weight: 3ct total
 cert: GIA Certified
 featured: false
+image: "rings/three-stone-ring/hero.jpg"
 collectionId:
 
 ---

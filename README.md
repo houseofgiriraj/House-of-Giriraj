@@ -64,12 +64,16 @@ Images are stored in `public/assets/images/products/`. The path is auto-managed.
 
 ### The House Collection
 
-The homepage features **The House Collection** — 9 curated high jewellery pieces.
+The homepage features **The House Collection** — 9 curated high jewellery pieces arranged
+as **1 hero + 4 rows of 2 pieces** (1+2+2+2+2 layout). Each row displays two equal columns.
 Data is stored as markdown in `src/data/house-collection-entries/{id}.md` and synced
 via `sync-house-collection.cjs` into `src/data/house-collection.js`.
 
 **Hero product**: A piece with `isHero: true` renders as a full-width row at the top
 (bigger image, full description). Currently: **Maharani Cascade Necklace**.
+
+**Card image aspect ratio**: `3:4` (taller display, via `.house-card-image`), capped
+at `700px` max-height.
 
 Data flow:
 ```

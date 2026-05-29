@@ -10,6 +10,7 @@ metal: 18k Gold
 weight: 2.5ct total
 cert: BIS Hallmarked
 featured: false
+image: "chokers/royal-choker/hero.jpg"
 collectionId:
 
 ---

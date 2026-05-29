@@ -34,7 +34,7 @@
       type="image/avif"
     />
   </head>
-  <body>
+  <body class="cursor-diamond">
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="nav" aria-label="Primary navigation">
@@ -162,17 +162,17 @@
           </video>
         </div>
         <div class="hero-copy">
-          <span class="eyebrow hero-kicker">Established 1995</span>
+          <span class="eyebrow hero-kicker" data-i18n="hero_tagline">Established 1995</span>
           <h1 class="hero-title" data-split>
             <span class="split-line">Where Value</span>
             <span class="split-line">Takes Form.</span>
           </h1>
-          <p class="hero-subtitle">
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
             Fine jewelry crafted to preserve beauty, rarity, and legacy. A sanctuary
             for the world's most exceptional stones.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#house-collection">
+            <a class="button button-primary" href="#house-collection" data-i18n="hero_cta_discover">
               Discover
             </a>
           </div>
@@ -185,15 +185,15 @@
       <section class="section section-low">
         <div class="page-shell editorial-grid">
           <div>
-            <h2 class="editorial-title" data-reveal>
+            <h2 class="editorial-title" data-reveal data-i18n="philosophy_headline">
               An inheritance of <span class="italic text-gold">absolute rarity</span>.
               We do not merely create; we archive the earth's silent wonders.
             </h2>
             <div class="two-column-copy">
               <article data-reveal>
                 <span class="process-index">01</span>
-                <h3 class="meta text-text-primary">Curation</h3>
-                <p class="text-text-secondary">
+                <h3 class="meta text-text-primary" data-i18n="curation_title">Curation</h3>
+                <p class="text-text-secondary" data-i18n="curation_desc">
                   Every stone in our vault undergoes a rigorous selection process,
                   ensuring only the top fraction of global yields find a home at
                   Shree Giriraj.
@@ -201,8 +201,8 @@
               </article>
               <article data-reveal>
                 <span class="process-index">02</span>
-                <h3 class="meta text-text-primary">Longevity</h3>
-                <p class="text-text-secondary">
+                <h3 class="meta text-text-primary" data-i18n="longevity_title">Longevity</h3>
+                <p class="text-text-secondary" data-i18n="longevity_desc">
                   Our design philosophy rejects ephemeral trends in favor of
                   structural integrity and timeless silhouettes that endure through
                   generations.
@@ -216,7 +216,7 @@
                 <source src="/assets/videos/stone-dictates-form.mp4" type="video/mp4" />
               </video>
             </div>
-            <p class="quote-plaque">The stone dictates the form.</p>
+            <p class="quote-plaque" data-i18n="stone_quote">The stone dictates the form.</p>
           </div>
         </div>
       </section>
@@ -225,7 +225,7 @@
         <div class="page-shell">
           <div class="promise-heading">
             <p class="eyebrow" data-split data-split-scroll>Our Promise</p>
-            <h2 id="promise-title" class="section-title" data-reveal>
+            <h2 id="promise-title" class="section-title" data-reveal data-i18n="trust_certified">
               Certified. Transparent. Trusted.
             </h2>
           </div>
@@ -265,11 +265,11 @@
       <section id="house-collection" class="section" aria-labelledby="house-title">
         <div class="page-shell">
           <div class="house-header">
-            <span class="eyebrow" data-reveal>The House Collection</span>
-            <h2 id="house-title" class="section-title" data-reveal>
+            <span class="eyebrow" data-reveal data-i18n="house_label">The House Collection</span>
+            <h2 id="house-title" class="section-title" data-reveal data-i18n="collections_headline">
               Nine curated high jewellery masterpieces
             </h2>
-            <p class="lead text-text-secondary" data-reveal>
+            <p class="lead text-text-secondary" data-reveal data-i18n="collections_lead">
               Selected to reflect the house's pursuit of rarity,
               craftsmanship, and gemstone excellence.
             </p>
@@ -278,7 +278,7 @@
           <div class="house-grid" id="house-grid"></div>
 
           <div class="house-cta" data-reveal>
-            <a class="button button-secondary" href="/collections.html">
+            <a class="button button-secondary" href="/collections.html" data-i18n="collections_cta">
               View Full Collection
             </a>
           </div>
@@ -293,12 +293,12 @@
             </video>
           </div>
           <div>
-            <span class="eyebrow" data-reveal>The Atelier</span>
+            <span class="eyebrow" data-reveal data-i18n="atelier_label">The Atelier</span>
             <h2 class="editorial-title" data-split data-split-scroll>
               <span class="split-line">The Precision of</span>
               <span class="split-line">Ten Thousand Hours.</span>
             </h2>
-            <p class="lead mt-6" data-reveal>
+            <p class="lead mt-6" data-reveal data-i18n="atelier_desc">
               Each piece born in our atelier is the culmination of heritage
               techniques and futuristic engineering. Our master craftsmen spend
               months on a single setting.
@@ -307,8 +307,8 @@
               <article class="atelier-item" data-reveal>
                 <span class="material-symbols-outlined" aria-hidden="true">diamond</span>
                 <div>
-                  <h3 class="meta text-text-primary">Unrivaled Setting</h3>
-                  <p class="text-text-muted">
+                  <h3 class="meta text-text-primary" data-i18n="unrivaled_setting">Unrivaled Setting</h3>
+                  <p class="text-text-muted" data-i18n="unrivaled_desc">
                     Proprietary micro-pave techniques that minimize visible metal.
                   </p>
                 </div>
@@ -316,8 +316,8 @@
               <article class="atelier-item" data-reveal>
                 <span class="material-symbols-outlined" aria-hidden="true">handyman</span>
                 <div>
-                  <h3 class="meta text-text-primary">Artisanal Casting</h3>
-                  <p class="text-text-muted">
+                  <h3 class="meta text-text-primary" data-i18n="artisanal_casting">Artisanal Casting</h3>
+                  <p class="text-text-muted" data-i18n="artisanal_desc">
                     High-density platinum and 18k gold alloys forged for lifetime
                     integrity.
                   </p>
@@ -350,18 +350,18 @@
           />
         </picture>
         <div class="cta-copy">
-          <h2 class="section-title" data-reveal>
+          <h2 class="section-title" data-reveal data-i18n="cta_headline">
             Begin Your <span class="italic text-gold">Private Acquisition</span>
           </h2>
-          <p class="lead mx-auto mt-6 mb-10" data-reveal>
+          <p class="lead mx-auto mt-6 mb-10" data-reveal data-i18n="cta_subtitle">
             Consult with our senior diamond specialists to source the world's
             most significant gemstones or commission a bespoke masterpiece.
           </p>
           <div class="hero-actions" data-reveal style="justify-content: center;">
-            <a class="button button-primary" href="/bespoke.html">
+            <a class="button button-primary" href="/bespoke.html" data-i18n="cta_primary">
               Request a Private Viewing
             </a>
-            <a class="button button-secondary" href="/contact.html">
+            <a class="button button-secondary" href="/contact.html" data-i18n="cta_secondary">
               Visit Our Atelier
             </a>
           </div>
@@ -378,9 +378,9 @@
         height="64"
       />
       <nav class="footer-links" aria-label="Footer navigation">
-        <a class="nav-link" href="/collections.html">Collections</a>
-        <a class="nav-link" href="/bespoke.html">Private Viewing</a>
-        <a class="nav-link" href="/heritage.html">The House</a>
+        <a class="nav-link" href="/collections.html" data-i18n="nav_collections_page">Collections</a>
+        <a class="nav-link" href="/bespoke.html" data-i18n="nav_private_viewing_page">Private Viewing</a>
+        <a class="nav-link" href="/heritage.html" data-i18n="nav_heritage_page">The House</a>
       </nav>
       <div class="flex gap-6 mt-4">
         <a class="text-text-muted hover:text-accent-gold transition-colors" href="https://instagram.com/shreegirirajjewels" target="_blank" aria-label="Instagram"><span class="material-symbols-outlined text-xl">photo_camera</span></a>
@@ -388,7 +388,7 @@
         <a class="text-text-muted hover:text-accent-gold transition-colors" href="contact.html" aria-label="Location"><span class="material-symbols-outlined text-xl">location_on</span></a>
         <a class="text-text-muted hover:text-accent-gold transition-colors" href="https://wa.me/919885055550" target="_blank" aria-label="WhatsApp"><span class="material-symbols-outlined text-xl">chat</span></a>
       </div>
-      <p class="footer-note">&copy; 2026 Shree Giriraj Gems and Jewels. All Rights Reserved.</p>
+      <p class="footer-note" data-i18n="footer_rights">&copy; 2026 Shree Giriraj Gems and Jewels. All Rights Reserved.</p>
     </footer>
 
     <div class="modal" data-search-modal aria-hidden="true">
@@ -396,8 +396,8 @@
       <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="search-title">
         <div class="modal-head">
           <div>
-            <h2 class="modal-title" id="search-title">Search Archive</h2>
-            <p class="metadata">Type to search private collections</p>
+            <h2 class="modal-title" id="search-title" data-i18n="search_modal_title">Search Archive</h2>
+            <p class="metadata" data-i18n="search_modal_desc">Type to search private collections</p>
           </div>
           <button class="icon-button" type="button" data-search-close aria-label="Close search">
             <span class="material-symbols-outlined" aria-hidden="true">close</span>
@@ -407,7 +407,7 @@
           class="search-input"
           type="search"
           placeholder="Search collections, stones, appointments"
-          data-search-input
+          data-search-input data-i18n="search_placeholder"
         />
         <div class="search-results" data-search-results></div>
       </div>

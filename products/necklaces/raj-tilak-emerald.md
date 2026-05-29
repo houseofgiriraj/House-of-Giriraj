@@ -10,6 +10,7 @@ metal: 18k Gold
 weight: 38ct total
 cert: GIA Certified
 featured: true
+image: "necklaces/raj-tilak-emerald/hero.jpg"
 collectionId:
 
 ---

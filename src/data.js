@@ -10,7 +10,7 @@ export const products = [
     "priceRange": "₹5L - ₹8L",
     "shortDesc": "High Jewelry • 3ct",
     "description": "A bold statement piece featuring 3 carats of carefully selected diamonds in a contemporary collar design.",
-    "image": "",
+    "image": "/assets/images/products/chokers/diamond-collar/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -30,7 +30,7 @@ export const products = [
     "priceRange": "₹1.5L - ₹3L",
     "shortDesc": "Heritage & Classic",
     "description": "Timeless pearls woven with delicate gold, creating a piece that bridges generations.",
-    "image": "",
+    "image": "/assets/images/products/chokers/pearl-choker/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -50,7 +50,7 @@ export const products = [
     "priceRange": "₹2L - ₹4L",
     "shortDesc": "Heritage & Classic",
     "description": "A regal choker crafted with exceptional diamonds, designed for the modern queen who honors tradition.",
-    "image": "",
+    "image": "/assets/images/products/chokers/royal-choker/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -70,7 +70,7 @@ export const products = [
     "priceRange": "₹15L - ₹25L",
     "shortDesc": "Masterpiece • Rubies",
     "description": "A profound exploration of deep reds and structural platinum, echoing the intensity of a blood moon.",
-    "image": "",
+    "image": "/assets/images/products/necklaces/maharani-viraasat/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -90,7 +90,7 @@ export const products = [
     "priceRange": "₹12L - ₹20L",
     "shortDesc": "Masterpiece • Emerald",
     "description": "Regal emeralds set in 18k gold, inspired by the grandeur of Indian royalty.",
-    "image": "",
+    "image": "/assets/images/products/necklaces/raj-tilak-emerald/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -110,7 +110,7 @@ export const products = [
     "priceRange": "₹8L - ₹15L",
     "shortDesc": "Classic • Diamonds",
     "description": "A stunning strand of solitaire diamonds, each individually set for maximum brilliance.",
-    "image": "",
+    "image": "/assets/images/products/necklaces/solitaire-strand/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -130,7 +130,7 @@ export const products = [
     "priceRange": "₹3L - ₹6L",
     "shortDesc": "Statement • 5ct",
     "description": "Dramatic chandelier earrings that cascade with 5 carats of brilliant diamonds.",
-    "image": "",
+    "image": "/assets/images/products/chandeliers/celestial-chandelier/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -150,7 +150,7 @@ export const products = [
     "priceRange": "₹4L - ₹7L",
     "shortDesc": "Statement • Emerald",
     "description": "Cascading emeralds create a waterfall of green, framed by delicate diamond settings.",
-    "image": "",
+    "image": "/assets/images/products/chandeliers/emerald-cascade/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -170,7 +170,7 @@ export const products = [
     "priceRange": "₹2.5L - ₹5L",
     "shortDesc": "Statement • Ruby",
     "description": "Elegant drop earrings featuring vivid rubies surrounded by a halo of diamonds.",
-    "image": "",
+    "image": "/assets/images/products/chandeliers/royal-drops/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -190,7 +190,7 @@ export const products = [
     "priceRange": "₹3L - ₹5L",
     "shortDesc": "Classic • 3ct",
     "description": "The timeless tennis bracelet reimagined with 3 carats of perfectly matched diamonds.",
-    "image": "",
+    "image": "/assets/images/products/bracelets/diamond-tennis/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -210,7 +210,7 @@ export const products = [
     "priceRange": "₹8L - ₹12L",
     "shortDesc": "High Jewelry • 12ct D-Flawless",
     "description": "A breathtaking bracelet featuring a cascade of 12 carats of D-Flawless diamonds in a heritage legacy setting.",
-    "image": "",
+    "image": "/assets/images/products/bracelets/ekta-lineage/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -230,7 +230,7 @@ export const products = [
     "priceRange": "₹2L - ₹4L",
     "shortDesc": "Heritage • Gold",
     "description": "A vintage-inspired bangle with intricate gold work and subtle diamond accents.",
-    "image": "",
+    "image": "/assets/images/products/bracelets/vintage-bangle/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -250,7 +250,7 @@ export const products = [
     "priceRange": "₹2L - ₹4L",
     "shortDesc": "Bridal • Gold",
     "description": "Traditional bridal chooda bangles reimagined with modern elegance and diamond embellishments.",
-    "image": "",
+    "image": "/assets/images/products/bangles/bridal-chooda/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -270,7 +270,7 @@ export const products = [
     "priceRange": "₹6L - ₹10L",
     "shortDesc": "Bridal • Diamond",
     "description": "An exquisite set of diamond kangan bangles, each handcrafted with meticulous attention to detail.",
-    "image": "",
+    "image": "/assets/images/products/bangles/kangan-set/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -290,7 +290,7 @@ export const products = [
     "priceRange": "₹4L - ₹7L",
     "shortDesc": "Bridal • Gold",
     "description": "A pair of ornate bangles inspired by royal Indian craftsmanship, perfect for bridal occasions.",
-    "image": "",
+    "image": "/assets/images/products/bangles/raj-bangles/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -310,7 +310,7 @@ export const products = [
     "priceRange": "₹3L - ₹6L",
     "shortDesc": "Solitaire • 2.5ct",
     "description": "A magnificent 2.5 carat solitaire set in platinum, designed to capture light from every angle.",
-    "image": "",
+    "image": "/assets/images/products/rings/celestial-solitaire/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -330,7 +330,7 @@ export const products = [
     "priceRange": "₹1.5L - ₹3L",
     "shortDesc": "Fashion • 1.5ct",
     "description": "A delicate halo ring with a 1.5 carat center stone surrounded by a ring of brilliant diamonds.",
-    "image": "",
+    "image": "/assets/images/products/rings/halo-ring/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -350,7 +350,7 @@ export const products = [
     "priceRange": "₹4L - ₹8L",
     "shortDesc": "Statement • 3ct",
     "description": "A powerful three-stone design representing past, present, and future — 3 carats of pure brilliance.",
-    "image": "",
+    "image": "/assets/images/products/rings/three-stone-ring/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -370,7 +370,7 @@ export const products = [
     "priceRange": "₹1.5L - ₹3L",
     "shortDesc": "Fashion • 2ct",
     "description": "Elegant drop studs with 2 carats of diamonds, designed for the woman who appreciates understated luxury.",
-    "image": "",
+    "image": "/assets/images/products/studs/diamond-drops/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -390,7 +390,7 @@ export const products = [
     "priceRange": "₹80K - ₹1.5L",
     "shortDesc": "Daily Wear • 1ct",
     "description": "Classic princess-cut diamond studs that pair effortlessly with any look.",
-    "image": "",
+    "image": "/assets/images/products/studs/princess-studs/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {
@@ -410,7 +410,7 @@ export const products = [
     "priceRange": "₹1L - ₹2.5L",
     "shortDesc": "Daily Wear • 1.8ct",
     "description": "Everyday elegance with 1.8 carats of brilliant diamond studs, perfect for any occasion.",
-    "image": "",
+    "image": "/assets/images/products/studs/stardust-studs/hero.jpg",
     "gallery": [],
     "videos": [],
     "specs": {

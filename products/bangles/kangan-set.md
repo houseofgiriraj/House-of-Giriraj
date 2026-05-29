@@ -10,6 +10,7 @@ metal: 18k Gold
 weight: 4.5ct total
 cert: GIA Certified
 featured: true
+image: "bangles/kangan-set/hero.jpg"
 collectionId:
 
 ---

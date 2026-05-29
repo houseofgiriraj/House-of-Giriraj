@@ -10,6 +10,7 @@ metal: Platinum
 weight: 5ct total
 cert: GIA Certified
 featured: false
+image: "chandeliers/celestial-chandelier/hero.jpg"
 collectionId:
 
 ---

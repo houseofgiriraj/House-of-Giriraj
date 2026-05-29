@@ -10,6 +10,7 @@ metal: 18k White Gold
 weight: 8ct total
 cert: GIA Certified
 featured: false
+image: "necklaces/solitaire-strand/hero.jpg"
 collectionId:
 
 ---

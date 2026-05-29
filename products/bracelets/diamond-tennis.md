@@ -10,6 +10,7 @@ metal: 18k White Gold
 weight: 3ct total
 cert: GIA Certified
 featured: false
+image: "bracelets/diamond-tennis/hero.jpg"
 collectionId:
 
 ---

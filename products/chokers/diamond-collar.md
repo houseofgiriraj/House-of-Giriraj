@@ -10,6 +10,7 @@ metal: Platinum
 weight: 3ct total
 cert: GIA Certified
 featured: false
+image: "chokers/diamond-collar/hero.jpg"
 collectionId:
 
 ---

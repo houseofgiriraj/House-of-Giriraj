@@ -10,6 +10,7 @@ metal: Platinum
 weight: 45ct total
 cert: GIA Certified
 featured: true
+image: "necklaces/maharani-viraasat/hero.jpg"
 collectionId:
 
 ---

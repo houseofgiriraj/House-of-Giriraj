@@ -10,6 +10,7 @@ metal: 22k Gold
 weight: 35ct total
 cert: BIS Hallmarked
 featured: false
+image: "chokers/pearl-choker/hero.jpg"
 collectionId:
 
 ---

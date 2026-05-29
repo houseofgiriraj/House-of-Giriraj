@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.cursor-diamond {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23e3c484' d='M16 2L2 16l14 14 14-14L16 2zm0 4l8 8-8 8-8-8 8-8z'/%3E%3C/svg%3E") 16 2, pointer;
+}
+
 :root {
   color-scheme: dark;
   --bg-primary: #050403;
@@ -182,6 +186,11 @@ button {
 .brand-logo {
   width: clamp(9.25rem, 12vw, 13.5rem);
   height: auto;
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.light .brand-logo {
+  filter: none;
 }
 
 .desktop-nav {
@@ -790,6 +799,11 @@ button {
 .footer-logo {
   width: clamp(10rem, 14vw, 14rem);
   margin: 0 auto 2rem;
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.light .footer-logo {
+  filter: none;
 }
 
 .footer-links {
@@ -1214,7 +1228,7 @@ button {
 .house-grid {
   display: flex;
   flex-direction: column;
-  gap: clamp(2.5rem, 5vw, 5rem);
+  gap: clamp(2rem, 3vw, 4rem);
 }
 
 .house-row {
@@ -1233,6 +1247,7 @@ button {
 
 .row-hero {
   grid-template-columns: 1fr;
+  margin-bottom: 2rem;
 }
 
 .row-hero .house-card-image {
@@ -1357,9 +1372,9 @@ button {
 .house-ref {
   font-family: var(--font-body);
   font-size: clamp(0.55rem, 0.2vw + 0.4rem, 0.7rem);
-  font-weight: 400;
-  color: #999;
-  letter-spacing: 0.12em;
+  font-weight: 300;
+  color: #888;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-top: 2px;
 }
@@ -1727,6 +1742,16 @@ button {
 
   .menu-backdrop {
     display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .house-row {
+    gap: 4rem;
+  }
+
+  .house-grid {
+    gap: 4rem;
   }
 }
 

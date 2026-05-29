@@ -250,3 +250,27 @@
 - **Count updated**: "Eight curated high jewellery masterpieces" → "Nine" in `index.html`.
 - **Image fix**: Second image changed from `.png` to `.jpg` — updated markdown entry to match.
 - **ID rename**: Directory renamed from `celestial-cascade` to `maharani-cascade` — updated markdown id and image paths to match; renamed markdown file to `maharani-cascade.md`.
+
+### House Collection Layout Rebalance
+
+- **Row layout**: Changed from 1+3+3+2 to **1+2+2+2+2** (hero row + 4 rows of 2 pieces each).
+- **Reassigned rows** across 5 markdown files:
+  - `imperial-cascade.md`: row 1→2, order 3→1
+  - `dynasty-bloom.md`: order 1→2
+  - `ruby-aurora.md`: row 2→3, order 2→1
+  - `celestial-rain.md`: row 2→3, order 3→2
+  - `emerald-reverie.md`: row 3→4, order 2→2
+  - `royal-lace.md`: row 3→4, order 1→1
+
+### Card Aspect Ratio
+
+- **Changed** `.house-card-image` from `aspect-ratio: 4/5` to `3/4` (taller display).
+- **Max-height** bumped from `600px` to `700px` to avoid cropping on the taller ratio.
+
+### Hero Subtitle Redesign
+
+- **Translucent background**: Added `background: rgba(0,0,0,0.35)` + `backdrop-filter: blur(2px)` on `.hero-subtitle`.
+- **Font**: Switched from Manrope 300 → **Italianno** (flowing cursive script) for decorative elegance.
+- **Styling**: `letter-spacing: 0.04em` for elongated appearance, white text at 0.88 opacity, inline-block display so the background wraps only the text content.
+- **Intermediate font tried**: Alex Brush (too uniformly thick for the "thin and long" request), Italianno selected as thinner naturally.
+- **Google Fonts**: Added `Italianno` to the `index.html` font import.

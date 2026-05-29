@@ -10,6 +10,7 @@ metal: Platinum
 weight: 12ct total
 cert: GIA Certified
 featured: true
+image: "bracelets/ekta-lineage/hero.jpg"
 collectionId:
 
 ---

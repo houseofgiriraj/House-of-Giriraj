@@ -10,6 +10,7 @@ metal: 18k White Gold
 weight: 1.8ct pair
 cert: GIA Certified
 featured: false
+image: "studs/stardust-studs/hero.jpg"
 collectionId:
 
 ---

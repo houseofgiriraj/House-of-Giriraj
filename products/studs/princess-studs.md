@@ -10,6 +10,7 @@ metal: 18k White Gold
 weight: 1ct pair
 cert: GIA Certified
 featured: false
+image: "studs/princess-studs/hero.jpg"
 collectionId:
 
 ---

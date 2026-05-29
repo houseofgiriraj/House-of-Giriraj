@@ -10,6 +10,7 @@ metal: Platinum
 weight: 2.5ct
 cert: GIA Certified
 featured: true
+image: "rings/celestial-solitaire/hero.jpg"
 collectionId:
 
 ---

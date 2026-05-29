@@ -142,7 +142,7 @@ img, video {
 }
 
 /* ===== 6. TYPOGRAPHY ===== */
-.font-serif { font-family: "Noto Serif", serif !important; }
+.font-serif { font-family: "Cormorant Garamond", Georgia, serif !important; }
 .font-label { font-family: "Manrope", sans-serif !important; }
 .font-body { font-family: "Manrope", sans-serif !important; }
 

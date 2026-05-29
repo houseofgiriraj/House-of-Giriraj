@@ -10,6 +10,7 @@ metal: Platinum
 weight: 6ct total
 cert: GIA Certified
 featured: false
+image: "chandeliers/emerald-cascade/hero.jpg"
 collectionId:
 
 ---

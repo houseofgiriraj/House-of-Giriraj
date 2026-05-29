@@ -14,14 +14,74 @@ const translations = {
     nav_collections_page: "Collections",
     nav_private_viewing_page: "Private Viewing",
     search_placeholder: "Search Archive",
-    private_viewing_cta: "Private Viewing"
+    private_viewing_cta: "Private Viewing",
+    hero_tagline: "Established 1995",
+    hero_headline: "Where Value Takes Form.",
+    hero_subtitle: "Fine jewelry crafted to preserve beauty, rarity, and legacy. A sanctuary for the world's most exceptional stones.",
+    hero_cta_discover: "Discover",
+    philosophy_headline: "An inheritance of absolute rarity. We do not merely create; we archive the earth's silent wonders.",
+    curation_title: "Curation",
+    curation_desc: "Every stone in our vault undergoes a rigorous selection process, ensuring only the top fraction of global yields find a home at Shree Giriraj.",
+    longevity_title: "Longevity",
+    longevity_desc: "Our design philosophy rejects ephemeral trends in favor of structural integrity and timeless silhouettes that endure through generations.",
+    stone_quote: "The stone dictates the form.",
+    trust_promise: "Our Promise",
+    trust_certified: "Certified. Transparent. Trusted.",
+    house_label: "The House Collection",
+    collections_headline: "Nine curated high jewellery masterpieces",
+    collections_lead: "Selected to reflect the house's pursuit of rarity, craftsmanship, and gemstone excellence.",
+    collections_cta: "View Full Collection",
+    atelier_label: "The Atelier",
+    atelier_headline: "The Precision of Ten Thousand Hours.",
+    atelier_desc: "Each piece born in our atelier is the culmination of heritage techniques and futuristic engineering. Our master craftsmen spend months on a single setting.",
+    unrivaled_setting: "Unrivaled Setting",
+    unrivaled_desc: "Proprietary micro-pave techniques that minimize visible metal.",
+    artisanal_casting: "Artisanal Casting",
+    artisanal_desc: "High-density platinum and 18k gold alloys forged for lifetime integrity.",
+    cta_headline: "Begin Your Private Acquisition",
+    cta_subtitle: "Consult with our senior diamond specialists to source the world's most significant gemstones or commission a bespoke masterpiece.",
+    cta_primary: "Request a Private Viewing",
+    cta_secondary: "Visit Our Atelier",
+    footer_rights: "© 2026 Shree Giriraj Gems and Jewels. All Rights Reserved.",
+    search_modal_title: "Search Archive",
+    search_modal_desc: "Type to search private collections"
   },
   hi: {
     nav_heritage_page: "द हाउस",
-    nav_collections_page: "Collections",
-    nav_private_viewing_page: "Private Viewing",
-    search_placeholder: "Search Archive",
-    private_viewing_cta: "Private Viewing"
+    nav_collections_page: "संग्रह",
+    nav_private_viewing_page: "निजी प्रदर्शन",
+    search_placeholder: "आर्काइव खोजें",
+    private_viewing_cta: "निजी प्रदर्शन",
+    hero_tagline: "स्थापित 1995",
+    hero_headline: "जहाँ मूल्य रूप लेता है।",
+    hero_subtitle: "सौंदर्य, दुर्लभता और विरासत को संरक्षित करने के लिए तैयार किए गए उत्कृष्ट गहने। दुनिया के सबसे असाधारण रत्नों के लिए एक अभयारण्य।",
+    hero_cta_discover: "अन्वेषण",
+    philosophy_headline: "निरपेक्ष दुर्लभता की विरासत। हम केवल नहीं बनाते; हम पृथ्वी के मौन आश्चर्यों को संरक्षित करते हैं।",
+    curation_title: "चयन",
+    curation_desc: "हमारी तिजोरी में हर पत्थर एक कठोर चयन प्रक्रिया से गुजरता है।",
+    longevity_title: "दीर्घायु",
+    longevity_desc: "हमारी डिज़ाइन दर्शन क्षणिक रुझानों को अस्वीकार करता है।",
+    stone_quote: "आकार पत्थर देता है।",
+    trust_promise: "हमारा वादा",
+    trust_certified: "प्रमाणित। पारदर्शी। विश्वसनीय।",
+    house_label: "द हाउस संग्रह",
+    collections_headline: "नौ चयनित उच्च आभूषण उत्कृष्ट कृतियाँ",
+    collections_lead: "दुर्लभता, शिल्प कौशल और रत्न उत्कृष्टता की हाउस की खोज को दर्शाने के लिए चयनित।",
+    collections_cta: "पूरा संग्रह देखें",
+    atelier_label: "कार्यशाला",
+    atelier_headline: "दस हजार घंटों की सटीकता।",
+    atelier_desc: "हमारी कार्यशाला में जन्मा प्रत्येक टुकड़ा विरासत तकनीकों और भविष्य की इंजीनियरिंग का परिणाम है।",
+    unrivaled_setting: "अतुलनीय सेटिंग",
+    unrivaled_desc: "स्वामित्व माइक्रो-पेव तकनीकें जो दृश्य धातु को कम करती हैं।",
+    artisanal_casting: "कारीगरी ढलाई",
+    artisanal_desc: "उच्च घनत्व वाला प्लैटिनम और 18k सोना।",
+    cta_headline: "अपना निजी अधिग्रहण शुरू करें",
+    cta_subtitle: "दुनिया के सबसे महत्वपूर्ण रत्नों को खोजने या एक बेस्पोक उत्कृष्ट कृति का आदेश देने के लिए हमारे वरिष्ठ हीरा विशेषज्ञों से परामर्श करें।",
+    cta_primary: "निजी प्रदर्शन का अनुरोध करें",
+    cta_secondary: "हमारी कार्यशाला देखें",
+    footer_rights: "© 2026 श्री गिरिराज जेम्स एंड ज्वेल्स। सर्वाधिकार सुरक्षित।",
+    search_modal_title: "आर्काइव खोजें",
+    search_modal_desc: "निजी संग्रह खोजने के लिए टाइप करें"
   }
 };
 
@@ -110,7 +170,10 @@ function updateTranslations(language) {
   const copy = translations[language] || translations.en;
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
-    if (copy[key]) {
+    if (!copy[key]) return;
+    if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+      element.placeholder = copy[key];
+    } else {
       element.textContent = copy[key];
     }
   });

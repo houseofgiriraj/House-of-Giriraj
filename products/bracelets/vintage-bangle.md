@@ -10,6 +10,7 @@ metal: 22k Gold
 weight: 28g
 cert: BIS Hallmarked
 featured: false
+image: "bracelets/vintage-bangle/hero.jpg"
 collectionId:
 
 ---

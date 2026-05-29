@@ -10,6 +10,7 @@ metal: 18k Gold
 weight: 4ct total
 cert: GIA Certified
 featured: false
+image: "chandeliers/royal-drops/hero.jpg"
 collectionId:
 
 ---

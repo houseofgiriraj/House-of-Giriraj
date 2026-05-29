@@ -10,6 +10,7 @@ metal: 22k Gold
 weight: 55g set
 cert: BIS Hallmarked
 featured: false
+image: "bangles/bridal-chooda/hero.jpg"
 collectionId:
 
 ---

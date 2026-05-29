@@ -10,6 +10,7 @@ metal: 18k White Gold
 weight: 1.5ct + 0.5ct halo
 cert: GIA Certified
 featured: false
+image: "rings/halo-ring/hero.jpg"
 collectionId:
 
 ---

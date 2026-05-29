@@ -10,6 +10,7 @@ metal: Platinum
 weight: 2ct pair
 cert: GIA Certified
 featured: false
+image: "studs/diamond-drops/hero.jpg"
 collectionId:
 
 ---
