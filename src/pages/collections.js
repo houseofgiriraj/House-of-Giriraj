@@ -90,4 +90,20 @@ document.addEventListener("DOMContentLoaded", function () {
       </section>
     `;
   }).join("");
+
+  gallery.querySelectorAll("video").forEach(v => {
+    const fallback = () => {
+      const poster = v.poster || v.getAttribute("poster");
+      if (poster && v.parentNode) {
+        const img = document.createElement("img");
+        img.src = poster;
+        img.className = v.className;
+        img.alt = "";
+        v.parentNode.replaceChild(img, v);
+      }
+    };
+    v.addEventListener("error", fallback);
+    v.addEventListener("stalled", fallback);
+    v.play().catch(fallback);
+  });
 });

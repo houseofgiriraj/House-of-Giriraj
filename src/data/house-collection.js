@@ -652,7 +652,7 @@ const houseCollection = [
     ],
     "onHomepage": false,
     "isHero": false,
-    "trailer": null,
+    "trailer": "/assets/videos/products/Silken_Light-film.mp4",
     "collection": "jasmine-atelier",
     "type": "earrings",
     "status": "active"

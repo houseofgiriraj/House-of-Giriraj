@@ -17,6 +17,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const items = hero ? [...allItems.slice(0, heroIndex), ...allItems.slice(heroIndex + 1)] : allItems;
 
   const heroRow = document.getElementById("hero-row");
+  function attachVideoFallback(video) {
+    if (!video || video.dataset.fallbackAttached) return;
+    video.dataset.fallbackAttached = "true";
+    const fallback = () => {
+      const poster = video.poster || video.getAttribute("poster");
+      if (poster && video.parentNode) {
+        const img = document.createElement("img");
+        img.src = poster;
+        img.className = video.className;
+        img.alt = "";
+        video.parentNode.replaceChild(img, video);
+      }
+    };
+    video.addEventListener("error", fallback);
+    video.addEventListener("stalled", fallback);
+    video.play().catch(fallback);
+  }
+
   if (hero && heroRow) {
     const trail = hero.trailer;
     heroRow.innerHTML = `
@@ -38,6 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
       </a>
     `;
   }
+
+  const heroVideo = heroRow?.querySelector("video");
+  if (heroVideo) attachVideoFallback(heroVideo);
 
   if (items.length === 0) {
     const filterSection = document.getElementById("filter-section");
@@ -120,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isInViewport(card)) startAutoPlay(card);
       });
     });
+    document.querySelectorAll("video.card-img").forEach(v => attachVideoFallback(v));
   }
 
   const autoObserver = new IntersectionObserver((entries) => {

@@ -8,6 +8,7 @@ images:
   - silken-light_T-898_hero.jpg
   - silken-light_T-898_model.png
   - silken-light_T-898_atmosphere.jpg
+trailer: /assets/videos/products/Silken_Light-film.mp4
 onHomepage: false
 row: 31
 homepageOrder: 0
