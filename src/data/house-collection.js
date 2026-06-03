@@ -37,7 +37,7 @@ const houseCollection = [
     "row": 1,
     "homepageOrder": 0,
     "isHero": false,
-    "trailer": null,
+    "trailer": "/assets/videos/products/Imperial_Dominion-film.mp4",
     "collection": "crown",
     "type": "necklace",
     "status": "active"
