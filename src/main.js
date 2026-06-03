@@ -601,7 +601,7 @@ function renderHouseCollection(gridSelector = "#house-grid") {
   Object.keys(grouped).forEach((rowKey) => {
     const rowPieces = grouped[rowKey];
     const isFirst = parseInt(rowKey) === 1;
-    const rowClass = rowPieces.length === 3 ? "row-equal" : "row-asymmetric";
+    const rowClass = rowPieces.length === 3 ? "row-equal" : rowPieces.length === 1 ? "row-single" : "row-asymmetric";
 
     const rowDiv = document.createElement("div");
     rowDiv.className = `house-row ${rowClass}`;

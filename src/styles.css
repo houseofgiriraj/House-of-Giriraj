@@ -1406,8 +1406,12 @@ button {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.row-hero {
+.row-hero,
+.row-single {
   grid-template-columns: 1fr;
+}
+
+.row-hero {
   margin-bottom: 2rem;
 }
 
