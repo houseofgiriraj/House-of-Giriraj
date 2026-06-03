@@ -323,9 +323,9 @@ const houseCollection = [
     "category": "High Jewellery",
     "description": "Radiant yet effortless, Champagne Bloom brings warmth and delicacy into refined diamond form.",
     "images": [
-      "/assets/images/products/jasmine-atelier/champagne-bloom/hero.jpg",
-      "/assets/images/products/jasmine-atelier/champagne-bloom/model.jpg",
-      "/assets/images/products/jasmine-atelier/champagne-bloom/atmosphere.jpg"
+      "/assets/images/products/jasmine-atelier/champagne-bloom/champagne-bloom_T-10862_hero.jpg",
+      "/assets/images/products/jasmine-atelier/champagne-bloom/champagne-bloom_T-10862_model.png",
+      "/assets/images/products/jasmine-atelier/champagne-bloom/champagne-bloom_T-10862_atmosphere.png"
     ],
     "onHomepage": false,
     "isHero": false,
