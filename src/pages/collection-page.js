@@ -38,20 +38,21 @@ document.addEventListener("DOMContentLoaded", function () {
   if (hero && heroRow) {
     const trail = hero.trailer;
     heroRow.innerHTML = `
-      <a href="house-piece.html?id=${encodeURIComponent(hero.id)}" class="group block relative overflow-hidden bg-stone-900 w-full aspect-[16/9] md:aspect-[21/9]">
-        ${trail ? `
-        <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline poster="${esc(hero.images[0] || "")}">
-          <source src="${esc(trail)}" type="video/mp4" />
-        </video>
-        ` : `
-        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="${esc(hero.images[0] || "")}" alt="${esc(hero.title)}" loading="eager" />
-        `}
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10"></div>
-        <div class="absolute bottom-0 left-0 right-0 z-20 p-8 md:p-12">
-          <span class="text-[10px] tracking-[0.2em] uppercase text-[#e3c484] mb-2 block">Featured</span>
-          <h2 class="font-serif text-2xl md:text-4xl text-white mb-2">${esc(hero.title)}</h2>
-          <p class="text-white/60 max-w-xl text-sm md:text-base leading-relaxed line-clamp-2">${hero.description ? esc(hero.description.split("\n\n")[0]) : ""}</p>
-          <span class="inline-block mt-4 text-[10px] tracking-[0.2em] uppercase text-[#e3c484] group-hover:underline">View Masterpiece</span>
+      <a href="house-piece.html?id=${encodeURIComponent(hero.id)}" class="group block w-full">
+        <div class="relative overflow-hidden bg-stone-900 w-full aspect-[16/9]">
+          ${trail ? `
+          <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline poster="${esc(hero.images[0] || "")}">
+            <source src="${esc(trail)}" type="video/mp4" />
+          </video>
+          ` : `
+          <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="${esc(hero.images[0] || "")}" alt="${esc(hero.title)}" loading="eager" />
+          `}
+        </div>
+        <div class="p-6 md:p-8 text-left bg-white border-t border-surface-variant/30">
+          <span class="text-[10px] tracking-[0.12em] uppercase text-stone-400 mb-1 block">Featured</span>
+          <h2 class="font-serif font-[400] text-lg md:text-xl text-stone-800 leading-snug mb-1">${esc(hero.title)}</h2>
+          <p class="text-[11px] text-stone-400 leading-relaxed line-clamp-2 mb-2">${hero.description ? esc(hero.description.split("\n\n")[0]) : ""}</p>
+          <span class="text-[0.7rem] tracking-[0.18em] font-light uppercase text-stone-400">View Masterpiece</span>
         </div>
       </a>
     `;
