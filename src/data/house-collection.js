@@ -433,13 +433,13 @@ const houseCollection = [
     "id": "first-light",
     "slug": "first-light",
     "title": "First Light",
-    "ref": "T-10692",
+    "ref": "T-10642",
     "category": "High Jewellery",
     "description": "Airy, luminous, and quietly refined, First Light celebrates beauty carried with ease.",
     "images": [
-      "/assets/images/products/jasmine-atelier/first-light/hero.jpg",
-      "/assets/images/products/jasmine-atelier/first-light/model.jpg",
-      "/assets/images/products/jasmine-atelier/first-light/atmosphere.jpg"
+      "/assets/images/products/jasmine-atelier/first-light/first-light_T-10642_hero.jpg",
+      "/assets/images/products/jasmine-atelier/first-light/first-light_T-10642_model.png",
+      "/assets/images/products/jasmine-atelier/first-light/first-light_T-10642_atmosphere.jpg"
     ],
     "onHomepage": false,
     "isHero": false,
@@ -532,9 +532,9 @@ const houseCollection = [
     "category": "High Jewellery",
     "description": "Graceful and intimate, Petal Halo reflects softness shaped through precision and light.",
     "images": [
-      "/assets/images/products/jasmine-atelier/petal-halo/hero.jpg",
-      "/assets/images/products/jasmine-atelier/petal-halo/model.jpg",
-      "/assets/images/products/jasmine-atelier/petal-halo/atmosphere.jpg"
+      "/assets/images/products/jasmine-atelier/petal-halo/petal-halo_T-1026_hero.jpg",
+      "/assets/images/products/jasmine-atelier/petal-halo/petal-halo_T-1026_model.png",
+      "/assets/images/products/jasmine-atelier/petal-halo/petal-halo_T-1026_atmosphere.jpg"
     ],
     "onHomepage": false,
     "isHero": false,
@@ -646,9 +646,9 @@ const houseCollection = [
     "category": "High Jewellery",
     "description": "A refined expression of modern elegance, Silken Light frames brilliance through restraint and grace.",
     "images": [
-      "/assets/images/products/jasmine-atelier/silken-light/hero.jpg",
-      "/assets/images/products/jasmine-atelier/silken-light/model.jpg",
-      "/assets/images/products/jasmine-atelier/silken-light/atmosphere.jpg"
+      "/assets/images/products/jasmine-atelier/silken-light/silken-light_T-898_hero.jpg",
+      "/assets/images/products/jasmine-atelier/silken-light/silken-light_T-898_model.png",
+      "/assets/images/products/jasmine-atelier/silken-light/silken-light_T-898_atmosphere.jpg"
     ],
     "onHomepage": false,
     "isHero": false,
@@ -741,9 +741,9 @@ const houseCollection = [
     "category": "High Jewellery",
     "description": "Minimal yet expressive, Whisper Diamond celebrates elegance that speaks softly and remains unforgettable.",
     "images": [
-      "/assets/images/products/jasmine-atelier/whisper-diamond/hero.jpg",
-      "/assets/images/products/jasmine-atelier/whisper-diamond/model.jpg",
-      "/assets/images/products/jasmine-atelier/whisper-diamond/atmosphere.jpg"
+      "/assets/images/products/jasmine-atelier/whisper-diamond/whisper-diamond_T-11011_hero.jpg",
+      "/assets/images/products/jasmine-atelier/whisper-diamond/whisper-diamond_T-11011_model.png",
+      "/assets/images/products/jasmine-atelier/whisper-diamond/whisper-diamond_T-11011_atmosphere.jpg"
     ],
     "onHomepage": false,
     "isHero": false,

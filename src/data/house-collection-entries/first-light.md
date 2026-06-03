@@ -1,10 +1,13 @@
 ---
 id: first-light
 title: First Light
-ref: T-10692
+ref: T-10642
 category: High Jewellery
 description: Airy, luminous, and quietly refined, First Light celebrates beauty carried with ease.
-images: []
+images:
+  - first-light_T-10642_hero.jpg
+  - first-light_T-10642_model.png
+  - first-light_T-10642_atmosphere.jpg
 onHomepage: false
 row: 36
 homepageOrder: 0
