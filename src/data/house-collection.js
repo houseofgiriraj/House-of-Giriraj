@@ -295,6 +295,27 @@ const houseCollection = [
     "status": "active"
   },
   {
+    "id": "morning-dew",
+    "slug": "morning-dew",
+    "title": "Morning Dew",
+    "ref": "T-389",
+    "category": "High Jewellery",
+    "description": "Delicate and luminous, Morning Dew captures the softness of first light through refined diamond brilliance.",
+    "images": [
+      "/assets/images/products/jasmine-atelier/morning-dew/morning-dew_T-389_hero.png",
+      "/assets/images/products/jasmine-atelier/morning-dew/morning-dew_T-389_model.png",
+      "/assets/images/products/jasmine-atelier/morning-dew/morning-dew_T-389_atmosphere.jpg"
+    ],
+    "onHomepage": true,
+    "row": 30,
+    "homepageOrder": 10,
+    "isHero": true,
+    "trailer": "/assets/videos/products/Morning_Dew-film.mp4",
+    "collection": "jasmine-atelier",
+    "type": "earrings",
+    "status": "active"
+  },
+  {
     "id": "champagne-bloom",
     "slug": "champagne-bloom",
     "title": "Champagne Bloom",
@@ -482,25 +503,6 @@ const houseCollection = [
     "trailer": null,
     "collection": "emerald-court",
     "type": "necklace",
-    "status": "active"
-  },
-  {
-    "id": "morning-dew",
-    "slug": "morning-dew",
-    "title": "Morning Dew",
-    "ref": "T-389",
-    "category": "High Jewellery",
-    "description": "Delicate and luminous, Morning Dew captures the softness of first light through refined diamond brilliance.",
-    "images": [
-      "/assets/images/products/jasmine-atelier/morning-dew/hero.jpg",
-      "/assets/images/products/jasmine-atelier/morning-dew/model.jpg",
-      "/assets/images/products/jasmine-atelier/morning-dew/atmosphere.jpg"
-    ],
-    "onHomepage": false,
-    "isHero": false,
-    "trailer": null,
-    "collection": "jasmine-atelier",
-    "type": "earrings",
     "status": "active"
   },
   {
