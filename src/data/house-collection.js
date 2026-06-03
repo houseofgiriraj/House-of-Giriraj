@@ -397,9 +397,9 @@ const houseCollection = [
     "category": "High Jewellery",
     "description": "Rooted in floral symbolism and ceremonial memory, Eternal Lotus celebrates continuity through sculpted elegance.",
     "images": [
-      "/assets/images/products/heritage-atelier/eternal-lotus/hero.jpg",
-      "/assets/images/products/heritage-atelier/eternal-lotus/model.jpg",
-      "/assets/images/products/heritage-atelier/eternal-lotus/atmosphere.jpg"
+      "/assets/images/products/heritage-atelier/eternal-lotus/eternal-lotus_NK-291_hero.png",
+      "/assets/images/products/heritage-atelier/eternal-lotus/eternal-lotus_NK-291_model.png",
+      "/assets/images/products/heritage-atelier/eternal-lotus/eternal-lotus_NK-291_atmosphere.jpg"
     ],
     "onHomepage": false,
     "isHero": false,
@@ -587,9 +587,9 @@ const houseCollection = [
     "category": "High Jewellery",
     "description": "A study in symmetry and symbolism, Sacred Geometry transforms traditional ornament into living heritage.",
     "images": [
-      "/assets/images/products/heritage-atelier/sacred-geometry/hero.jpg",
-      "/assets/images/products/heritage-atelier/sacred-geometry/model.jpg",
-      "/assets/images/products/heritage-atelier/sacred-geometry/atmosphere.jpg"
+      "/assets/images/products/heritage-atelier/sacred-geometry/sacred-geometry_NK-2263_hero.png",
+      "/assets/images/products/heritage-atelier/sacred-geometry/sacred-geometry_NK-2263_model.png",
+      "/assets/images/products/heritage-atelier/sacred-geometry/sacred-geometry_NK-2263_atmosphere.jpg"
     ],
     "onHomepage": false,
     "isHero": false,
@@ -606,9 +606,9 @@ const houseCollection = [
     "category": "High Jewellery",
     "description": "Inspired by ceremonial architecture and sacred ornament traditions, Sanctum Arch carries devotion through refined craftsmanship and enduring form.",
     "images": [
-      "/assets/images/products/heritage-atelier/sanctum-arch/hero.jpg",
-      "/assets/images/products/heritage-atelier/sanctum-arch/model.jpg",
-      "/assets/images/products/heritage-atelier/sanctum-arch/atmosphere.jpg"
+      "/assets/images/products/heritage-atelier/sanctum-arch/sanctum-arch_NK-10212_hero.png",
+      "/assets/images/products/heritage-atelier/sanctum-arch/sanctum-arch_NK-10212_model.png",
+      "/assets/images/products/heritage-atelier/sanctum-arch/sanctum-arch_NK-10212_atmosphere.jpg"
     ],
     "onHomepage": false,
     "isHero": false,

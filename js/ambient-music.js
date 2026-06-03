@@ -9,6 +9,7 @@
   audio.loop = true;
   audio.volume = VOLUME;
 
+  var fadeRafId = null;
   var btns, icons, tip, wrap, tipLabel;
 
   function getElements() {
@@ -34,27 +35,35 @@
   }
 
   function fadeVolume(from, to, duration, cb) {
+    if (fadeRafId) cancelAnimationFrame(fadeRafId);
     var start = performance.now();
     function step(now) {
       var t = Math.min((now - start) / duration, 1);
-      audio.volume = from + (to - from) * t;
-      if (t < 1) requestAnimationFrame(step);
-      else if (cb) cb();
+      audio.volume = Math.max(0, Math.min(1, from + (to - from) * t));
+      if (t < 1) fadeRafId = requestAnimationFrame(step);
+      else { fadeRafId = null; if (cb) cb(); }
     }
-    requestAnimationFrame(step);
+    fadeRafId = requestAnimationFrame(step);
   }
 
+  var userToggled = false;
+
   function stop() {
+    if (fadeRafId) { cancelAnimationFrame(fadeRafId); fadeRafId = null; }
     audio.pause();
     audio.currentTime = 0;
     setIcon("stopped");
     setTipText("stopped");
     localStorage.setItem("musicEnabled", "false");
+    localStorage.removeItem("musicPosition");
     btns.forEach(function (b) { b.classList.remove("is-active"); });
   }
 
   function play() {
-    audio.play().catch(function () {});
+    userToggled = true;
+    audio.play().catch(function (err) {
+      console.warn("Ambient music play failed:", err);
+    });
     setIcon("playing");
     setTipText("playing");
     localStorage.setItem("musicEnabled", "true");
@@ -79,8 +88,8 @@
     tryPlay()
       .then(function () { fadeVolume(0, VOLUME, FADE_DURATION); })
       .catch(function () {
-        audio.volume = VOLUME;
         function onGesture() {
+          if (userToggled) return;
           tryPlay().then(function () { fadeVolume(0, VOLUME, FADE_DURATION); }).catch(function () {});
           document.removeEventListener("click", onGesture);
           document.removeEventListener("touchstart", onGesture);
