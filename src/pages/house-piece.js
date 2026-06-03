@@ -167,6 +167,7 @@ function initHousePiece() {
       </div>
     </section>
 
+    ${piece.specs ? `
     <section class="px-6 md:px-12 py-12 md:py-16 bg-surface-container">
       <div class="max-w-[1440px] mx-auto">
         <h3 class="font-serif text-2xl text-on-surface mb-8">Specifications</h3>
@@ -180,9 +181,11 @@ function initHousePiece() {
             </div>
           </div>
           <div class="bg-surface-container-low p-6">
-            <h4 class="font-label text-xs tracking-widest uppercase text-outline mb-4">Craft Details</h4>
+            <h4 class="font-label text-xs tracking-widest uppercase text-outline mb-4">Weight & Craft</h4>
             <div class="space-y-3 text-sm">
-              <div class="flex justify-between py-2 border-b border-surface-variant/30"><span class="text-outline">Craft</span><span class="text-on-surface">Handmade</span></div>
+              <div class="flex justify-between py-2 border-b border-surface-variant/30"><span class="text-outline">Diamond Weight</span><span class="text-on-surface">${piece.specs.diamondCts ? piece.specs.diamondCts.toFixed(2) + " cts" : "Available Upon Request"}</span></div>
+              <div class="flex justify-between py-2 border-b border-surface-variant/30"><span class="text-outline">Gross Weight</span><span class="text-on-surface">${piece.specs.grossWeight ? piece.specs.grossWeight.toFixed(2) + " g" : "Available Upon Request"}</span></div>
+              <div class="flex justify-between py-2 border-b border-surface-variant/30"><span class="text-outline">Karat</span><span class="text-on-surface">${piece.specs.karat || "Available Upon Request"}</span></div>
               <div class="flex justify-between py-2 border-b border-surface-variant/30"><span class="text-outline">Setting</span><span class="text-on-surface">Micro-pave</span></div>
               <div class="flex justify-between py-2"><span class="text-outline">Finish</span><span class="text-on-surface">High Polish</span></div>
             </div>
@@ -190,6 +193,7 @@ function initHousePiece() {
         </div>
       </div>
     </section>
+    ` : ""}
 
     ${related.length > 0 ? `
     <section class="px-6 md:px-12 py-16 md:py-24 bg-background">

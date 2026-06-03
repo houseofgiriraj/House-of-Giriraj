@@ -3,7 +3,11 @@ id: royal-edict
 title: Royal Edict
 ref: NK-12383
 category: High Jewellery
-description: A composition of authority and grace, Royal Edict frames brilliance through ceremonial symmetry and royal proportion.
+description: |
+  A composition of authority and grace, Royal Edict frames brilliance through ceremonial symmetry and royal proportion.
+mood: Court ceremonial
+emotion: Presence
+form: Regal symmetry
 images:
   - royal_edict_NK-12383_hero.png
   - royal_edict_NK-12383_model.png
@@ -11,7 +15,6 @@ images:
 onHomepage: true
 row: 1
 homepageOrder: 1
-
 collection: crown
 type: necklace
 ---

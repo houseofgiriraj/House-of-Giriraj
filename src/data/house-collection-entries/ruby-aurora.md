@@ -4,6 +4,9 @@ title: Ruby Aurora
 ref: NK-12479
 category: High Jewellery
 description: Radiant and emotionally magnetic, Ruby Aurora carries the fire of rare gemstones shaped through elegance and restraint.
+mood: Fire
+emotion: Passion
+form: Radiant symmetry
 images:
   - ruby-aurora_NK-12479_hero.jpg
   - ruby-aurora_NK-12479_model.jpg

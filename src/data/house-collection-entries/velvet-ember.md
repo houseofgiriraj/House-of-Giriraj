@@ -3,7 +3,11 @@ id: velvet-ember
 title: Velvet Ember
 ref: NK-12373
 category: High Jewellery
-description: Soft in movement yet intense in presence, Velvet Ember transforms ruby light into an intimate statement of luxury.
+description: |
+  Soft in movement yet intense in presence, Velvet Ember transforms ruby light into an intimate statement of luxury.
+mood: Velvet evening
+emotion: Seduction
+form: Fluid brilliance
 images:
   - velvet-ember_NK-12373_hero.png
   - velvet-ember_NK-12373_model.png
@@ -11,7 +15,6 @@ images:
 onHomepage: false
 row: 21
 homepageOrder: 0
-
 collection: ruby-salon
 type: necklace
 ---

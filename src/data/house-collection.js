@@ -19,7 +19,17 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Maharani_Cascade-film.mp4",
     "collection": "house-of-diamonds",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": {
+      "diamondCts": 66.66999999999997,
+      "colorStoneCts": 0,
+      "grossWeight": 120.4,
+      "stoneWeight": 13.334,
+      "netWeight": 107.066,
+      "appNo": "72383",
+      "design": "NECKLACE",
+      "karat": "14K"
+    }
   },
   {
     "id": "imperial-dominion",
@@ -27,7 +37,7 @@ const houseCollection = [
     "title": "Imperial Dominion",
     "ref": "NK-12384",
     "category": "High Jewellery",
-    "description": "Sculpted through grandeur and balance, Imperial Dominion carries the language of ceremonial power and enduring prestige.",
+    "description": "Sculpted through grandeur and balance, Imperial Dominion carries the language of ceremonial power and enduring prestige.\n",
     "images": [
       "/assets/images/products/crown/imperial-dominion/hero.jpg",
       "/assets/images/products/crown/imperial-dominion/model.jpg",
@@ -40,7 +50,17 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Imperial_Dominion-film.mp4",
     "collection": "crown",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": {
+      "diamondCts": 42.910000000000004,
+      "colorStoneCts": 31.25,
+      "grossWeight": 137.25,
+      "stoneWeight": 14.832,
+      "netWeight": 122.418,
+      "appNo": "72406",
+      "design": "NECKLACE",
+      "karat": null
+    }
   },
   {
     "id": "royal-edict",
@@ -48,7 +68,7 @@ const houseCollection = [
     "title": "Royal Edict",
     "ref": "NK-12383",
     "category": "High Jewellery",
-    "description": "A composition of authority and grace, Royal Edict frames brilliance through ceremonial symmetry and royal proportion.",
+    "description": "A composition of authority and grace, Royal Edict frames brilliance through ceremonial symmetry and royal proportion.\n",
     "images": [
       "/assets/images/products/crown/royal-edict/royal_edict_NK-12383_hero.png",
       "/assets/images/products/crown/royal-edict/royal_edict_NK-12383_model.png",
@@ -61,7 +81,17 @@ const houseCollection = [
     "trailer": null,
     "collection": "crown",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": {
+      "diamondCts": 64.59,
+      "colorStoneCts": 33.18,
+      "grossWeight": 119.05,
+      "stoneWeight": 19.554,
+      "netWeight": 99.496,
+      "appNo": "72371",
+      "design": "NECKLACE",
+      "karat": "14K"
+    }
   },
   {
     "id": "regalia-canopy",
@@ -69,7 +99,7 @@ const houseCollection = [
     "title": "Regalia Canopy",
     "ref": "NK-12692",
     "category": "High Jewellery",
-    "description": "Architectural and ceremonially bold, Regalia Canopy evokes the grandeur of royal halls translated into gemstone form.",
+    "description": "Architectural and ceremonially bold, Regalia Canopy evokes the grandeur of royal halls translated into gemstone form.\n",
     "images": [
       "/assets/images/products/crown/regalia-canopy/regalia_canopy_NK-12692_hero.png",
       "/assets/images/products/crown/regalia-canopy/regalia_canopy_NK-12692_model.png",
@@ -82,7 +112,17 @@ const houseCollection = [
     "trailer": null,
     "collection": "crown",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": {
+      "diamondCts": 21.8,
+      "colorStoneCts": 35.38,
+      "grossWeight": 78.14,
+      "stoneWeight": 11.436,
+      "netWeight": 66.704,
+      "appNo": "72358",
+      "design": "NECKLACE",
+      "karat": "14K"
+    }
   },
   {
     "id": "throne-of-light",
@@ -90,7 +130,7 @@ const houseCollection = [
     "title": "Throne of Light",
     "ref": "NK-1691",
     "category": "High Jewellery",
-    "description": "Created for ceremonial presence and visual authority, Throne of Light transforms ornament into legacy.",
+    "description": "Created for ceremonial presence and visual authority, Throne of Light transforms ornament into legacy.\n",
     "images": [
       "/assets/images/products/crown/throne-of-light/throne_of_light_NK-1691_hero.png",
       "/assets/images/products/crown/throne-of-light/throne_of_light_NK-1691_model.png",
@@ -103,7 +143,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "crown",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "imperial-cascade",
@@ -124,7 +165,8 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Imperial_Cascade-film.mp4",
     "collection": "crown",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "dynasty-bloom",
@@ -145,7 +187,17 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Dynasty_Bloom-film.mp4",
     "collection": "crown",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": {
+      "diamondCts": 33.05,
+      "colorStoneCts": 44.15,
+      "grossWeight": 132.42,
+      "stoneWeight": 20.73,
+      "netWeight": 111.69,
+      "appNo": "72246",
+      "design": "HAAR",
+      "karat": null
+    }
   },
   {
     "id": "maharani-veil",
@@ -166,7 +218,17 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Maharani_Veil-film.mp4",
     "collection": "crown",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": {
+      "diamondCts": 85.63999999999999,
+      "colorStoneCts": 14.09,
+      "grossWeight": 208.01,
+      "stoneWeight": 19.946,
+      "netWeight": 188.064,
+      "appNo": "72406",
+      "design": "HAAR",
+      "karat": null
+    }
   },
   {
     "id": "celestial-rain",
@@ -187,7 +249,8 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Celestial_Rain-film.mp4",
     "collection": "house-of-diamonds",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "royal-lace",
@@ -208,7 +271,17 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Royal_Lace-film.mp4",
     "collection": "house-of-diamonds",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": {
+      "diamondCts": 65.35000000000001,
+      "colorStoneCts": 0,
+      "grossWeight": 147.16,
+      "stoneWeight": 13.07,
+      "netWeight": 134.09,
+      "appNo": "72242",
+      "design": "CHOWKER",
+      "karat": null
+    }
   },
   {
     "id": "emerald-canopy",
@@ -229,7 +302,8 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Emerald_Canopy-film.mp4",
     "collection": "emerald-court",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "forest-reverie",
@@ -250,7 +324,8 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Forest_Reverie-film.mp4",
     "collection": "emerald-court",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "ruby-aurora",
@@ -271,7 +346,17 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Ruby_Aurora-film.mp4",
     "collection": "ruby-salon",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": {
+      "diamondCts": 49.480000000000004,
+      "colorStoneCts": 79.48,
+      "grossWeight": 104.73,
+      "stoneWeight": 25.792,
+      "netWeight": 78.938,
+      "appNo": "71788",
+      "design": "NECKLACE",
+      "karat": "14K"
+    }
   },
   {
     "id": "ceremonial-bloom",
@@ -292,7 +377,8 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Ceremonial_Bloom-film.mp4",
     "collection": "heritage-atelier",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "morning-dew",
@@ -313,7 +399,8 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Morning_Dew-film.mp4",
     "collection": "jasmine-atelier",
     "type": "earrings",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "champagne-bloom",
@@ -332,7 +419,8 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Champagne_Bloom-film.mp4",
     "collection": "jasmine-atelier",
     "type": "earrings",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "crimson-dynasty",
@@ -340,7 +428,7 @@ const houseCollection = [
     "title": "Crimson Dynasty",
     "ref": "NK-12755",
     "category": "High Jewellery",
-    "description": "A ceremonial expression of ruby brilliance, Crimson Dynasty evokes royal celebration and enduring grandeur.",
+    "description": "A ceremonial expression of ruby brilliance, Crimson Dynasty evokes royal celebration and enduring grandeur.\n",
     "images": [
       "/assets/images/products/ruby-salon/crimson-dynasty/crimson-dynasty_NK-12755_hero.png",
       "/assets/images/products/ruby-salon/crimson-dynasty/crimson-dynasty_NK-12755_model.png",
@@ -351,7 +439,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "ruby-salon",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "divine-veil",
@@ -370,7 +459,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "heritage-atelier",
     "type": "pendant",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "emerald-chamber",
@@ -378,7 +468,7 @@ const houseCollection = [
     "title": "Emerald Chamber",
     "ref": "ER-12496",
     "category": "High Jewellery",
-    "description": "A study in depth and brilliance, Emerald Chamber frames the emerald as both jewel and emotion.",
+    "description": "A study in depth and brilliance, Emerald Chamber frames the emerald as both jewel and emotion.\n",
     "images": [
       "/assets/images/products/emerald-court/emerald-chamber/emerald_chamber_ER-12496_hero.png",
       "/assets/images/products/emerald-court/emerald-chamber/emerald_chamber_ER-12496_model.png",
@@ -389,7 +479,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "emerald-court",
     "type": "earrings",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "emerald-reverie",
@@ -397,7 +488,7 @@ const houseCollection = [
     "title": "Emerald Reverie",
     "ref": "NK-12503",
     "category": "High Jewellery",
-    "description": "A composition of luminous emerald drops and diamond brilliance, crafted for moments where elegance feels instinctive rather than performed.",
+    "description": "A composition of luminous emerald drops and diamond brilliance, crafted for moments where elegance feels instinctive rather than performed.\n",
     "images": [
       "/assets/images/products/emerald-court/emerald-reverie/emerald_reverie_NK-12503_hero.png",
       "/assets/images/products/emerald-court/emerald-reverie/emerald_reverie_NK-12503_model.png",
@@ -408,7 +499,17 @@ const houseCollection = [
     "trailer": null,
     "collection": "emerald-court",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": {
+      "diamondCts": 16.39,
+      "colorStoneCts": 67.54,
+      "grossWeight": 60.93,
+      "stoneWeight": 16.786,
+      "netWeight": 44.144,
+      "appNo": "72406",
+      "design": "NECKLACE",
+      "karat": "14K"
+    }
   },
   {
     "id": "eternal-lotus",
@@ -416,7 +517,7 @@ const houseCollection = [
     "title": "Eternal Lotus",
     "ref": "NK-291",
     "category": "High Jewellery",
-    "description": "Rooted in floral symbolism and ceremonial memory, Eternal Lotus celebrates continuity through sculpted elegance.",
+    "description": "Rooted in floral symbolism and ceremonial memory, Eternal Lotus celebrates continuity through sculpted elegance.\n",
     "images": [
       "/assets/images/products/heritage-atelier/eternal-lotus/eternal-lotus_NK-291_hero.png",
       "/assets/images/products/heritage-atelier/eternal-lotus/eternal-lotus_NK-291_model.png",
@@ -427,7 +528,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "heritage-atelier",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "first-light",
@@ -446,7 +548,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "jasmine-atelier",
     "type": "earrings",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "guardian-pendant",
@@ -454,7 +557,7 @@ const houseCollection = [
     "title": "Guardian Pendant",
     "ref": "P-590",
     "category": "High Jewellery",
-    "description": "Compact yet powerful, Guardian Pendant carries the intimacy of protection and the dignity of inherited form.",
+    "description": "Compact yet powerful, Guardian Pendant carries the intimacy of protection and the dignity of inherited form.\n",
     "images": [
       "/assets/images/products/heritage-atelier/guardian-pendant/guardian-pendant_P-590_hero.png",
       "/assets/images/products/heritage-atelier/guardian-pendant/guardian-pendant_P-590_model.png",
@@ -465,7 +568,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "heritage-atelier",
     "type": "pendant",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "ivory-sonata",
@@ -473,7 +577,7 @@ const houseCollection = [
     "title": "Ivory Sonata",
     "ref": "T-10588",
     "category": "High Jewellery",
-    "description": "Balanced through softness and precision, Ivory Sonata transforms everyday luxury into wearable poetry.",
+    "description": "Balanced through softness and precision, Ivory Sonata transforms everyday luxury into wearable poetry.\n",
     "images": [
       "/assets/images/products/jasmine-atelier/ivory-sonata/ivory-sonata_T-10588_hero.jpg",
       "/assets/images/products/jasmine-atelier/ivory-sonata/ivory-sonata_T-10588_model.png",
@@ -484,7 +588,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "jasmine-atelier",
     "type": "earrings",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "moonlit-emerald",
@@ -492,7 +597,7 @@ const houseCollection = [
     "title": "Moonlit Emerald",
     "ref": "NK-12530",
     "category": "High Jewellery",
-    "description": "Where moonlight meets gemstone fire, this creation balances delicacy and command in a singular luminous form.",
+    "description": "Where moonlight meets gemstone fire, this creation balances delicacy and command in a singular luminous form.\n",
     "images": [
       "/assets/images/products/emerald-court/moonlit-emerald/moonlit_emerald_NK-12530_hero.png",
       "/assets/images/products/emerald-court/moonlit-emerald/moonlit_emerald_NK-12530_model.png",
@@ -503,7 +608,17 @@ const houseCollection = [
     "trailer": null,
     "collection": "emerald-court",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": {
+      "diamondCts": 21.650000000000002,
+      "colorStoneCts": 9.48,
+      "grossWeight": 56.875,
+      "stoneWeight": 6.226,
+      "netWeight": 50.649,
+      "appNo": "72406",
+      "design": "NECKLACE",
+      "karat": null
+    }
   },
   {
     "id": "opera-nocturne",
@@ -511,7 +626,7 @@ const houseCollection = [
     "title": "Opera Nocturne",
     "ref": "NK-12100",
     "category": "High Jewellery",
-    "description": "Composed for evenings of ceremony and spectacle, Opera Nocturne carries the drama of diamond theatre.",
+    "description": "Composed for evenings of ceremony and spectacle, Opera Nocturne carries the drama of diamond theatre.\n",
     "images": [
       "/assets/images/products/house-of-diamonds/opera-nocturne/opera-nocturne_NK-12100_hero.png",
       "/assets/images/products/house-of-diamonds/opera-nocturne/opera-nocturne_NK-12100_model.png",
@@ -522,7 +637,17 @@ const houseCollection = [
     "trailer": null,
     "collection": "house-of-diamonds",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": {
+      "diamondCts": 42.7,
+      "colorStoneCts": 0,
+      "grossWeight": 98.55,
+      "stoneWeight": 8.54,
+      "netWeight": 90.01,
+      "appNo": "72383",
+      "design": "NECKLACE",
+      "karat": "18K"
+    }
   },
   {
     "id": "petal-halo",
@@ -530,7 +655,7 @@ const houseCollection = [
     "title": "Petal Halo",
     "ref": "T-1026",
     "category": "High Jewellery",
-    "description": "Graceful and intimate, Petal Halo reflects softness shaped through precision and light.",
+    "description": "Graceful and intimate, Petal Halo reflects softness shaped through precision and light.\n",
     "images": [
       "/assets/images/products/jasmine-atelier/petal-halo/petal-halo_T-1026_hero.jpg",
       "/assets/images/products/jasmine-atelier/petal-halo/petal-halo_T-1026_model.png",
@@ -541,7 +666,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "jasmine-atelier",
     "type": "earrings",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "quiet-majesty",
@@ -549,7 +675,7 @@ const houseCollection = [
     "title": "Quiet Majesty",
     "ref": "NK-12505",
     "category": "High Jewellery",
-    "description": "Minimal in gesture yet powerful in presence, Quiet Majesty reflects the language of modern luxury.",
+    "description": "Minimal in gesture yet powerful in presence, Quiet Majesty reflects the language of modern luxury.\n",
     "images": [
       "/assets/images/products/house-of-diamonds/quiet-majesty/quiet-majesty_NK-12505_hero.png",
       "/assets/images/products/house-of-diamonds/quiet-majesty/quiet-majesty_NK-12505_model.png",
@@ -560,7 +686,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "house-of-diamonds",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "rose-sovereign",
@@ -568,7 +695,7 @@ const houseCollection = [
     "title": "Rose Sovereign",
     "ref": "ER-12431",
     "category": "High Jewellery",
-    "description": "Framing the face through ruby brilliance and delicate motion, Rose Sovereign balances romance with authority.",
+    "description": "Framing the face through ruby brilliance and delicate motion, Rose Sovereign balances romance with authority.\n",
     "images": [
       "/assets/images/products/ruby-salon/rose-sovereign/rose-sovereign_ER-12431_hero.png",
       "/assets/images/products/ruby-salon/rose-sovereign/rose-sovereign_ER-12431_model.png",
@@ -579,7 +706,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "ruby-salon",
     "type": "earrings",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "sacred-geometry",
@@ -587,7 +715,7 @@ const houseCollection = [
     "title": "Sacred Geometry",
     "ref": "NK-2263",
     "category": "High Jewellery",
-    "description": "A study in symmetry and symbolism, Sacred Geometry transforms traditional ornament into living heritage.",
+    "description": "A study in symmetry and symbolism, Sacred Geometry transforms traditional ornament into living heritage.\n",
     "images": [
       "/assets/images/products/heritage-atelier/sacred-geometry/sacred-geometry_NK-2263_hero.png",
       "/assets/images/products/heritage-atelier/sacred-geometry/sacred-geometry_NK-2263_model.png",
@@ -598,7 +726,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "heritage-atelier",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "sanctum-arch",
@@ -606,7 +735,7 @@ const houseCollection = [
     "title": "Sanctum Arch",
     "ref": "NK-10212",
     "category": "High Jewellery",
-    "description": "Inspired by ceremonial architecture and sacred ornament traditions, Sanctum Arch carries devotion through refined craftsmanship and enduring form.",
+    "description": "Inspired by ceremonial architecture and sacred ornament traditions, Sanctum Arch carries devotion through refined craftsmanship and enduring form.\n",
     "images": [
       "/assets/images/products/heritage-atelier/sanctum-arch/sanctum-arch_NK-10212_hero.png",
       "/assets/images/products/heritage-atelier/sanctum-arch/sanctum-arch_NK-10212_model.png",
@@ -617,7 +746,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "heritage-atelier",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "sanctum-emerald",
@@ -625,7 +755,7 @@ const houseCollection = [
     "title": "Sanctum Emerald",
     "ref": "NK-10361",
     "category": "High Jewellery",
-    "description": "An heirloom of ceremonial beauty, shaped through reverence, balance, and enduring brilliance.",
+    "description": "An heirloom of ceremonial beauty, shaped through reverence, balance, and enduring brilliance.\n",
     "images": [
       "/assets/images/products/emerald-court/sanctum-emerald/sanctum_emerald_NK-10361_hero.png",
       "/assets/images/products/emerald-court/sanctum-emerald/sanctum_emerald_NK-10361_model.png",
@@ -636,7 +766,17 @@ const houseCollection = [
     "trailer": null,
     "collection": "emerald-court",
     "type": "pendant",
-    "status": "active"
+    "status": "active",
+    "specs": {
+      "diamondCts": 4,
+      "colorStoneCts": 1.2,
+      "grossWeight": 38.97,
+      "stoneWeight": 1.04,
+      "netWeight": 37.93,
+      "appNo": "72300",
+      "design": "NECKLACE",
+      "karat": "18K"
+    }
   },
   {
     "id": "silken-light",
@@ -644,7 +784,7 @@ const houseCollection = [
     "title": "Silken Light",
     "ref": "T-898",
     "category": "High Jewellery",
-    "description": "A refined expression of modern elegance, Silken Light frames brilliance through restraint and grace.",
+    "description": "A refined expression of modern elegance, Silken Light frames brilliance through restraint and grace.\n",
     "images": [
       "/assets/images/products/jasmine-atelier/silken-light/silken-light_T-898_hero.jpg",
       "/assets/images/products/jasmine-atelier/silken-light/silken-light_T-898_model.png",
@@ -655,7 +795,8 @@ const houseCollection = [
     "trailer": "/assets/videos/products/Silken_Light-film.mp4",
     "collection": "jasmine-atelier",
     "type": "earrings",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "starlit-reverence",
@@ -663,7 +804,7 @@ const houseCollection = [
     "title": "Starlit Reverence",
     "ref": "ER-12508",
     "category": "High Jewellery",
-    "description": "Designed as an echo of celestial light, Starlit Reverence frames the face through brilliance and movement.",
+    "description": "Designed as an echo of celestial light, Starlit Reverence frames the face through brilliance and movement.\n",
     "images": [
       "/assets/images/products/house-of-diamonds/starlit-reverence/starlit-reverence_ER-12508_hero.png",
       "/assets/images/products/house-of-diamonds/starlit-reverence/starlit-reverence_ER-12508_model.png",
@@ -674,7 +815,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "house-of-diamonds",
     "type": "earrings",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "symphony-of-light",
@@ -682,7 +824,7 @@ const houseCollection = [
     "title": "Symphony of Light",
     "ref": "NK-12528",
     "category": "High Jewellery",
-    "description": "Balanced through rhythm and symmetry, this creation celebrates the quiet power of perfect proportion.",
+    "description": "Balanced through rhythm and symmetry, this creation celebrates the quiet power of perfect proportion.\n",
     "images": [
       "/assets/images/products/house-of-diamonds/symphony-of-light/symphony-of-light_NK-12528_hero.png",
       "/assets/images/products/house-of-diamonds/symphony-of-light/symphony-of-light_NK-12528_model.png",
@@ -693,7 +835,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "house-of-diamonds",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "velvet-ember",
@@ -701,7 +844,7 @@ const houseCollection = [
     "title": "Velvet Ember",
     "ref": "NK-12373",
     "category": "High Jewellery",
-    "description": "Soft in movement yet intense in presence, Velvet Ember transforms ruby light into an intimate statement of luxury.",
+    "description": "Soft in movement yet intense in presence, Velvet Ember transforms ruby light into an intimate statement of luxury.\n",
     "images": [
       "/assets/images/products/ruby-salon/velvet-ember/velvet-ember_NK-12373_hero.png",
       "/assets/images/products/ruby-salon/velvet-ember/velvet-ember_NK-12373_model.png",
@@ -712,7 +855,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "ruby-salon",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "verdant-halo",
@@ -720,7 +864,7 @@ const houseCollection = [
     "title": "Verdant Halo",
     "ref": "NK-12493",
     "category": "High Jewellery",
-    "description": "An architectural emerald masterpiece shaped through symmetry and light, carrying the quiet grandeur of royal inheritance.",
+    "description": "An architectural emerald masterpiece shaped through symmetry and light, carrying the quiet grandeur of royal inheritance.\n",
     "images": [
       "/assets/images/products/emerald-court/verdant-halo/verdant_halo_NK-12493_hero.png",
       "/assets/images/products/emerald-court/verdant-halo/verdant_halo_NK-12493_model.png",
@@ -731,7 +875,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "emerald-court",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "whisper-diamond",
@@ -739,7 +884,7 @@ const houseCollection = [
     "title": "Whisper Diamond",
     "ref": "T-11011",
     "category": "High Jewellery",
-    "description": "Minimal yet expressive, Whisper Diamond celebrates elegance that speaks softly and remains unforgettable.",
+    "description": "Minimal yet expressive, Whisper Diamond celebrates elegance that speaks softly and remains unforgettable.\n",
     "images": [
       "/assets/images/products/jasmine-atelier/whisper-diamond/whisper-diamond_T-11011_hero.jpg",
       "/assets/images/products/jasmine-atelier/whisper-diamond/whisper-diamond_T-11011_model.png",
@@ -750,7 +895,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "jasmine-atelier",
     "type": "earrings",
-    "status": "active"
+    "status": "active",
+    "specs": null
   },
   {
     "id": "winter-halo",
@@ -758,7 +904,7 @@ const houseCollection = [
     "title": "Winter Halo",
     "ref": "NK-12415",
     "category": "High Jewellery",
-    "description": "A restrained expression of brilliance, Winter Halo carries the stillness and precision of sculpted frost.",
+    "description": "A restrained expression of brilliance, Winter Halo carries the stillness and precision of sculpted frost.\n",
     "images": [
       "/assets/images/products/house-of-diamonds/winter-halo/winter-halo_NK-12415_hero.png",
       "/assets/images/products/house-of-diamonds/winter-halo/winter-halo_NK-12415_model.png",
@@ -769,7 +915,8 @@ const houseCollection = [
     "trailer": null,
     "collection": "house-of-diamonds",
     "type": "necklace",
-    "status": "active"
+    "status": "active",
+    "specs": null
   }
 ];
 

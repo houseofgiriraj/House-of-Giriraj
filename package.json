@@ -8,8 +8,9 @@
     "dev:cms": "decap-server",
     "dev:all": "concurrently \"npm run dev\" \"npm run dev:cms\"",
     "dev:sync": "npx nodemon --watch products --ext md --exec \"node scripts/sync-products.cjs\"",
+    "generate:specs": "node src/scripts/generate-specs.cjs",
     "sync:house": "node src/scripts/sync-house-collection.cjs",
-    "build": "npm run sync:house && vite build",
+    "build": "npm run generate:specs && npm run sync:house && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "optimize:images": "node scripts/optimize-images.mjs"
   },

@@ -4,6 +4,9 @@ title: Morning Dew
 ref: T-389
 category: High Jewellery
 description: Delicate and luminous, Morning Dew captures the softness of first light through refined diamond brilliance.
+mood: Morning light
+emotion: Fresh elegance
+form: Dewdrop symmetry
 images:
   - morning-dew_T-389_hero.png
   - morning-dew_T-389_model.png
@@ -13,7 +16,6 @@ onHomepage: true
 row: 30
 homepageOrder: 10
 isHero: true
-
 collection: jasmine-atelier
 type: earrings
 ---

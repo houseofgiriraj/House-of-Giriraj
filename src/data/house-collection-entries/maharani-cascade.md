@@ -9,6 +9,9 @@ description: |
   Its dramatic silhouette frames the neckline with extraordinary brilliance, transforming light into movement and elegance into authority.
 
   Crafted for weddings, couture occasions, and collectors of exceptional jewellery.
+mood: Diamond waterfall
+emotion: Luxury abundance
+form: Layered radiance
 hero: Full-width hero piece on homepage
 images:
   - maharani-cascade_NK-12585_hero.jpg

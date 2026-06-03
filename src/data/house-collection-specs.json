@@ -1,0 +1,162 @@
+{
+  "dynasty-bloom": {
+    "diamondCts": 33.05,
+    "colorStoneCts": 44.15,
+    "grossWeight": 132.42,
+    "stoneWeight": 20.73,
+    "netWeight": 111.69,
+    "appNo": "72246",
+    "design": "HAAR",
+    "karat": null
+  },
+  "emerald-reverie": {
+    "diamondCts": 16.39,
+    "colorStoneCts": 67.54,
+    "grossWeight": 60.93,
+    "stoneWeight": 16.786,
+    "netWeight": 44.144,
+    "appNo": "72406",
+    "design": "NECKLACE",
+    "karat": "14K"
+  },
+  "emerald-sonata": {
+    "diamondCts": 43.050000000000004,
+    "colorStoneCts": 27.31,
+    "grossWeight": 103.59,
+    "stoneWeight": 14.072,
+    "netWeight": 89.518,
+    "appNo": "71966",
+    "design": "NECKLACE",
+    "karat": null
+  },
+  "garden-of-noor": {
+    "diamondCts": 43.050000000000004,
+    "colorStoneCts": 27.31,
+    "grossWeight": 103.59,
+    "stoneWeight": 14.072,
+    "netWeight": 89.518,
+    "appNo": "71966",
+    "design": "NECKLACE",
+    "karat": null
+  },
+  "imperial-dominion": {
+    "diamondCts": 42.910000000000004,
+    "colorStoneCts": 31.25,
+    "grossWeight": 137.25,
+    "stoneWeight": 14.832,
+    "netWeight": 122.418,
+    "appNo": "72406",
+    "design": "NECKLACE",
+    "karat": null
+  },
+  "maharani-cascade": {
+    "diamondCts": 66.66999999999997,
+    "colorStoneCts": 0,
+    "grossWeight": 120.4,
+    "stoneWeight": 13.334,
+    "netWeight": 107.066,
+    "appNo": "72383",
+    "design": "NECKLACE",
+    "karat": "14K"
+  },
+  "maharani-veil": {
+    "diamondCts": 85.63999999999999,
+    "colorStoneCts": 14.09,
+    "grossWeight": 208.01,
+    "stoneWeight": 19.946,
+    "netWeight": 188.064,
+    "appNo": "72406",
+    "design": "HAAR",
+    "karat": null
+  },
+  "moonlit-cascade": {
+    "diamondCts": 45.27,
+    "colorStoneCts": 0,
+    "grossWeight": 71.04,
+    "stoneWeight": 9.054,
+    "netWeight": 61.986,
+    "appNo": "72246",
+    "design": "NECKLACE",
+    "karat": null
+  },
+  "moonlit-emerald": {
+    "diamondCts": 21.650000000000002,
+    "colorStoneCts": 9.48,
+    "grossWeight": 56.875,
+    "stoneWeight": 6.226,
+    "netWeight": 50.649,
+    "appNo": "72406",
+    "design": "NECKLACE",
+    "karat": null
+  },
+  "opera-nocturne": {
+    "diamondCts": 42.7,
+    "colorStoneCts": 0,
+    "grossWeight": 98.55,
+    "stoneWeight": 8.54,
+    "netWeight": 90.01,
+    "appNo": "72383",
+    "design": "NECKLACE",
+    "karat": "18K"
+  },
+  "regalia-canopy": {
+    "diamondCts": 21.8,
+    "colorStoneCts": 35.38,
+    "grossWeight": 78.14,
+    "stoneWeight": 11.436,
+    "netWeight": 66.704,
+    "appNo": "72358",
+    "design": "NECKLACE",
+    "karat": "14K"
+  },
+  "royal-edict": {
+    "diamondCts": 64.59,
+    "colorStoneCts": 33.18,
+    "grossWeight": 119.05,
+    "stoneWeight": 19.554,
+    "netWeight": 99.496,
+    "appNo": "72371",
+    "design": "NECKLACE",
+    "karat": "14K"
+  },
+  "royal-lace": {
+    "diamondCts": 65.35000000000001,
+    "colorStoneCts": 0,
+    "grossWeight": 147.16,
+    "stoneWeight": 13.07,
+    "netWeight": 134.09,
+    "appNo": "72242",
+    "design": "CHOWKER",
+    "karat": null
+  },
+  "ruby-aurora": {
+    "diamondCts": 49.480000000000004,
+    "colorStoneCts": 79.48,
+    "grossWeight": 104.73,
+    "stoneWeight": 25.792,
+    "netWeight": 78.938,
+    "appNo": "71788",
+    "design": "NECKLACE",
+    "karat": "14K"
+  },
+  "sanctum-emerald": {
+    "diamondCts": 4,
+    "colorStoneCts": 1.2,
+    "grossWeight": 38.97,
+    "stoneWeight": 1.04,
+    "netWeight": 37.93,
+    "appNo": "72300",
+    "design": "NECKLACE",
+    "karat": "18K"
+  },
+  "the-sovereign-emerald": {
+    "diamondCts": 64.59,
+    "colorStoneCts": 33.18,
+    "grossWeight": 119.05,
+    "stoneWeight": 19.554,
+    "netWeight": 99.496,
+    "appNo": "72371",
+    "design": "NECKLACE",
+    "karat": "14K"
+  }
+}

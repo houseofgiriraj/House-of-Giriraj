@@ -3,7 +3,11 @@ id: whisper-diamond
 title: Whisper Diamond
 ref: T-11011
 category: High Jewellery
-description: Minimal yet expressive, Whisper Diamond celebrates elegance that speaks softly and remains unforgettable.
+description: |
+  Minimal yet expressive, Whisper Diamond celebrates elegance that speaks softly and remains unforgettable.
+mood: Quiet luxury
+emotion: Intimacy
+form: Minimal brilliance
 images:
   - whisper-diamond_T-11011_hero.jpg
   - whisper-diamond_T-11011_model.png
@@ -11,7 +15,6 @@ images:
 onHomepage: false
 row: 33
 homepageOrder: 0
-
 collection: jasmine-atelier
 type: earrings
 ---

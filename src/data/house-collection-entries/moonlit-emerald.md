@@ -3,7 +3,11 @@ id: moonlit-emerald
 title: Moonlit Emerald
 ref: NK-12530
 category: High Jewellery
-description: Where moonlight meets gemstone fire, this creation balances delicacy and command in a singular luminous form.
+description: |
+  Where moonlight meets gemstone fire, this creation balances delicacy and command in a singular luminous form.
+mood: Moonlit elegance
+emotion: Desire
+form: Droplet radiance
 images:
   - moonlit_emerald_NK-12530_hero.png
   - moonlit_emerald_NK-12530_model.png
@@ -11,7 +15,6 @@ images:
 onHomepage: false
 row: 7
 homepageOrder: 0
-
 collection: emerald-court
 type: necklace
 ---

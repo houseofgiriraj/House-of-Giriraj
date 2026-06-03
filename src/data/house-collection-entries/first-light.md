@@ -11,7 +11,6 @@ images:
 onHomepage: false
 row: 36
 homepageOrder: 0
-
 collection: jasmine-atelier
 type: earrings
 ---

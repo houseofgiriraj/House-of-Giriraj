@@ -3,7 +3,11 @@ id: regalia-canopy
 title: Regalia Canopy
 ref: NK-12692
 category: High Jewellery
-description: Architectural and ceremonially bold, Regalia Canopy evokes the grandeur of royal halls translated into gemstone form.
+description: |
+  Architectural and ceremonially bold, Regalia Canopy evokes the grandeur of royal halls translated into gemstone form.
+mood: Ceremony
+emotion: Prestige
+form: Architectural canopy
 images:
   - regalia_canopy_NK-12692_hero.png
   - regalia_canopy_NK-12692_model.png
@@ -11,7 +15,6 @@ images:
 onHomepage: true
 row: 2
 homepageOrder: 1
-
 collection: crown
 type: necklace
 ---

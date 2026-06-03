@@ -4,6 +4,9 @@ title: Maharani Veil
 ref: H-12294
 category: High Jewellery
 description: Maharani inspired — a layered diamond necklace with emerald centrepiece, royal and ceremonial.
+mood: Royal veil
+emotion: Majesty
+form: Layered royalty
 images: []
 onHomepage: true
 row: 6

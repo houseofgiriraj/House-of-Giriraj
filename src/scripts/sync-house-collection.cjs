@@ -4,6 +4,7 @@ const matter = require("gray-matter");
 
 const ENTRIES_DIR = path.resolve(__dirname, "../data/house-collection-entries");
 const OUTPUT = path.resolve(__dirname, "../data/house-collection.js");
+const SPECS_PATH = path.resolve(__dirname, "../data/house-collection-specs.json");
 
 function extractFilenames(images) {
   if (!images || !Array.isArray(images)) return [];
@@ -15,6 +16,13 @@ function extractFilenames(images) {
 }
 
 function build() {
+  // Load specs if available
+  let specsMap = {};
+  if (fs.existsSync(SPECS_PATH)) {
+    try { specsMap = JSON.parse(fs.readFileSync(SPECS_PATH, "utf-8")); } catch {}
+    console.log(`Loaded specs for ${Object.keys(specsMap).length} products`);
+  }
+
   const files = fs.readdirSync(ENTRIES_DIR).filter((f) => f.endsWith(".md"));
   const pieces = files.map((file) => {
     const raw = fs.readFileSync(path.join(ENTRIES_DIR, file), "utf-8");
@@ -52,6 +60,7 @@ function build() {
       collection,
       type,
       status,
+      specs: specsMap[data.id] || null,
     };
   });
 

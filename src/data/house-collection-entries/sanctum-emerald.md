@@ -3,7 +3,11 @@ id: sanctum-emerald
 title: Sanctum Emerald
 ref: NK-10361
 category: High Jewellery
-description: An heirloom of ceremonial beauty, shaped through reverence, balance, and enduring brilliance.
+description: |
+  An heirloom of ceremonial beauty, shaped through reverence, balance, and enduring brilliance.
+mood: Royal heirloom
+emotion: Protection
+form: Sacred pendant language
 images:
   - sanctum_emerald_NK-10361_hero.png
   - sanctum_emerald_NK-10361_model.png
@@ -11,7 +15,6 @@ images:
 onHomepage: false
 row: 8
 homepageOrder: 0
-
 collection: emerald-court
 type: pendant
 ---

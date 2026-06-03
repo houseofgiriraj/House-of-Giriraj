@@ -4,6 +4,9 @@ title: Imperial Cascade
 ref: CH-12316
 category: High Jewellery
 description: Power and architecture — an elaborate emerald diamond necklace with cascading sculptural form.
+mood: Power + architecture
+emotion: Command
+form: Cascading architecture
 images: []
 onHomepage: true
 row: 6

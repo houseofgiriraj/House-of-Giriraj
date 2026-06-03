@@ -4,6 +4,9 @@ title: Forest Reverie
 ref: NK-12536
 category: High Jewellery
 description: Bridal emotion — an emerald diamond necklace with soft, romantic presence and graceful elegance.
+mood: Forest reverie
+emotion: Romance
+form: Bridal cascade
 images: []
 onHomepage: true
 row: 6

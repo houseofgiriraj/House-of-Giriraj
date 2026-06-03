@@ -4,6 +4,9 @@ title: Dynasty Bloom
 ref: H-12695
 category: High Jewellery
 description: Floral emerald — a graceful emerald floral necklace with botanical elegance and dynastic beauty.
+mood: Floral emerald
+emotion: Grace
+form: Floral symmetry
 images: []
 onHomepage: true
 row: 6

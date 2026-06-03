@@ -3,7 +3,11 @@ id: starlit-reverence
 title: Starlit Reverence
 ref: ER-12508
 category: High Jewellery
-description: Designed as an echo of celestial light, Starlit Reverence frames the face through brilliance and movement.
+description: |
+  Designed as an echo of celestial light, Starlit Reverence frames the face through brilliance and movement.
+mood: Starlight
+emotion: Celebration
+form: Celestial drop
 images:
   - starlit-reverence_ER-12508_hero.png
   - starlit-reverence_ER-12508_model.png
@@ -11,7 +15,6 @@ images:
 onHomepage: false
 row: 18
 homepageOrder: 0
-
 collection: house-of-diamonds
 type: earrings
 ---
