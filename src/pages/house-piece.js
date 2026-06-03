@@ -26,9 +26,14 @@ function getRelated(piece, count = 4) {
   return shuffle(pool).slice(0, count);
 }
 
-function buildImagePath(pieceId, filename) {
-  return `/assets/images/collection/${pieceId}/${filename}`;
-}
+const collectionFiles = {
+  "crown": "crown-collection.html",
+  "emerald-court": "emerald-court.html",
+  "house-of-diamonds": "house-of-diamonds.html",
+  "ruby-salon": "ruby-salon.html",
+  "heritage-atelier": "heritage-atelier.html",
+  "jasmine-atelier": "jasmine-atelier.html",
+};
 
 function initHousePiece() {
   const main = document.getElementById("main-content");
@@ -43,7 +48,7 @@ function initHousePiece() {
         <span class="material-symbols-outlined text-6xl text-[#999081] mb-4">search_off</span>
         <h1 class="font-serif text-2xl md:text-3xl text-on-surface mb-2">Piece Not Found</h1>
         <p class="text-on-surface-variant mb-8">This piece may have been moved or is no longer available.</p>
-        <a href="signature-collection.html" class="inline-block px-8 py-3 border border-primary text-primary font-label text-sm tracking-[0.2em] uppercase hover:bg-primary hover:text-on-primary transition-all">View the House Collection</a>
+        <a href="crown-collection.html" class="inline-block px-8 py-3 border border-primary text-primary font-label text-sm tracking-[0.2em] uppercase hover:bg-primary hover:text-on-primary transition-all">View Crown Collection</a>
       </section>
     `;
     return;
@@ -59,7 +64,7 @@ function initHousePiece() {
 
   const images = piece.images && piece.images.length > 0 ? piece.images : [];
   const hasSlideshow = images.length > 0;
-  const mainImage = hasSlideshow ? buildImagePath(piece.id, images[0]) : "/assets/images/collection/placeholder.jpg";
+  const mainImage = hasSlideshow ? images[0] : "/assets/images/collection/placeholder.jpg";
 
   const related = getRelated(piece, 4);
 
@@ -68,7 +73,7 @@ function initHousePiece() {
     "@type": "Product",
     name: piece.title,
     description: piece.description,
-    image: images.map((img) => buildImagePath(piece.id, img)),
+    image: images,
     category: piece.category,
     offers: {
       "@type": "Offer",
@@ -89,7 +94,7 @@ function initHousePiece() {
         <div class="flex items-center gap-2 text-xs tracking-widest text-outline">
           <a href="index.html" class="hover:text-primary">HOME</a>
           <span>/</span>
-          <a href="collections.html" class="hover:text-primary">THE HOUSE COLLECTION</a>
+          <a href="${collectionFiles[piece.collection] || "crown-collection.html"}" class="hover:text-primary">${esc(piece.collection ? piece.collection.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()) + " Collection" : "COLLECTION")}</a>
           <span>/</span>
           <span class="text-on-surface">${esc(piece.title).toUpperCase()}</span>
         </div>
@@ -104,7 +109,7 @@ function initHousePiece() {
               <div class="house-slideshow">
                 ${hasSlideshow ? images.map((img, i) => `
                   <div class="slide${i === 0 ? " active" : ""}" data-slide>
-                    <img src="${esc(buildImagePath(piece.id, img))}" alt="${esc(piece.title)}" width="1100" height="1375" ${i === 0 ? 'fetchpriority="high" decoding="sync"' : 'loading="lazy" decoding="async"'} />
+                    <img src="${esc(img)}" alt="${esc(piece.title)}" width="1100" height="1375" ${i === 0 ? 'fetchpriority="high" decoding="sync"' : 'loading="lazy" decoding="async"'} />
                   </div>
                 `).join("") : `
                   <div class="slide active" data-slide>
@@ -149,7 +154,7 @@ function initHousePiece() {
 
             <div class="flex flex-col sm:flex-row gap-4 mb-12">
               <a href="bespoke.html" class="px-10 md:px-12 py-3 md:py-4 bg-primary text-on-primary font-label text-sm tracking-[0.2em] uppercase hover:translate-y-[-4px] transition-all duration-500 text-center">Request Private Viewing</a>
-              <a href="signature-collection.html" class="px-10 md:px-12 py-3 md:py-4 border border-primary text-primary font-label text-sm tracking-[0.2em] uppercase hover:bg-primary hover:text-on-primary transition-all duration-500 text-center">View the House Collection</a>
+              <a href="${collectionFiles[piece.collection] || "crown-collection.html"}" class="px-10 md:px-12 py-3 md:py-4 border border-primary text-primary font-label text-sm tracking-[0.2em] uppercase hover:bg-primary hover:text-on-primary transition-all duration-500 text-center">View Collection</a>
             </div>
 
             <div class="flex flex-wrap gap-6 text-xs tracking-widest text-outline">
@@ -193,7 +198,7 @@ function initHousePiece() {
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           ${related.map((p) => {
             const img = p.images && p.images.length > 0
-              ? buildImagePath(p.id, p.images[0])
+              ? p.images[0]
               : "/assets/images/collection/placeholder.jpg";
             return `
             <a href="/house-piece.html?id=${encodeURIComponent(p.id)}" class="piece-related-link">

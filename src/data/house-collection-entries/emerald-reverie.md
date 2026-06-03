@@ -1,15 +1,17 @@
 ---
 id: emerald-reverie
 title: Emerald Reverie
-ref: NK-12536
-category: High Jewellery · Emerald & Diamond
-description: Cascading emerald clusters suspended through floral diamond arrangements, designed for celebration and grandeur.
-hero: Elegant bridal appeal.
+ref: NK-12503
+category: High Jewellery
+description: A composition of luminous emerald drops and diamond brilliance, crafted for moments where elegance feels instinctive rather than performed.
 images:
-  - image: /assets/images/collection/emerald-reverie/emerald-reverie-nk-12536(1).png
-  - image: /assets/images/collection/emerald-reverie/emerald-reverie-nk-12536(2).png
-  - image: /assets/images/collection/emerald-reverie/emerald-reverie-nk-12536(3).jpg
-onHomepage: true
-row: 4
-homepageOrder: 2
+  - emerald_reverie_NK-12503_hero.png
+  - emerald_reverie_NK-12503_model.png
+  - emerald_reverie_NK-12503_atmosphere.jpg
+onHomepage: false
+row: 5
+homepageOrder: 0
+
+collection: emerald-court
+type: necklace
 ---

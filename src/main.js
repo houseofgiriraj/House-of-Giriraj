@@ -28,9 +28,9 @@ const translations = {
     trust_promise: "Our Promise",
     trust_certified: "Certified. Transparent. Trusted.",
     house_label: "The House Collection",
-    collections_headline: "Nine curated high jewellery masterpieces",
-    collections_lead: "Selected to reflect the house's pursuit of rarity, craftsmanship, and gemstone excellence.",
-    collections_cta: "View Full Collection",
+    collections_headline: "Curated Masterpieces",
+    collections_lead: "Nine extraordinary pieces, each a world unto itself.",
+    collections_cta: "Browse All Collections",
     atelier_label: "The Atelier",
     atelier_headline: "The Precision of Ten Thousand Hours.",
     atelier_desc: "Each piece born in our atelier is the culmination of heritage techniques and futuristic engineering. Our master craftsmen spend months on a single setting.",
@@ -65,9 +65,9 @@ const translations = {
     trust_promise: "हमारा वादा",
     trust_certified: "प्रमाणित। पारदर्शी। विश्वसनीय।",
     house_label: "द हाउस संग्रह",
-    collections_headline: "नौ चयनित उच्च आभूषण उत्कृष्ट कृतियाँ",
-    collections_lead: "दुर्लभता, शिल्प कौशल और रत्न उत्कृष्टता की हाउस की खोज को दर्शाने के लिए चयनित।",
-    collections_cta: "पूरा संग्रह देखें",
+    collections_headline: "चयनित उत्कृष्ट कृतियाँ",
+    collections_lead: "नौ असाधारण कृतियाँ, प्रत्येक अपने आप में एक दुनिया।",
+    collections_cta: "सभी संग्रह देखें",
     atelier_label: "कार्यशाला",
     atelier_headline: "दस हजार घंटों की सटीकता।",
     atelier_desc: "हमारी कार्यशाला में जन्मा प्रत्येक टुकड़ा विरासत तकनीकों और भविष्य की इंजीनियरिंग का परिणाम है।",
@@ -404,12 +404,22 @@ function initVideoFallbacks() {
 }
 
 function createHouseCard(piece, isHomepage) {
+  const collectionFiles = {
+    crown: "crown-collection.html",
+    "emerald-court": "emerald-court.html",
+    "house-of-diamonds": "house-of-diamonds.html",
+    "ruby-salon": "ruby-salon.html",
+    "heritage-atelier": "heritage-atelier.html",
+    "jasmine-atelier": "jasmine-atelier.html"
+  };
   const link = document.createElement("div");
   link.className = "house-card-link";
   link.tabIndex = 0;
   link.role = "link";
   link.setAttribute("aria-label", `View ${piece.title}`);
-  const pieceUrl = `/house-piece.html?id=${piece.id}`;
+  const pieceUrl = isHomepage
+    ? `/${collectionFiles[piece.collection] || "crown-collection.html"}`
+    : `/house-piece.html?id=${piece.id}`;
   link.addEventListener("click", (e) => {
     if (e.target.closest("button, [data-slide-prev], [data-slide-next], [data-dot]")) return;
     window.location.href = pieceUrl;
@@ -451,7 +461,7 @@ function createHouseCard(piece, isHomepage) {
       video.muted = true;
       video.loop = false;
       video.playsInline = true;
-      video.className = "w-full h-full object-contain";
+      video.className = "w-full h-full object-cover";
       slide.appendChild(video);
       slideshow.appendChild(slide);
       slideIdx++;
@@ -462,7 +472,7 @@ function createHouseCard(piece, isHomepage) {
       slide.className = `slide${!piece.trailer && i === 0 ? " active" : ""}`;
       slide.setAttribute("data-slide", "");
       const imgEl = document.createElement("img");
-      imgEl.src = `/assets/images/collection/${piece.id}/${img}`;
+      imgEl.src = img;
       imgEl.alt = piece.title;
       imgEl.width = 1200;
       imgEl.height = 1600;
@@ -497,9 +507,9 @@ function createHouseCard(piece, isHomepage) {
     imageArea.appendChild(next);
   } else {
     const imgEl = document.createElement("img");
-    imgEl.src = piece.images && piece.images.length === 1
-      ? `/assets/images/collection/${piece.id}/${piece.images[0]}`
-      : "/assets/images/collection/placeholder.jpg";
+    imgEl.src = piece.images && piece.images.length > 0
+      ? piece.images[0]
+      : "/assets/images/products/diamond-macro/hero.jpg";
     imgEl.alt = piece.title;
     imgEl.width = 1200;
     imgEl.height = 1600;
@@ -558,11 +568,11 @@ function renderHouseCollection(gridSelector = "#house-grid") {
 
   const isHomepage = grid.id === "house-grid";
   const pieces = isHomepage
-    ? houseCollection.filter((p) => p.onHomepage)
+    ? houseCollection.filter((p) => p.isHero && p.status === "active")
     : houseCollection;
 
-  const heroPiece = pieces.find((p) => p.isHero);
-  const regularPieces = heroPiece ? pieces.filter((p) => !p.isHero) : pieces;
+  const heroPiece = pieces.find((p) => p.homepageOrder === 0);
+  const regularPieces = heroPiece ? pieces.filter((p) => p.id !== heroPiece.id) : pieces;
 
   if (heroPiece) {
     const heroRow = document.createElement("div");
@@ -621,6 +631,19 @@ function initHouseSlideshow() {
     const slides = container.querySelectorAll("[data-slide]");
     if (!slides.length) return;
 
+    slides.forEach(s => {
+      const v = s.querySelector("video");
+      if (v) {
+        v.onerror = () => {
+          clearAuto();
+          s.classList.add("slide-dead");
+          const idx = Array.from(slides).indexOf(s);
+          if (dots[idx]) dots[idx].style.display = "none";
+          goTo(current + 1);
+        };
+      }
+    });
+
     const card = container.closest(".house-card");
     const dots = card ? card.querySelectorAll("[data-dot]") : container.querySelectorAll("[data-dot]");
     const prev = container.querySelector("[data-slide-prev]");
@@ -662,6 +685,11 @@ function initHouseSlideshow() {
       slides.forEach((s) => s.classList.remove("active"));
       dots.forEach((d) => d.classList.remove("active"));
       current = (index + slides.length) % slides.length;
+      let guard = 0;
+      while (slides[current]?.classList.contains("slide-dead") && guard < slides.length) {
+        current = (current + 1) % slides.length;
+        guard++;
+      }
       slides[current].classList.add("active");
       if (dots[current]) dots[current].classList.add("active");
       scheduleAuto();
@@ -717,161 +745,6 @@ function initNavHide() {
   }, { passive: true });
 }
 
-function initAmbientMusic() {
-  const audio = new Audio("/assets/website-music/Rondo_in_A_Minor.mp3");
-  audio.loop = true;
-  audio.volume = 0.25;
-
-  const btns = document.querySelectorAll("[data-music-toggle]");
-  const icons = {
-    desktop: document.getElementById("music-icon"),
-    mobile: document.getElementById("music-icon-mobile"),
-  };
-  const tip = document.getElementById("music-tip");
-  const wrap = document.querySelector(".music-toggle-wrap");
-  const tipLabel = document.querySelector(".music-tip-label");
-
-  function setIcon(state) {
-    const iconName = state === "playing" ? "music_off" : "music_note";
-    if (icons.desktop) icons.desktop.textContent = iconName;
-    if (icons.mobile) icons.mobile.textContent = iconName;
-  }
-
-  function setTipText(state) {
-    if (!tipLabel) return;
-    tipLabel.textContent = state === "playing" ? "Turn off ambient music" : "Turn on ambient music";
-  }
-
-  function fadeVolume(from, to, duration, cb) {
-    const start = performance.now();
-    function step(now) {
-      const t = Math.min((now - start) / duration, 1);
-      audio.volume = from + (to - from) * t;
-      if (t < 1) requestAnimationFrame(step);
-      else if (cb) cb();
-    }
-    requestAnimationFrame(step);
-  }
-
-  function stop() {
-    audio.pause();
-    audio.currentTime = 0;
-    setIcon("stopped");
-    setTipText("stopped");
-    localStorage.setItem("musicEnabled", "false");
-    btns.forEach((b) => b.classList.remove("is-active"));
-  }
-
-  function play() {
-    audio.play().catch(() => {});
-    setIcon("playing");
-    setTipText("playing");
-    localStorage.setItem("musicEnabled", "true");
-    btns.forEach((b) => b.classList.add("is-active"));
-  }
-
-  function savePosition() {
-    if (!audio.paused) {
-      localStorage.setItem("musicPosition", audio.currentTime);
-    }
-  }
-
-  function resumeFromSaved() {
-    const savedTime = localStorage.getItem("musicPosition");
-    if (savedTime) audio.currentTime = parseFloat(savedTime);
-
-    const tryPlay = () => {
-      audio.volume = 0;
-      return audio.play();
-    };
-
-    tryPlay()
-      .then(() => fadeVolume(0, 0.25, 500))
-      .catch(() => {
-        audio.volume = 0.25;
-        const onGesture = () => {
-          tryPlay().then(() => fadeVolume(0, 0.25, 500)).catch(() => {});
-          document.removeEventListener("click", onGesture);
-          document.removeEventListener("touchstart", onGesture);
-          document.removeEventListener("keydown", onGesture);
-        };
-        document.addEventListener("click", onGesture);
-        document.addEventListener("touchstart", onGesture);
-        document.addEventListener("keydown", onGesture);
-      });
-  }
-
-  window.addEventListener("beforeunload", savePosition);
-  window.addEventListener("pagehide", savePosition);
-
-  if (localStorage.getItem("musicEnabled") === "true") {
-    setIcon("playing");
-    setTipText("playing");
-    btns.forEach((b) => b.classList.add("is-active"));
-    resumeFromSaved();
-  } else {
-    setIcon("stopped");
-    setTipText("stopped");
-  }
-
-  btns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (audio.paused) {
-        const savedTime = localStorage.getItem("musicPosition");
-        if (savedTime && audio.currentTime === 0) {
-          audio.currentTime = parseFloat(savedTime);
-        }
-        play();
-      } else {
-        stop();
-      }
-    });
-  });
-
-  if (!tip || !wrap) return;
-
-  let isHovering = false;
-  let autoTimer = null;
-
-  function showTip() {
-    tip.classList.add("is-visible");
-  }
-
-  function hideTip() {
-    tip.classList.remove("is-visible");
-  }
-
-  if (!localStorage.getItem("musicTipShown")) {
-    showTip();
-    autoTimer = setTimeout(() => {
-      if (!isHovering) hideTip();
-      localStorage.setItem("musicTipShown", "true");
-      autoTimer = null;
-    }, 2500);
-  }
-
-  wrap.addEventListener("mouseenter", () => {
-    isHovering = true;
-    showTip();
-  });
-
-  wrap.addEventListener("mouseleave", () => {
-    isHovering = false;
-    hideTip();
-  });
-
-  btns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (autoTimer) {
-        clearTimeout(autoTimer);
-        autoTimer = null;
-      }
-      hideTip();
-      localStorage.setItem("musicTipShown", "true");
-    });
-  });
-}
-
 function init() {
   initTheme();
   initLanguageSelectors();
@@ -879,7 +752,6 @@ function init() {
   initSearch();
   initMotion();
   initVideoFallbacks();
-  initAmbientMusic();
   initNavHide();
   renderHouseCollection("#house-grid");
   initHouseSlideshow();

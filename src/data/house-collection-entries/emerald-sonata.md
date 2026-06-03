@@ -7,4 +7,5 @@ description: Graceful emerald drops framed by intricate diamond detailing, compo
 hero: Strong emotional luxury appeal.
 images: []
 onHomepage: false
+status: archived
 ---

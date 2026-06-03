@@ -2,14 +2,17 @@
 id: celestial-rain
 title: Celestial Rain
 ref: NK-12725
-category: High Jewellery · Diamond
-description: Diamond strands arranged in graceful tiers, creating a floating impression of brilliance and movement.
-hero: Minimal luxury, easier inquiry conversion.
+category: High Jewellery
+description: A cascade of diamond light suspended in motion, Celestial Rain transforms brilliance into atmosphere.
 images:
-  - image: /assets/images/collection/celestial-rain/celestial-rain-nk-12725 (1).png
-  - image: /assets/images/collection/celestial-rain/celestial-rain-nk-12725 (2).png
-  - image: /assets/images/collection/celestial-rain/celestial-rain-nk-12725 (3).jpg
+  - celestial-rain_NK-12725_hero.jpg
+  - celestial-rain_NK-12725_model.jpg
+  - celestial-rain_NK-12725_atmosphere.jpg
 onHomepage: true
-row: 3
-homepageOrder: 2
+row: 6
+homepageOrder: 4
+isHero: true
+trailer: /assets/videos/products/Celestial_Rain-film.mp4
+collection: house-of-diamonds
+type: necklace
 ---

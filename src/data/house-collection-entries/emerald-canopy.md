@@ -2,14 +2,14 @@
 id: emerald-canopy
 title: Emerald Canopy
 ref: CH-12325
-category: High Jewellery · Emerald & Diamond
-description: A grand emerald composition framed through architectural diamond latticework, designed to command ceremonial presence.
-hero: Strong symmetry + royal scale + instantly memorable silhouette.
-images:
-  - image: /assets/images/collection/emerald-canopy/emerald-canopy-ch-12325(1).png
-  - image: /assets/images/collection/emerald-canopy/emerald-canopy-ch-12325(2).png
-  - image: /assets/images/collection/emerald-canopy/emerald-canopy-ch-12325(3).jpg
+category: High Jewellery
+description: Imperial emerald queen — a massive emerald and diamond statement necklace with regal presence.
+images: []
 onHomepage: true
-row: 1
-homepageOrder: 1
+row: 6
+homepageOrder: 6
+isHero: true
+trailer: /assets/videos/products/Emerald_Canopy-film.mp4
+collection: emerald-court
+type: necklace
 ---

@@ -213,6 +213,80 @@ nav.fixed.nav--hidden {
   transform: scale(1.05);
 }
 
+/* Icon button (used for theme toggle + music toggle on collection pages) */
+.icon-button {
+  min-width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--border-default);
+  background: transparent;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    color 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+}
+.icon-button:hover,
+.icon-button:focus-visible {
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  transform: translateY(-1px);
+}
+
+/* Music toggle */
+.music-toggle-wrap {
+  position: relative;
+  display: inline-flex;
+}
+.music-toggle.is-active {
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+.music-tip {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.45rem 0.75rem;
+  background: #222;
+  color: #eee;
+  font-size: 0.6875rem;
+  font-family: Manrope, system-ui, sans-serif;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 85;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.music-tip-arrow {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #222;
+}
+.music-tip.is-visible {
+  opacity: 1;
+}
+.light .music-tip {
+  background: #fff;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.light .music-tip-arrow {
+  border-bottom-color: #fff;
+}
+
 /* Language selector */
 .lang-select {
   -webkit-appearance: none;
@@ -1148,6 +1222,10 @@ a:focus-visible {
   pointer-events: auto;
 }
 
+.slide-dead {
+  display: none;
+}
+
 .slide img {
   width: 100%;
   height: 100%;
@@ -1288,3 +1366,129 @@ a:focus-visible {
     right: 0.65rem;
   }
 }
+
+/* ===== 16. WORLDS GALLERY (video + info panels per collection) ===== */
+.worlds-gallery {
+  background: #0a0a09;
+}
+.worlds-slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  background: var(--worlds-bg, #15130f);
+}
+.worlds-media {
+  position: relative;
+  height: 70vh;
+  min-height: 380px;
+  overflow: hidden;
+  width: 92%;
+  margin: 2rem auto 0;
+  border-radius: 0.75rem 0.75rem 0 0;
+}
+.worlds-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.08) 35%, rgba(0,0,0,0.15) 100%);
+}
+.worlds-video,
+.worlds-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.worlds-info {
+  flex: 1;
+  padding: 2rem 4% 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+  width: 92%;
+  margin: 0 auto 2rem;
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+.worlds-eyebrow {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #e3c484;
+  font-weight: 600;
+}
+.worlds-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.5rem, 2.8vw, 2.8rem);
+  color: #f3eee7;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+.worlds-desc {
+  font-size: 0.8rem;
+  color: rgba(243, 238, 231, 0.65);
+  max-width: 36rem;
+  line-height: 1.6;
+  margin: 0.15rem 0;
+}
+.worlds-btn {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.8rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #f3eee7;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+.worlds-btn:hover {
+  background: #e3c484;
+  border-color: #e3c484;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .worlds-media {
+    height: 55vh;
+    min-height: 280px;
+    width: 96%;
+    margin-top: 1rem;
+  }
+  .worlds-info {
+    padding: 1.5rem 3% 2rem;
+    width: 96%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* ===== 17. MOBILE MENU SUBSECTION ===== */
+.mobile-menu-overlay .menu-subsection {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  margin-left: 0.5rem;
+}
+.mobile-menu-overlay .menu-subsection-label {
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  padding: 0.5rem 0.75rem 0.25rem;
+  pointer-events: none;
+}
+.light .mobile-menu-overlay .menu-subsection {
+  border-left-color: rgba(0, 0, 0, 0.08);
+}
+.light .mobile-menu-overlay .menu-subsection-label {
+  color: rgba(0, 0, 0, 0.35);
+}
+

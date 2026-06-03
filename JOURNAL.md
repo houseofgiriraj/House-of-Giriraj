@@ -342,6 +342,38 @@
   promise rejection and swaps `<video>` to `<img>` with the poster image.
 - Also adds a `stalled` event listener as additional trigger.
 
+## 2026-06-01
+
+### Worlds of Giriraj — Full-Screen Scroll-Snap Layout
+
+- **Rewired** `src/pages/collections.js` to render 6 full-screen scroll-snap sections,
+  one per collection (Crown → Imperial Cascade, Emerald Court → Emerald Canopy,
+  House of Diamonds → Maharani Cascade, Ruby Salon → Ruby Aurora,
+  Heritage Atelier → Ceremonial Bloom, Jasmine Atelier → Champagne Bloom).
+- **New layout**: Each `.worlds-slide` is a flex column with:
+  - `.worlds-media` at 70vh (video/image with gradient overlay)
+  - `.worlds-info` panel below (collection name, title, 150-char description excerpt,
+    "Explore Collection" button)
+- **Per-collection background colors**: Each slide gets a distinct dark tone from
+  the brand palette (crown `#1c1814`, emerald-court `#0f1512`,
+  house-of-diamonds `#111316`, ruby-salon `#1b1012`, heritage-atelier `#17140e`,
+  jasmine-atelier `#141016`). Info panels use slightly lighter variants.
+- **"Browse All Collections" button** on homepage (`index.html:315`): changed link
+  from `/crown-collection.html` to `worlds-of-giriraj.html`.
+- **CSS**: Worlds gallery styles moved to dedicated section in `css/style.css`
+  (scroll-snap removed from gallery container; each slide is `min-height: 100vh`).
+  Responsive breakpoint at 768px reduces media to 55vh.
+
+### Slideshow Black Frame Fix
+
+- **Root cause**: 8 hero products on the homepage have `trailer` paths but no actual
+  video files. The slideshow created a video slide as the first active slide →
+  black frame. On every loop wrap-around the dead video slide reactivated briefly.
+- **Fix** (`src/main.js:initHouseSlideshow`):
+  - On `video.onerror`: marks the slide as `.slide-dead`, hides its dot
+  - `goTo()` skips all `.slide-dead` slides via a guard loop before activation
+  - `.slide-dead { display: none }` added to both `src/styles.css` and `css/style.css`
+
 ### FFmpeg Faststart — All Videos Optimized
 
 - `ffmpeg` installed via `winget install Gyan.FFmpeg` (found at
@@ -355,3 +387,39 @@
   - `curation.mp4` — already had faststart (curation section)
 - **Result**: All 6 verified moov-at-start via binary scan. Firefox, Safari, and
   Samsung Internet can now stream without full download.
+
+## 2026-06-02
+
+### Ambient Music Fix
+
+- **Root cause 1 (404)**: Audio file `Rondo_in_A_Minor.mp3` (4MB) existed in `public/` and `dist/` but site needed redeploy.
+- **Root cause 2 (negative volume)**: `fadeVolume` used `requestAnimationFrame` but `stop()` never cancelled it. Stale animation frames continued writing volume after `stop()` ran, causing out-of-range values (-0.0038).
+- **Fix**: Added `fadeRafId` tracking + `cancelAnimationFrame` in `stop()`. Added `Math.max(0, Math.min(1, ...))` clamp to volume setter in `fadeVolume`.
+
+### Video Object-Fit Fix
+
+- Homepage slideshow videos used `object-fit: contain` (letterboxed inside card).
+- Changed to `object-fit: cover` in both `src/main.js:464` (inline class `object-contain` → `object-cover`) and `src/styles.css:1651` (`.slide video` rule).
+- Videos now fill card completely, matching image behavior.
+
+### Sanctum Emerald Images Added
+
+- User added 3 images (`1.png`, `2.png`, `3.jpg`) to `emerald-court/sanctum-emerald/`.
+- Renamed to new convention: `sanctum_emerald_NK-10361_hero.png`, `_model.png`, `_atmosphere.jpg`.
+- Updated `sanctum-emerald.md` with explicit `images` list.
+
+### Image Naming Convention Rollout (6 products)
+
+- Renamed images for **Royal Edict**, **Regalia Canopy**, **Throne of Light**, **Sanctum Emerald**, **Moonlit Emerald**, and **Verdant Halo** to `{product}_{ref}_{role}.{ext}`.
+- Updated all 6 markdown frontmatter files with explicit `images` arrays pointing to new filenames.
+- 10 legacy products still use `hero.jpg`/`model.jpg`/`atmosphere.jpg` fallback.
+- 23 products remain with empty folders (awaiting user images).
+
+### Image Inventory
+
+| Status | Count |
+|--------|-------|
+| Products with images (path OK) | 16 |
+| Products with images (needs attention) | 0 |
+| Products with empty folders | 23 |
+| **Total active products** | **39** |

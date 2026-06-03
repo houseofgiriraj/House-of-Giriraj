@@ -7,4 +7,5 @@ description: Three sweeping layers of diamonds designed to evoke softness, radia
 hero: Modern and wearable.
 images: []
 onHomepage: false
+status: archived
 ---

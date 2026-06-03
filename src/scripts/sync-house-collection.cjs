@@ -19,6 +19,22 @@ function build() {
   const pieces = files.map((file) => {
     const raw = fs.readFileSync(path.join(ENTRIES_DIR, file), "utf-8");
     const { data } = matter(raw);
+
+    const collection = data.collection || "";
+    const type = data.type || "necklace";
+    const status = data.status || "active";
+    const isHero = data.isHero ?? false;
+
+    // Convention-based images: if no explicit images, use the standard 3-image pipeline
+    const explicitImages = extractFilenames(data.images);
+    const images = explicitImages.length > 0
+      ? explicitImages.map(f => `/assets/images/products/${collection}/${data.id}/${f}`)
+      : [
+          `/assets/images/products/${collection}/${data.id}/hero.jpg`,
+          `/assets/images/products/${collection}/${data.id}/model.jpg`,
+          `/assets/images/products/${collection}/${data.id}/atmosphere.jpg`,
+        ];
+
     return {
       id: data.id,
       slug: data.id,
@@ -27,25 +43,30 @@ function build() {
       category: data.category,
       description: data.description,
       hero: data.hero,
-      images: extractFilenames(data.images),
+      images,
       onHomepage: data.onHomepage ?? true,
       row: data.onHomepage ? (data.row != null ? data.row : null) : undefined,
       homepageOrder: data.onHomepage ? (data.homepageOrder != null ? data.homepageOrder : 1) : undefined,
-      isHero: data.isHero ?? false,
+      isHero,
       trailer: data.trailer || null,
+      collection,
+      type,
+      status,
     };
   });
 
-  pieces.sort((a, b) => {
+  const activePieces = pieces.filter(p => p.status !== "archived");
+
+  activePieces.sort((a, b) => {
     if (a.onHomepage !== b.onHomepage) return a.onHomepage ? -1 : 1;
     const rowDiff = (a.row || 0) - (b.row || 0);
     if (rowDiff !== 0) return rowDiff;
     return (a.homepageOrder || 1) - (b.homepageOrder || 1);
   });
 
-  const code = `const houseCollection = ${JSON.stringify(pieces, null, 2)};\n\nexport default houseCollection;\n`;
+  const code = `const houseCollection = ${JSON.stringify(activePieces, null, 2)};\n\nexport default houseCollection;\n`;
   fs.writeFileSync(OUTPUT, code, "utf-8");
-  console.log(`Generated ${OUTPUT} — ${pieces.length} pieces`);
+  console.log(`Generated ${OUTPUT} — ${activePieces.length} active pieces (${pieces.length - activePieces.length} archived)`);
 }
 
 build();

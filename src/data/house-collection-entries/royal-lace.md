@@ -2,14 +2,17 @@
 id: royal-lace
 title: Royal Lace
 ref: CH-12509
-category: High Jewellery · Diamond
-description: 65 carats of precisely calibrated diamonds set in an intricate openwork lattice — a choker of regal proportions and heirloom artistry.
-hero: Diamond mastery at its most elaborate.
+category: High Jewellery
+description: Intricacy — an intricate diamond necklace with lace-inspired detailing, delicate and commanding.
 images:
-  - image: /assets/images/collection/royal-lace/royale-lace-ch-12509(1).png
-  - image: /assets/images/collection/royal-lace/royale-lace-ch-12509(2).png
-  - image: /assets/images/collection/royal-lace/royale-lace-ch-12509(3).jpg
+  - royal-lace_CH-12509_hero.jpg
+  - royal-lace_CH-12509_model.jpg
+  - royal-lace_CH-12509_atmosphere.jpg
 onHomepage: true
-row: 4
-homepageOrder: 1
+row: 6
+homepageOrder: 5
+isHero: true
+trailer: /assets/videos/products/Royal_Lace-film.mp4
+collection: house-of-diamonds
+type: necklace
 ---

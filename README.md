@@ -76,6 +76,27 @@ via `sync-house-collection.cjs` into `src/data/house-collection.js`.
 **Card image aspect ratio**: `3:4` (taller display, via `.house-card-image`), capped
 at `700px` max-height.
 
+**"Browse All Collections" button** on the homepage links to `worlds-of-giriraj.html`.
+
+### Worlds of Giriraj
+
+The `worlds-of-giriraj.html` page features 6 full-screen scroll-snap sections, one per
+collection. Each section has:
+- A **70vh media area** showing the collection's hero video or image
+- An **info panel** below with collection name, piece title, description excerpt, and "Explore Collection" button
+- A **distinct background color** per collection (dark brown, green-black, cool charcoal, burgundy, amber-brown, plum-brown)
+
+Data is selected dynamically: picks the `isHero` product from each collection, or the
+first active product if none is marked as hero. Rendered by `src/pages/collections.js`.
+
+### Slideshow Video Error Handling
+
+Products with `trailer` paths but no actual video files cause a blank black frame
+in the homepage card slideshow. The error handler now:
+1. Marks the dead video slide as `.slide-dead` (removed from rotation)
+2. Hides its corresponding dot
+3. `goTo()` skips all dead slides via a guard loop before activating any slide
+
 Data flow:
 ```
 markdown edits → src/data/house-collection-entries/{id}.md
@@ -139,7 +160,13 @@ When using Gemini/ChatGPT to generate product details from images, use this temp
 The preserved public routes are:
 
 - `/index.html`
-- `/collections.html`
+- `/worlds-of-giriraj.html`
+- `/crown-collection.html`
+- `/emerald-court.html`
+- `/house-of-diamonds.html`
+- `/ruby-salon.html`
+- `/heritage-atelier.html`
+- `/jasmine-atelier.html`
 - `/product.html?id=<product-id>`
 - `/bespoke.html`
 - `/heritage.html`
@@ -190,9 +217,44 @@ their existing paths.
 
 ## Image Structure
 
-- **House collection** (15 editorial pieces): `public/assets/images/collection/{id}/` — 9 with images, 6 empty.
+- **House collection** (39 active pieces): `public/assets/images/products/{collection}/{id}/` — 16 with images, 23 empty.
 - **Products** (21 commercial items): `public/assets/images/products/{category}/{product-id}/hero.jpg`
-  (category-nested convention; 3 pre-populated, 18 awaiting user images).
+  (category-nested convention).
+
+### Image Naming Convention
+
+All house collection product images follow this convention:
+```
+{product_name}_{ref}_{role}.{ext}
+```
+- `product_name`: snake_case (e.g. `sanctum_emerald`, `regalia_canopy`)
+- `ref`: reference number (e.g. `NK-10361`)
+- `role`: one of `hero`, `model`, `atmosphere`
+
+**Example:** `sanctum_emerald_NK-10361_hero.png`
+
+Each product has exactly 3 images (hero, model, atmosphere). The filenames are declared explicitly in the markdown frontmatter under `images:`. If the `images` array is empty, the sync script falls back to `hero.jpg`/`model.jpg`/`atmosphere.jpg` (legacy naming).
+
+### Products with images (16/39)
+
+| Product | Ref | Collection | Convention |
+|---------|-----|-----------|------------|
+| Maharani Cascade Necklace | NK-12585 | house-of-diamonds | legacy (hero.jpg) |
+| Imperial Dominion | NK-12384 | crown | legacy (hero.jpg) |
+| Royal Edict | NK-12383 | crown | new ✓ |
+| Regalia Canopy | NK-12692 | crown | new ✓ |
+| Throne of Light | NK-1691 | crown | new ✓ |
+| Imperial Cascade | CH-12316 | crown | legacy (hero.jpg) |
+| Dynasty Bloom | H-12695 | crown | legacy (hero.jpg) |
+| Maharani Veil | H-12294 | crown | legacy (hero.jpg) |
+| Celestial Rain | NK-12725 | house-of-diamonds | legacy (hero.jpg) |
+| Royal Lace | CH-12509 | house-of-diamonds | legacy (hero.jpg) |
+| Emerald Canopy | CH-12325 | emerald-court | legacy (hero.jpg) |
+| Forest Reverie | NK-12536 | emerald-court | legacy (hero.jpg) |
+| Ruby Aurora | NK-12479 | ruby-salon | legacy (hero.jpg) |
+| Moonlit Emerald | NK-12530 | emerald-court | new ✓ |
+| Verdant Halo | NK-12493 | emerald-court | new ✓ |
+| Sanctum Emerald | NK-10361 | emerald-court | new ✓ |
 
 ## Inventory Reference
 

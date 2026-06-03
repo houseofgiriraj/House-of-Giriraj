@@ -2,14 +2,17 @@
 id: ruby-aurora
 title: Ruby Aurora
 ref: NK-12479
-category: High Jewellery · Ruby & Diamond
-description: 49 carats of diamonds frame 79 carats of vivid rubies in a composition of ceremonial grandeur — where fire meets brilliance.
-hero: Your boldest ruby statement.
+category: High Jewellery
+description: Radiant and emotionally magnetic, Ruby Aurora carries the fire of rare gemstones shaped through elegance and restraint.
 images:
-  - image: /assets/images/collection/ruby-aurora/ruby-aurora-nk-12479(1).png
-  - image: /assets/images/collection/ruby-aurora/ruby-aurora-nk-12479(2).png
-  - image: /assets/images/collection/ruby-aurora/ruby-aurora-nk-12479(3).jpg
+  - ruby-aurora_NK-12479_hero.jpg
+  - ruby-aurora_NK-12479_model.jpg
+  - ruby-aurora_NK-12479_atmosphere.jpg
 onHomepage: true
-row: 3
-homepageOrder: 1
+row: 6
+homepageOrder: 8
+isHero: true
+trailer: /assets/videos/products/Ruby_Aurora-film.mp4
+collection: ruby-salon
+type: necklace
 ---

@@ -1,210 +1,93 @@
 import "../../css/style.css";
-import { products } from "../data.js";
 import houseCollection from "../data/house-collection.js";
+
+const collectionNames = {
+  crown: "Crown Collection",
+  "emerald-court": "Emerald Court",
+  "house-of-diamonds": "House of Diamonds",
+  "ruby-salon": "Ruby Salon",
+  "heritage-atelier": "Heritage Atelier",
+  "jasmine-atelier": "Jasmine Atelier"
+};
+
+const collectionFiles = {
+  crown: "crown-collection.html",
+  "emerald-court": "emerald-court.html",
+  "house-of-diamonds": "house-of-diamonds.html",
+  "ruby-salon": "ruby-salon.html",
+  "heritage-atelier": "heritage-atelier.html",
+  "jasmine-atelier": "jasmine-atelier.html"
+};
+
+const collectionColors = {
+  crown: "#1c1814",
+  "emerald-court": "#0f1512",
+  "house-of-diamonds": "#111316",
+  "ruby-salon": "#1b1012",
+  "heritage-atelier": "#17140e",
+  "jasmine-atelier": "#141016"
+};
+
+const collectionInfoColors = {
+  crown: "#28221c",
+  "emerald-court": "#1a241e",
+  "house-of-diamonds": "#1c2026",
+  "ruby-salon": "#281a1c",
+  "heritage-atelier": "#242016",
+  "jasmine-atelier": "#221c28"
+};
+
+const collectionOrder = ["crown", "emerald-court", "house-of-diamonds", "ruby-salon", "heritage-atelier", "jasmine-atelier"];
 
 function esc(str) {
   return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
-const houseItems = houseCollection
-  .filter(p => p.images && p.images.length > 0)
-  .map(p => {
-    let subcategory = "necklaces";
-    const prefix = (p.ref || "").split("-")[0];
-    if (prefix === "CH") subcategory = "chokers";
-    const base = `/assets/images/collection/${p.id}/`;
-    return {
-      id: p.id,
-      name: p.title,
-      subcategory,
-      images: p.images.map(f => base + encodeURIComponent(f)),
-      shortDesc: p.ref,
-      description: p.description || "",
-      type: "house"
-    };
-  });
-
-const productItems = products.map(p => {
-  const imgs = [];
-  if (p.image) imgs.push(p.image);
-  if (p.gallery) p.gallery.forEach(g => { if (g.image) imgs.push(g.image); });
-  if (imgs.length === 0) imgs.push("/assets/images/collection/placeholder.jpg");
-  return {
-    id: p.id,
-    name: p.name,
-    subcategory: p.subcategory,
-    images: imgs,
-    shortDesc: p.shortDesc,
-    description: p.description || "",
-    type: "product"
-  };
-});
-
-const allItems = [...houseItems, ...productItems];
-const categories = ["all", ...new Set(allItems.map(i => i.subcategory))];
+function getExcerpt(text, maxLen) {
+  if (!text) return "";
+  const cleaned = text.replace(/\n+/g, " ").replace(/\s+/g, " ").trim();
+  if (cleaned.length <= maxLen) return cleaned;
+  return cleaned.slice(0, maxLen).replace(/\s+\S*$/, "") + "…";
+}
 
 document.addEventListener("DOMContentLoaded", function () {
-  const filterContainer = document.getElementById("filter-buttons");
-  const grid = document.getElementById("products-grid");
-  const emptyState = document.getElementById("empty-state");
-  if (!filterContainer || !grid) return;
+  const gallery = document.getElementById("hero-gallery");
+  if (!gallery) return;
 
-  filterContainer.innerHTML = categories.map((cat, i) => `
-    <button class="filter-btn px-6 md:px-8 py-3 border border-surface-variant text-[10px] tracking-[0.2em] uppercase hover:border-primary transition-all ${i === 0 ? "active" : ""}" data-filter="${cat}">
-      ${esc(cat === "all" ? "All" : cat.charAt(0).toUpperCase() + cat.slice(1))}
-    </button>
-  `).join("");
+  const pieces = collectionOrder.map(col => {
+    const items = houseCollection.filter(p => p.collection === col && p.status === "active");
+    const hero = items.find(p => p.isHero);
+    return hero || items[0];
+  }).filter(Boolean);
 
-  function cycleImage(card, dir) {
-    const imgs = card.querySelectorAll(".card-img");
-    if (imgs.length < 2) return;
-    const cur = card.querySelector(".card-img:not(.hidden)");
-    if (!cur) return;
-    let idx = parseInt(cur.dataset.index, 10);
-    if (dir === "prev") idx = idx > 0 ? idx - 1 : imgs.length - 1;
-    else idx = idx < imgs.length - 1 ? idx + 1 : 0;
-    imgs.forEach(img => img.classList.add("hidden"));
-    imgs[idx].classList.remove("hidden");
-  }
+  if (pieces.length === 0) return;
 
-  function isInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return rect.top < window.innerHeight && rect.bottom > 0;
-  }
-
-  function startAutoPlay(card) {
-    if (card.dataset.autoTimer) return;
-    card.dataset.autoTimer = setInterval(() => cycleImage(card, "next"), 4000);
-  }
-
-  function stopAutoPlay(card) {
-    if (card.dataset.autoTimer) {
-      clearInterval(parseInt(card.dataset.autoTimer));
-      delete card.dataset.autoTimer;
-    }
-  }
-
-  function resetAutoPlay(card) {
-    stopAutoPlay(card);
-    if (isInViewport(card)) startAutoPlay(card);
-  }
-
-  function connectAutoPlay() {
-    document.querySelectorAll(".product-card").forEach(card => {
-      const imgs = card.querySelectorAll(".card-img");
-      if (imgs.length < 2) return;
-      autoObserver.observe(card);
-      card.addEventListener("mouseenter", () => stopAutoPlay(card));
-      card.addEventListener("mouseleave", () => {
-        if (isInViewport(card)) startAutoPlay(card);
-      });
-    });
-  }
-
-  const autoObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const card = entry.target;
-      if (entry.isIntersecting) startAutoPlay(card);
-      else stopAutoPlay(card);
-    });
-  }, { threshold: 0.5 });
-
-  function render(filter = "all") {
-    const filtered = filter === "all" ? allItems : allItems.filter(i => i.subcategory === filter);
-    if (filtered.length === 0) {
-      grid.innerHTML = "";
-      if (emptyState) emptyState.classList.remove("hidden");
-      return;
-    }
-    if (emptyState) emptyState.classList.add("hidden");
-    grid.innerHTML = filtered.map(item => {
-      const href = item.type === "house"
-        ? `house-piece.html?id=${encodeURIComponent(item.id)}`
-        : `product.html?id=${encodeURIComponent(item.id)}`;
-      const multi = item.images.length > 1;
-      const desc = item.description ? esc(item.description) : "";
-      return `
-        <a href="${href}" class="product-card group bg-white block" data-type="${item.type}">
-          <div class="aspect-[4/5] overflow-hidden relative">
-            <div class="card-images w-full h-full">
-              ${item.images.map((img, i) => `
-                <img class="card-img w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 ${i === 0 ? "" : "hidden"}" src="${esc(img)}" alt="${esc(item.name)}" loading="lazy" data-index="${i}" />
-              `).join("")}
-            </div>
-            ${multi ? `
-            <button class="card-nav absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white/80 hover:bg-white text-stone-800 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10 shadow-md" type="button" data-dir="prev">
-              <span class="material-symbols-outlined text-sm">chevron_left</span>
-            </button>
-            <button class="card-nav absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white/80 hover:bg-white text-stone-800 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10 shadow-md" type="button" data-dir="next">
-              <span class="material-symbols-outlined text-sm">chevron_right</span>
-            </button>
-            ` : ""}
-          </div>
-          <div class="p-6 text-left flex flex-col min-h-[130px] border-t border-surface-variant/30">
-            <span class="text-[10px] tracking-[0.12em] uppercase text-stone-400 mb-1">${esc(item.subcategory)}</span>
-            <h4 class="font-serif font-[400] text-lg text-stone-800 leading-snug mb-1 group-hover:text-primary transition-colors">${esc(item.name)}</h4>
-            ${desc ? `<p class="text-[11px] text-stone-400 leading-relaxed line-clamp-2 mb-2">${desc}</p>` : ""}
-            <p class="text-[0.7rem] tracking-[0.18em] font-light uppercase text-stone-400 mt-auto">${esc(item.shortDesc || "")}</p>
-          </div>
-        </a>
-      `;
-    }).join("");
-    connectAutoPlay();
-  }
-
-  render("all");
-
-  grid.addEventListener("click", function (e) {
-    const btn = e.target.closest(".card-nav");
-    if (!btn) return;
-    e.preventDefault();
-    e.stopPropagation();
-    const card = btn.closest(".product-card");
-    if (!card) return;
-    cycleImage(card, btn.dataset.dir);
-    resetAutoPlay(card);
-  });
-
-  let touchCard = null, touchStartX = 0, touchStartY = 0, touchSwiped = false;
-
-  grid.addEventListener("touchstart", function (e) {
-    const card = e.target.closest(".product-card");
-    if (!card || card.querySelectorAll(".card-img").length < 2) { touchCard = null; return; }
-    touchCard = card;
-    touchStartX = e.changedTouches[0].screenX;
-    touchStartY = e.changedTouches[0].screenY;
-    touchSwiped = false;
-  }, { passive: true });
-
-  grid.addEventListener("touchmove", function (e) {
-    if (!touchCard) return;
-    const dx = e.changedTouches[0].screenX - touchStartX;
-    const dy = e.changedTouches[0].screenY - touchStartY;
-    if (Math.abs(dx) > 20 && Math.abs(dx) > Math.abs(dy)) touchSwiped = true;
-  }, { passive: true });
-
-  grid.addEventListener("touchend", function (e) {
-    if (!touchCard) return;
-    const dx = e.changedTouches[0].screenX - touchStartX;
-    const dy = e.changedTouches[0].screenY - touchStartY;
-    if (touchSwiped && Math.abs(dx) >= 50 && Math.abs(dx) > Math.abs(dy)) {
-      e.preventDefault();
-      cycleImage(touchCard, dx < 0 ? "next" : "prev");
-      resetAutoPlay(touchCard);
-    }
-    touchCard = null;
-  }, { passive: false });
-
-  filterContainer.addEventListener("click", function (e) {
-    const btn = e.target.closest(".filter-btn");
-    if (!btn) return;
-    filterContainer.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    autoObserver.disconnect();
-    render(btn.dataset.filter);
-  });
-
-  if (typeof WhatsAppFunnel !== "undefined") {
-    WhatsAppFunnel.init();
-  }
+  gallery.innerHTML = pieces.map(piece => {
+    const col = piece.collection;
+    const colPage = collectionFiles[col] || "crown-collection.html";
+    const colName = collectionNames[col] || col;
+    const bgColor = collectionColors[col] || "#15130f";
+    const infoBg = collectionInfoColors[col] || "#1e1b17";
+    const excerpt = getExcerpt(piece.description, 150);
+    return `
+      <section class="worlds-slide" style="--worlds-bg: ${bgColor}">
+        <div class="worlds-media">
+          <div class="worlds-gradient"></div>
+          ${piece.trailer ? `
+          <video class="worlds-video" autoplay muted loop playsinline poster="${esc(piece.images?.[0] || "")}">
+            <source src="${esc(piece.trailer)}" type="video/mp4" />
+          </video>
+          ` : `
+          <img class="worlds-image" src="${esc(piece.images?.[0] || "")}" alt="${esc(piece.title)}" />
+          `}
+        </div>
+        <div class="worlds-info" style="background: ${infoBg}">
+          <span class="worlds-eyebrow">${esc(colName)}</span>
+          <h2 class="worlds-title">${esc(piece.title)}</h2>
+          ${excerpt ? `<p class="worlds-desc">${esc(excerpt)}</p>` : ""}
+          <a href="${esc(colPage)}" class="worlds-btn">Explore Collection</a>
+        </div>
+      </section>
+    `;
+  }).join("");
 });
