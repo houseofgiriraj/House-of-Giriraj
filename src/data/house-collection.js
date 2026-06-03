@@ -475,9 +475,9 @@ const houseCollection = [
     "category": "High Jewellery",
     "description": "Balanced through softness and precision, Ivory Sonata transforms everyday luxury into wearable poetry.",
     "images": [
-      "/assets/images/products/jasmine-atelier/ivory-sonata/hero.jpg",
-      "/assets/images/products/jasmine-atelier/ivory-sonata/model.jpg",
-      "/assets/images/products/jasmine-atelier/ivory-sonata/atmosphere.jpg"
+      "/assets/images/products/jasmine-atelier/ivory-sonata/ivory-sonata_T-10588_hero.jpg",
+      "/assets/images/products/jasmine-atelier/ivory-sonata/ivory-sonata_T-10588_model.png",
+      "/assets/images/products/jasmine-atelier/ivory-sonata/ivory-sonata_T-10588_atmosphere.jpg"
     ],
     "onHomepage": false,
     "isHero": false,

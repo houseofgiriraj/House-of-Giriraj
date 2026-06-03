@@ -186,13 +186,13 @@ function initMenu() {
   if (!menu) return;
 
   function openMenu() {
-    menu.classList.add("is-open");
+    menu.classList.add("active");
     document.body.classList.add("menu-open");
     openers.forEach((button) => button.setAttribute("aria-expanded", "true"));
   }
 
   function closeMenu() {
-    menu.classList.remove("is-open");
+    menu.classList.remove("active");
     document.body.classList.remove("menu-open");
     openers.forEach((button) => button.setAttribute("aria-expanded", "false"));
   }
@@ -201,7 +201,7 @@ function initMenu() {
   closers.forEach((button) => button.addEventListener("click", closeMenu));
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && menu.classList.contains("is-open")) {
+    if (event.key === "Escape" && menu.classList.contains("active")) {
       closeMenu();
     }
   });
@@ -251,7 +251,7 @@ function initSearch() {
 
   openers.forEach((button) => {
     button.addEventListener("click", () => {
-      document.querySelector("[data-menu]")?.classList.remove("is-open");
+      document.querySelector("[data-menu]")?.classList.remove("active");
       document.body.classList.remove("menu-open");
       openSearch();
     });
