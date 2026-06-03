@@ -227,7 +227,7 @@ function initHousePiece() {
             <h3 class="font-serif text-2xl md:text-3xl text-on-surface mb-4">The Making</h3>
             <p class="text-on-surface-variant leading-relaxed">Each piece in the House of Giriraj collection is handcrafted by our master artisans in our atelier. From initial sketch to final polish, every stage is guided by a pursuit of perfection — transforming raw gems into heirlooms that transcend generations.</p>
           </div>
-          <div class="aspect-[16/9] overflow-hidden bg-stone-900">
+          <div class="h-[400px] md:h-[600px] w-full overflow-hidden bg-stone-900">
             <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="/assets/images/collection/placeholder.jpg">
               <source src="/assets/videos/atelier/atelier-${String(Math.floor(Math.random() * 7) + 1).padStart(2, "0")}.mp4" type="video/mp4" />
             </video>
