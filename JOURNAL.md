@@ -419,7 +419,62 @@
 
 | Status | Count |
 |--------|-------|
+## 2026-06-03
+
+### Mobile Menu Unification
+
+- **Problem**: Homepage used `mobile-menu` + `is-open` class system; collection pages used `mobile-menu-overlay` + `active`. Breakpoint mismatch (1180px vs 1024px).
+- **Fix**: Homepage converted to `mobile-menu-overlay` + `active` to match collection pages.
+- `index.html`: `class="mobile-menu"` → `class="mobile-menu-overlay"`
+- `src/main.js:initMenu()`: all `is-open` → `active` (4 occurrences)
+- `src/styles.css`: replaced `.mobile-menu` block with `.mobile-menu-overlay` CSS
+- Breakpoint unified to `@media (max-width: 1024px)`
+- **Result**: One consistent menu system across all pages.
+
+### Video Error Fallback on Collection Pages
+
+- Added `attachVideoFallback()` to `src/pages/collection-page.js` and `src/pages/collections.js`.
+- On video error/stalled/play rejection, the failed `<video>` element is replaced with its poster `<img>`.
+- Covers hero row videos + card videos in the hero gallery slideshow.
+
+### Product Image Processing (Jasmine Atelier)
+
+- **Silken Light (T-898)**: 1.png→hero.jpg, 2.png→model.png, 3.jpg→atmosphere.jpg. Added trailer field (`Silken_Light-film.mp4`).
+- **Whisper Diamond (T-11011)**: Same 3-image processing + markdown update.
+- **Petal Halo (T-1026)**: Same 3-image processing + markdown update.
+- **First Light (T-10642)**: Ref corrected from T-10692 to 10642.
+- **Ivory Sonata (T-10588)**: 3 images processed + markdown update.
+
+### Row-Single Layout Fix
+
+- Homepage house collection: single-item rows used `row-asymmetric` (2-col grid) → item filled only 1 column.
+- Added `row-single` class (`grid-template-columns: 1fr`) for rows with 1 product (`src/main.js:604`, `src/styles.css:1409`).
+- Fixes ceremonial-bloom (row 26) and morning-dew (row 30) spanning full width.
+
+### Imperial Dominion Trailer Wired
+
+- Orphaned video `Imperial_Dominion-film.mp4` (26 MB) found at `public/assets/videos/products/`.
+- Added `trailer:` field to `src/data/house-collection-entries/imperial-dominion.md`.
+- Product has no images folder (empty `images: []` in markdown).
+
+### Worlds of Giriraj Hero Video
+
+- User provided `WORLD-OF-GIRIRAJ-HERO-VIDEO.mp4` (from `generated videos/`).
+- Copied to `public/assets/videos/collections/world-of-giriraj-hero.mp4`.
+- Replaced static `<img>` with `<video autoplay muted loop playsinline>` in `worlds-of-giriraj.html` hero section.
+- Original image retained as fallback poster.
+
+### Hero Gradient Overlays Removed
+
+- Removed all dark gradient/overlay divs from hero sections across 8 pages:
+  - `worlds-of-giriraj.html`: `bg-gradient-to-b from-black/60 to-black/80`
+  - `crown-collection.html`, `emerald-court.html`, `house-of-diamonds.html`,
+    `ruby-salon.html`, `heritage-atelier.html`, `jasmine-atelier.html`, `heritage.html`:
+    `bg-black/50`
+- Hero videos now display without tint/overlay.
+
 | Products with images (path OK) | 16 |
 | Products with images (needs attention) | 0 |
 | Products with empty folders | 23 |
+| Products with trailer video wired | 12 |
 | **Total active products** | **39** |

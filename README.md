@@ -65,8 +65,8 @@ Images are stored in `public/assets/images/products/`. The path is auto-managed.
 
 ### The House Collection
 
-The homepage features **The House Collection** — 9 curated high jewellery pieces arranged
-as **1 hero + 4 rows of 2 pieces** (1+2+2+2+2 layout). Each row displays two equal columns.
+The homepage features **The House Collection** — 11 hero products arranged
+as **1 hero full-width + 10 pieces grouped by `row` value** (2-col grid, single items span full width).
 Data is stored as markdown in `src/data/house-collection-entries/{id}.md` and synced
 via `sync-house-collection.cjs` into `src/data/house-collection.js`.
 
@@ -80,10 +80,12 @@ at `700px` max-height.
 
 ### Worlds of Giriraj
 
-The `worlds-of-giriraj.html` page features 6 full-screen scroll-snap sections, one per
-collection. Each section has:
+The `worlds-of-giriraj.html` page has a **hero section with an autoplay video background**
+(`/assets/videos/collections/world-of-giriraj-hero.mp4`) and the `#hero-gallery` below rendered
+by `src/pages/collections.js`.
+
+The gallery features 6 full-screen scroll-snap sections, one per collection. Each section has:
 - A **70vh media area** showing the collection's hero video or image
-- An **info panel** below with collection name, piece title, description excerpt, and "Explore Collection" button
 - A **distinct background color** per collection (dark brown, green-black, cool charcoal, burgundy, amber-brown, plum-brown)
 
 Data is selected dynamically: picks the `isHero` product from each collection, or the
@@ -261,6 +263,20 @@ Each product has exactly 3 images (hero, model, atmosphere). The filenames are d
 `product details/master-inventory.xlsx` consolidates 119 items from 5 supplier
 sheets with tag-to-product mapping. Used to populate real specs (carat weights,
 stone types) into house collection entries.
+
+### Hero Video Overlays
+
+All collection pages (`crown-collection.html`, `emerald-court.html`, `house-of-diamonds.html`,
+`ruby-salon.html`, `heritage-atelier.html`, `jasmine-atelier.html`, `heritage.html`) and
+`worlds-of-giriraj.html` use hero section video backgrounds. The dark gradient overlay
+(`from-black/60 to-black/80` and `bg-black/50`) has been removed so the videos show
+without tinting.
+
+### Video Error Fallback
+
+Collection pages (`collection-page.js`, `collections.js`) have `attachVideoFallback()` —
+on error/stalled/play rejection, failed `<video>` elements are replaced with their
+poster `<img>`. Hero row videos + card videos both covered.
 
 ## Hero Styling
 
