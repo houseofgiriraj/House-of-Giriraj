@@ -61,6 +61,7 @@
 
   function play() {
     userToggled = true;
+    audio.volume = VOLUME;
     audio.play().catch(function (err) {
       console.warn("Ambient music play failed:", err);
     });
