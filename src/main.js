@@ -520,6 +520,17 @@ function createHouseCard(piece, isHomepage) {
   }
 
   imageArea.appendChild(wrapper);
+  const firstImg = wrapper.querySelector("img");
+  if (firstImg) {
+    if (firstImg.complete) {
+      wrapper.classList.add("loaded");
+    } else {
+      firstImg.addEventListener("load", () => wrapper.classList.add("loaded"), { once: true });
+      firstImg.addEventListener("error", () => wrapper.classList.add("loaded"), { once: true });
+    }
+  } else {
+    wrapper.classList.add("loaded");
+  }
   card.appendChild(imageArea);
 
   const caption = document.createElement("div");

@@ -160,6 +160,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function connectAutoPlay() {
+    document.querySelectorAll(".card-images").forEach(container => {
+      const firstImg = container.querySelector("img.card-img");
+      if (firstImg) {
+        if (firstImg.complete) {
+          container.classList.add("loaded");
+        } else {
+          firstImg.addEventListener("load", () => container.classList.add("loaded"), { once: true });
+          firstImg.addEventListener("error", () => container.classList.add("loaded"), { once: true });
+        }
+      } else {
+        container.classList.add("loaded");
+      }
+    });
     document.querySelectorAll(".product-card").forEach(card => {
       const imgs = card.querySelectorAll(".card-img");
       const nonVideo = card.querySelectorAll(".card-img:not([data-index='-1'])");

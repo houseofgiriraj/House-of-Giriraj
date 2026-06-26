@@ -1436,6 +1436,49 @@ button {
   75% { transform: translateX(4px); }
 }
 
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.06) 50%, transparent 70%);
+  animation: shimmer 1.6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.image-wrapper.loaded::after {
+  display: none;
+}
+
+.card-images {
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+.card-images::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.06) 50%, transparent 70%);
+  animation: shimmer 1.6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.card-images.loaded::after {
+  display: none;
+}
+
+video.card-img {
+  background: #000;
+}
+
 .wa-continue {
   width: 100%;
   margin-top: 0.9rem;
@@ -1567,6 +1610,7 @@ button {
 }
 
 .image-wrapper {
+  position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
