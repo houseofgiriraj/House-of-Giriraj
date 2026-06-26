@@ -17,6 +17,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const items = hero ? [...allItems.slice(0, heroIndex), ...allItems.slice(heroIndex + 1)] : allItems;
 
   const heroRow = document.getElementById("hero-row");
+  function tryInitVideo(video) {
+    if (!video || video.dataset.videoInit) return;
+    video.dataset.videoInit = "true";
+    const card = video.closest(".product-card");
+    const onFail = () => { video.remove(); };
+    const onCanPlay = () => {
+      const firstImg = card?.querySelector(".card-img[data-index='0']");
+      if (firstImg) firstImg.classList.add("hidden");
+      video.classList.remove("hidden");
+      video.play();
+      if (card) stopAutoPlay(card);
+    };
+    video.addEventListener("error", onFail, { once: true });
+    video.addEventListener("stalled", onFail, { once: true });
+    video.addEventListener("canplay", onCanPlay, { once: true });
+    video.load();
+  }
   function attachVideoFallback(video) {
     if (!video || video.dataset.fallbackAttached) return;
     video.dataset.fallbackAttached = "true";
@@ -142,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isInViewport(card)) startAutoPlay(card);
       });
     });
-    document.querySelectorAll("video.card-img").forEach(v => attachVideoFallback(v));
+    document.querySelectorAll("video.card-img").forEach(v => tryInitVideo(v));
   }
 
   const autoObserver = new IntersectionObserver((entries) => {
@@ -170,12 +187,12 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="aspect-[4/5] overflow-hidden relative">
             <div class="card-images w-full h-full">
               ${item.trailer ? `
-              <video class="card-img w-full h-full object-cover ${multi ? "" : ""}" autoplay muted loop playsinline poster="${esc(item.images[0] || "")}" data-index="-1">
+              <video class="card-img w-full h-full object-cover hidden" muted loop playsinline poster="${esc(item.images[0] || "")}" data-index="-1">
                 <source src="${esc(item.trailer)}" type="video/mp4" />
               </video>
               ` : ""}
               ${item.images.map((img, i) => `
-                <img class="card-img w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 ${!item.trailer && i === 0 ? "" : "hidden"}" src="${esc(img)}" alt="${esc(item.title)}" loading="lazy" data-index="${i}" />
+                <img class="card-img w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 ${i === 0 ? "" : "hidden"}" src="${esc(img)}" alt="${esc(item.title)}" loading="lazy" data-index="${i}" />
               `).join("")}
             </div>
             ${multi || item.trailer ? `
