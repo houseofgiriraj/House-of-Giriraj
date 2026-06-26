@@ -457,6 +457,7 @@ function createHouseCard(piece, isHomepage) {
       slide.setAttribute("data-slide", "");
       const video = document.createElement("video");
       video.src = piece.trailer;
+      video.poster = piece.images?.[0] || "";
       video.autoplay = true;
       video.muted = true;
       video.loop = false;
