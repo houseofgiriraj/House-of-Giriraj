@@ -4,6 +4,12 @@
   "rewrites": [
     { "source": "/product/:id", "destination": "/product.html?id=:id" }
   ],
+  "redirects": [
+    { "source": "/signature-collection", "destination": "/crown-collection.html", "permanent": true },
+    { "source": "/collections", "destination": "/crown-collection.html", "permanent": true },
+    { "source": "/signature-collection.html", "destination": "/crown-collection.html", "permanent": true },
+    { "source": "/collections.html", "destination": "/crown-collection.html", "permanent": true }
+  ],
   "functions": {
     "api/oauth.js": {
       "memory": 128,

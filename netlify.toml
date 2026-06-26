@@ -6,6 +6,26 @@
   to = "/product.html?id=:splat"
   status = 200
 
+[[redirects]]
+  from = "/signature-collection"
+  to = "/crown-collection.html"
+  status = 301
+
+[[redirects]]
+  from = "/collections"
+  to = "/crown-collection.html"
+  status = 301
+
+[[redirects]]
+  from = "/signature-collection.html"
+  to = "/crown-collection.html"
+  status = 301
+
+[[redirects]]
+  from = "/collections.html"
+  to = "/crown-collection.html"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]

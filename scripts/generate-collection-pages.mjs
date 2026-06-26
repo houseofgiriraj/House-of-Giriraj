@@ -90,6 +90,22 @@ function collectionPageHtml(slug, c) {
   <meta property="og:title" content="${c.title} | House of Giriraj" />
   <meta property="og:description" content="${c.desc}" />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.houseofgiriraj.com/assets/images/global/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:url" content="https://www.houseofgiriraj.com/${c.file}" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="House of Giriraj" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${c.title} | House of Giriraj" />
+  <meta name="twitter:description" content="${c.desc}" />
+  <meta name="twitter:image" content="https://www.houseofgiriraj.com/assets/images/global/og-image.jpg" />
+  <link rel="canonical" href="https://www.houseofgiriraj.com/${c.file}" />
+  <meta name="geo.region" content="IN-TG" />
+  <meta name="geo.placename" content="Hyderabad, Telangana" />
+  <meta name="geo.position" content="17.3850;78.4867" />
+  <meta name="ICBM" content="17.3850, 78.4867" />
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
