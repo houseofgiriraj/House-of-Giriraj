@@ -57,13 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
     heroRow.innerHTML = `
       <a href="house-piece.html?id=${encodeURIComponent(hero.id)}" class="group block w-full">
         <div class="relative overflow-hidden bg-stone-900 w-full aspect-[16/9]">
+          <img class="hero-img absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="${esc(hero.images[0] || "")}" alt="${esc(hero.title)}" loading="eager" />
           ${trail ? `
-          <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline poster="${esc(hero.images[0] || "")}">
+          <video class="hero-video absolute inset-0 w-full h-full object-cover hidden" muted playsinline poster="${esc(hero.images[0] || "")}">
             <source src="${esc(trail)}" type="video/mp4" />
           </video>
-          ` : `
-          <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="${esc(hero.images[0] || "")}" alt="${esc(hero.title)}" loading="eager" />
-          `}
+          ` : ""}
         </div>
         <div class="p-6 md:p-8 text-left bg-white border-t border-surface-variant/30">
           <span class="text-[10px] tracking-[0.12em] uppercase text-stone-400 mb-1 block">Featured</span>
@@ -73,10 +72,22 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </a>
     `;
+    const heroVid = heroRow.querySelector("video.hero-video");
+    if (heroVid) {
+      const card = { querySelector: () => heroRow.querySelector("img.hero-img") };
+      const onFail = () => { heroVid.remove(); };
+      const onCanPlay = () => {
+        const heroImg = heroRow.querySelector("img.hero-img");
+        if (heroImg) heroImg.classList.add("hidden");
+        heroVid.classList.remove("hidden");
+        heroVid.play();
+      };
+      heroVid.addEventListener("error", onFail, { once: true });
+      heroVid.addEventListener("stalled", onFail, { once: true });
+      heroVid.addEventListener("canplay", onCanPlay, { once: true });
+      heroVid.load();
+    }
   }
-
-  const heroVideo = heroRow?.querySelector("video");
-  if (heroVideo) attachVideoFallback(heroVideo);
 
   if (items.length === 0) {
     const filterSection = document.getElementById("filter-section");
