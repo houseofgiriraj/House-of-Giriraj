@@ -40,7 +40,9 @@ const collectionInfoColors = {
 const collectionOrder = ["crown", "emerald-court", "house-of-diamonds", "ruby-salon", "heritage-atelier", "jasmine-atelier"];
 
 function esc(str) {
-  return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  return String(str).replace(/[&<>"'`$]/g, function (m) {
+    return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;", "`": "&#96;", "$": "&#36;" })[m];
+  });
 }
 
 function getExcerpt(text, maxLen) {

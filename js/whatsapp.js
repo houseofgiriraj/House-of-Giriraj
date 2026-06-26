@@ -248,10 +248,9 @@ const WhatsAppFunnel = {
     const encoded = encodeURIComponent(message);
     const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encoded}`;
 
-    // Track lead (if analytics is loaded)
+    // Track lead (if analytics is loaded) — anonymized
     if (typeof trackLead === "function") {
       trackLead({
-        name: this.userName,
         intent: this.selectedIntent,
         source: this.sourcePage,
         product: this.productName,

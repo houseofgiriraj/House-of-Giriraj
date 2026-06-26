@@ -138,19 +138,22 @@ console.log(`✓ Generated ${OUTPUT_PATH} (${products.length} products from ${PR
 // Generate sitemap
 const staticPages = [
   { url: "/", priority: "1.0", changefreq: "weekly" },
-  { url: "/collections.html", priority: "0.9", changefreq: "weekly" },
+  { url: "/worlds-of-giriraj.html", priority: "0.9", changefreq: "weekly" },
+  { url: "/crown-collection.html", priority: "0.8", changefreq: "weekly" },
+  { url: "/emerald-court.html", priority: "0.8", changefreq: "weekly" },
+  { url: "/house-of-diamonds.html", priority: "0.8", changefreq: "weekly" },
+  { url: "/ruby-salon.html", priority: "0.8", changefreq: "weekly" },
+  { url: "/heritage-atelier.html", priority: "0.8", changefreq: "weekly" },
+  { url: "/jasmine-atelier.html", priority: "0.8", changefreq: "weekly" },
+  { url: "/house-piece.html", priority: "0.8", changefreq: "weekly" },
   { url: "/bespoke.html", priority: "0.7", changefreq: "monthly" },
   { url: "/heritage.html", priority: "0.7", changefreq: "monthly" },
   { url: "/contact.html", priority: "0.6", changefreq: "monthly" },
-  { url: "/admin/index.html", priority: "0.3", changefreq: "monthly" },
 ];
 
 const catOrder = ["chokers", "necklaces", "chandeliers", "bracelets", "bangles", "rings", "studs"];
 
 const urls = [...staticPages];
-for (const cat of catOrder) {
-  urls.push({ url: `/collections.html?category=${cat}`, priority: "0.8", changefreq: "weekly" });
-}
 for (const p of products) {
   urls.push({ url: `/product.html?id=${p.id}`, priority: "0.8", changefreq: "weekly" });
 }

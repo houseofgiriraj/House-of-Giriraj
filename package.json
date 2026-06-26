@@ -4,15 +4,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
+    "dev": "vite",
     "dev:cms": "decap-server",
     "dev:all": "concurrently \"npm run dev\" \"npm run dev:cms\"",
     "dev:sync": "npx nodemon --watch products --ext md --exec \"node scripts/sync-products.cjs\"",
     "generate:specs": "node src/scripts/generate-specs.cjs",
     "sync:house": "node src/scripts/sync-house-collection.cjs",
     "build": "npm run generate:specs && npm run sync:house && vite build",
-    "preview": "vite preview --host 0.0.0.0",
-    "optimize:images": "node scripts/optimize-images.mjs"
+    "preview": "vite preview",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "security:audit": "npm audit --audit-level=high"
   },
   "dependencies": {
     "decap-cms-app": "^3.12.2",
