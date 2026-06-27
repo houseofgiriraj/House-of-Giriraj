@@ -32,7 +32,7 @@ A Chiti-built system is quiet, confident, and fast. Pages load instantly. Intera
 
 ### Get in touch
 
-[chitistudio.com](https://chitistudio.com) — Start a project, commission a system, or just say hello.
+[www.chiti.tech/en](https://www.chiti.tech/en) — Start a project, commission a system, or just say hello.
 
 ---
 
