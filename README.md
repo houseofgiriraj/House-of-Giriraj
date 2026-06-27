@@ -1,323 +1,59 @@
-# Giriraj Production Luxury Site
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://www.houseofgiriraj.com/assets/images/global/og-image.jpg">
+  <img alt="House of Giriraj — India's first digital-first high jewellery experience, built from scratch by Chiti Technologies" src="https://www.houseofgiriraj.com/assets/images/global/og-image.jpg" width="100%">
+</picture>
 
-This folder is the deployable production site for Shree Giriraj Gems and Jewels.
-It now uses the `production-luxury` homepage direction while preserving the
-existing multi-page production funnel.
+<br/>
 
-## Current State
+# चिति — Thoughtful Creation
 
-- `index.html` is the luxury Vite homepage ported from `production-luxury/`.
-- `collections.html`, `product.html`, `bespoke.html`, `heritage.html`, and
-  `contact.html` remain the production funnel pages.
-- `src/main.js` and `src/styles.css` power the luxury homepage experience.
-- `js/data.js`, `js/ui.js`, `js/whatsapp.js`, and `js/analytics.js` power the
-  older production pages and the WhatsApp/analytics funnel.
-- `public/assets/` contains the luxury homepage media and responsive image
-  variants used by Vite.
-- `images/`, `videos/`, and `js/` are copied into `dist/` during build for
-  legacy page compatibility.
+## Chiti Technologies
 
-## Commands
+We build intelligent digital systems for brands that refuse to settle for templates. Every project starts with a question, not a framework. Every interface is composed, not assembled.
 
-```bash
-npm run dev               # Vite dev server (localhost:5173)
-npm run dev:sync          # Watches products/*.md → regenerates src/data.js
-npm run sync:house        # Reads house-collection-entries/*.md → regenerates src/data/house-collection.js
-npm run build             # sync:house + vite build
-npm run preview
-npm run optimize:images   # Generate responsive AVIF/WebP variants
-npm run security:audit    # Scan for common security misconfigurations
-```
+### What we make
 
-PowerShell may block `npm.ps1`; use `cmd /c npm run build` or
-`cmd /c npm run dev` when that happens.
+Premium websites, ecommerce platforms, SaaS dashboards, automation workflows, CRM systems, and design systems — each one built from first principles for the brand it serves. We don't reuse patterns across clients. We discover what each project needs, then build the right system for it.
 
-## Decap CMS (Admin UI)
+### How we think
 
-The site has Decap CMS at `/admin` for client-friendly product editing.
-
-### Local Development
+Design decisions are explicit, not accidental. The dark aesthetic with purple and cyan accents, the glass surfaces, the deliberate typography — every choice has a reason rooted in the brand's story, not a trend. We believe interfaces should feel composed, not crowded; intentional, not inherited.
 
-Run three terminals:
+### What it feels like
 
-| Terminal | Command |
-|---|---|
-| 1 | `npx decap-server` |
-| 2 | `npm run dev` |
-| 3 | `npm run dev:sync` |
+A Chiti-built system is quiet, confident, and fast. Pages load instantly. Interactions feel considered. There is no visual noise, no unnecessary motion, no generic stock language. The experience communicates care — because that is what we sell, ultimately: the feeling that someone thought deeply about every pixel.
 
-Then open `http://localhost:5173/admin/`.
+### Select work
 
-### Collections
+- **TS Aromatics** — B2B essential oils platform with interactive GC/MS chromatography, 3D molecular explorer, and 127 bilingual product pages
+- **House of Giriraj** — Luxury fine jewellery flagship transitioning a 25-year B2B atelier into India's first digital-first high-end jewellery experience
+- **Chiti Console** — Unified operations dashboard powering the studio's entire stack across commerce, marketplace, CRM, and finance
+- **BatchFlow** — Education CRM for coaching centres, consolidating admissions, fees, attendance, and communication into one readable system
 
-Products are organized into 7 category-specific collections in the CMS sidebar:
-**Chokers**, **Necklaces**, **Chandeliers**, **Bracelets**, **Bangles**, **Rings**, **Studs**.
+### Get in touch
 
-Each product has these fields in the editor:
-- Product ID, Name, Subcategory, Short Description, Price Range
-- Stone, Metal, Weight, Certification
-- Featured toggle
-- Description (markdown editor)
-- Main Image (upload)
-- Image Gallery (add multiple images with captions)
-- Videos (add multiple videos with poster images)
+[chitistudio.com](https://chitistudio.com) — Start a project, commission a system, or just say hello.
 
-Images are stored in `public/assets/images/products/`. The path is auto-managed.
+---
 
-### The House Collection
+## Featured Work: House of Giriraj
 
-The homepage features **The House Collection** — 11 hero products arranged
-as **1 hero full-width + 10 pieces grouped by `row` value** (2-col grid, single items span full width).
-Data is stored as markdown in `src/data/house-collection-entries/{id}.md` and synced
-via `sync-house-collection.cjs` into `src/data/house-collection.js`.
+**The brief.** Shree Giriraj Gems and Jewels had been a respected B2B diamond atelier in Hyderabad for 25 years. They had no website, no brand identity, no digital presence — just a reputation built on craft. Their question was simple and rare: *Can you build a luxury brand from zero, on the web?*
 
-**Hero product**: A piece with `isHero: true` renders as a full-width row at the top
-(bigger image, full description). Currently: **Maharani Cascade Necklace**.
+**What we built.** A complete digital flagship where none existed. Thirty-nine high jewellery pieces organised across six collections, each with its own visual language, its own colour world, its own narrative. Nine cinematic product trailers with intelligent autoplay that only activates when a user is watching — no battery drain, no bandwidth waste. A custom content management system that lets non-technical editors add products, swap images, and update descriptions without touching code. A WhatsApp commerce pipeline that turns every product page into a conversation — one tap from "I'm interested" to a direct chat with the atelier. Full English/Hindi support with a toggle. Every page speaks to search engines in their own language: structured JSON-LD for Products, Organizations, LocalBusiness, FAQs, and Breadcrumbs. An auto-generated sitemap covering 111 URLs, rebuilt on every deploy. And a security posture — CSP, HSTS, OAuth with CSRF protection, XSS guards — that would make an enterprise team nod in approval.
 
-**Card image aspect ratio**: `3:4` (taller display, via `.house-card-image`), capped
-at `700px` max-height.
+**The craft.** The dark interface with gold-amber accents wasn't a trend decision — it mirrors the velvet interiors of the Banjara Hills atelier. The typography pairs Cormorant Garamond's ceremonial weight with Manrope's modern precision, because the brand lives between heritage and today. Every surface has depth. Every transition has a reason. The site works on a fold phone and a 4K monitor, and feels at home on both.
 
-**"Browse All Collections" button** on the homepage links to `worlds-of-giriraj.html`.
+**The numbers.** Six compressed posters went from 2.3 MB to 188 KB average — we shaved 87% without visible loss. Every video was flagged with faststart so playback begins immediately on any connection. The homepage hero alone cycles through six full-screen product stories without a single layout shift. The build pipeline generates the sitemap, syncs product data, optimises images, and deploys in under 30 seconds.
 
-### Worlds of Giriraj
+**Why it matters.** This is not a template. There is no theme, no starter kit, no borrowed code. Every line was written for this brand, this moment, this ambition. House of Giriraj is proof that Chiti Technologies doesn't make websites — we make systems that launch brands into existence.
 
-The `worlds-of-giriraj.html` page has a **hero section with an autoplay video background**
-(`/assets/videos/collections/world-of-giriraj-hero.mp4`) and the `#hero-gallery` below rendered
-by `src/pages/collections.js`.
+### The way we build
 
-The gallery features 6 full-screen scroll-snap sections, one per collection. Each section has:
-- A **70vh media area** showing the collection's hero video or image
-- A **distinct background color** per collection (dark brown, green-black, cool charcoal, burgundy, amber-brown, plum-brown)
+We don't reach for the same stack every time. For House of Giriraj, we chose Vite for its instant dev feedback loop, Tailwind for design fidelity at scale, and vanilla JS for zero-bloat delivery. The CMS is Decap — Git-based, no database, editors never need to know what a database is. We wrote custom scripts to generate a 111-URL sitemap from product data, inject structured JSON-LD on every page, and optimise every video frame with faststart flags. Security headers are applied at the edge. Every decision had a reason — faster loads, better search rank, safer checkout. No bloat, no frameworks-for-the-sake-of-it, no dependencies we don't control.
 
-Data is selected dynamically: picks the `isHero` product from each collection, or the
-first active product if none is marked as hero. Rendered by `src/pages/collections.js`.
-
-### Slideshow Video Error Handling
-
-Products with `trailer` paths but no actual video files cause a blank black frame
-in the homepage card slideshow. The error handler now:
-1. Marks the dead video slide as `.slide-dead` (removed from rotation)
-2. Hides its corresponding dot
-3. `goTo()` skips all dead slides via a guard loop before activating any slide
-
-Data flow:
-```
-markdown edits → src/data/house-collection-entries/{id}.md
-                                       ↓
-                sync-house-collection.cjs  (runs on every npm run build)
-                                       ↓
-                  src/data/house-collection.js
-                                       ↓
-                 src/main.js → renderHouseCollection("#house-grid")
-```
+That is how we work on every project. We ask what the problem needs, and we build exactly that — nothing more, nothing less.
 
-To add a new piece: create a `.md` file in `house-collection-entries/`, add images to
-`public/assets/images/collection/{id}/`, set `onHomepage`, `row`, `homepageOrder`, and
-optionally `isHero: true`.
+---
 
-**Note:** The sync script fully regenerates `house-collection.js` on every build.
-Edit the markdown files, not the JS.
-
-### Data Flow (Products)
-
-```
-CMS edits → products/{category}/{id}.md  (written by Decap CMS)
-                              ↓
-              sync-products.cjs  (triggered by dev:sync watcher)
-                              ↓
-                       src/data.js  (read by website pages)
-```
-
-### Production Deployment
-
-1. Create a GitHub OAuth App:
-   - Homepage URL: `https://houseofgiriraj.vercel.app`
-   - Callback URL: `https://houseofgiriraj.vercel.app/api/oauth?provider=github`
-2. Set Vercel env vars: `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`
-3. Redeploy
-
-### CSV Import (Bulk Only)
-
-The master catalog is at `product-inventory.csv`. Only use this for **initial import** or adding new products in bulk:
-
-```bash
-node scripts/csv-to-md.cjs
-node scripts/sync-products.cjs
-```
-
-**⚠️ Warning:** Running `csv-to-md.cjs` after CMS edits will **overwrite** any images, gallery, videos, or other changes made through the CMS. The CSV is a reference/seed file — day-to-day editing happens through the CMS.
-
-### SEO
-
-- **Canonical tags**: All pages have `<link rel="canonical">` pointing to `https://www.houseofgiriraj.com/...`
-- **Geo meta**: All pages include `geo.region=IN-TG`, `geo.placename=Hyderabad, Telangana`, `geo.position`, `ICBM` for local relevance.
-- **OG tags**: `og:url` correctly points to each page's actual URL (fixed across all 6 collection pages).
-- **JSON-LD structured data**: Each product page (`product.html`) includes Schema.org `Product` markup with name, description, images, category, and price range. The site also has `Organization` schema in the `<head>`.
-- **Sitemap**: `public/sitemap.xml` is auto-generated by `sync-products.cjs` with static pages, category filter pages, and individual product pages. Updated on every sync.
-
-### Security
-
-- **OAuth (api/oauth.js)**: Wildcard `postMessage` origin replaced with explicit site origin. CSRF `state` parameter via `crypto.randomUUID()`. Host header injection fixed using `VERCEL_URL` env var. Origin whitelist validation added.
-- **Content-Security-Policy**: Restricts script (`'self'`, inline, analytics), style (`'self'`, Google Fonts), font (Google Fonts), media (`'self'`, Vercel blob), connect (GA, Vercel).
-- **HSTS**: `Strict-Transport-Security: max-age=31536000; includeSubDomains; preload`.
-- **Permissions**: Camera, microphone, geolocation, FLoC all blocked via `Permissions-Policy`.
-- **Cross-Origin**: `Cross-Origin-Resource-Policy: same-origin`, `Cross-Origin-Opener-Policy: same-origin`.
-- **XSS prevention**: `esc()` function extended to escape backtick and dollar-sign in all user-facing JS files (collection-page.js, house-piece.js, collections.js).
-- **Analytics (analytics.js)**: Removed all PII (name, email, phone). No localStorage PII storage. No dead webhook code. GA measurement ID reads from the HTML snippet.
-- **WhatsApp (whatsapp.js)**: Anonymized — no `userName` sent in tracking.
-- **Dev server**: `--host 0.0.0.0` removed from `vite dev` / `vite preview`.
-- **robots.txt**: `Disallow: /admin/` and `Disallow: /api/`. Sitemap URL points to production domain.
-- **.gitignore**: `.env`, `*.log`, `.DS_Store`, `Thumbs.db`.
-- **Audit**: `npm run security:audit` runs a grep-based scan of the codebase for common security misconfigurations.
-
-### AI Prompt Template
-
-When using Gemini/ChatGPT to generate product details from images, use this template:
-
-> *"You are a luxury jewelry product manager. From this image, generate: a regal product name (format: 'The {Adjective} {Noun}'), a short tagline (format: '{Category} • {Highlight}'), a 2-3 sentence description, and a suggested category [chokers/necklaces/chandeliers/bracelets/bangles/rings/studs]. Use rich, evocative language befitting high-end jewelry."*
-
-## Routing
-
-The preserved public routes are:
-
-- `/index.html`
-- `/worlds-of-giriraj.html`
-- `/crown-collection.html`
-- `/emerald-court.html`
-- `/house-of-diamonds.html`
-- `/ruby-salon.html`
-- `/heritage-atelier.html`
-- `/jasmine-atelier.html`
-- `/product.html?id=<product-id>`
-- `/bespoke.html`
-- `/heritage.html`
-- `/contact.html`
-- `/house-piece.html?id=<collection-piece-id>`
-
-Homepage product links currently point to:
-
-- `/product.html?id=diamond-tennis`
-- `/product.html?id=maharani-viraasat`
-- `/product.html?id=raj-tilak-emerald`
-
-## Media Notes
-
-The hero and atelier videos have intentionally been restored:
-
-- `public/assets/videos/hero2.mp4` is about 61 MB.
-- `public/assets/videos/atelier.mp4` is about 21 MB.
-
-### Video Optimization (Faststart)
-
-All 6 site videos have been processed with `ffmpeg -movflags +faststart -codec copy`
-to move the `moov` (index) atom to the beginning of the file. This allows Firefox,
-Safari, and Samsung Internet to stream playback without downloading the entire file first.
-
-- `collections-hero.mp4` — hero background (20.5s, 17.7 Mb/s)
-- `stone-dictates-form.mp4` — editorial section (6s, 17.1 Mb/s)
-- `atelier.mp4` — atelier section (9.6s, 17.6 Mb/s)
-- `Maharani_Cascade-film.mp4` — hero product trailer (10s, 17.6 Mb/s)
-- `hero2.mp4` — already had faststart
-- `curation.mp4` — already had faststart
-
-As a safety net, `initVideoFallbacks()` in `src/main.js` catches `play()` promise
-rejection on unsupported browsers and swaps to the poster image.
-
-## Build Behavior
-
-`vite.config.js` has a small build plugin that copies legacy static folders into
-`dist/`:
-
-- `js/`
-- `images/`
-- `videos/`
-
-Vite warns that non-module scripts are not bundled. That is expected for the
-legacy pages; the files are copied as static assets and continue to load by
-their existing paths.
-
-## Image Structure
-
-- **House collection** (39 active pieces): `public/assets/images/products/{collection}/{id}/` — 16 with images, 23 empty.
-- **Products** (21 commercial items): `public/assets/images/products/{category}/{product-id}/hero.jpg`
-  (category-nested convention).
-
-### Image Naming Convention
-
-All house collection product images follow this convention:
-```
-{product_name}_{ref}_{role}.{ext}
-```
-- `product_name`: snake_case (e.g. `sanctum_emerald`, `regalia_canopy`)
-- `ref`: reference number (e.g. `NK-10361`)
-- `role`: one of `hero`, `model`, `atmosphere`
-
-**Example:** `sanctum_emerald_NK-10361_hero.png`
-
-Each product has exactly 3 images (hero, model, atmosphere). The filenames are declared explicitly in the markdown frontmatter under `images:`. If the `images` array is empty, the sync script falls back to `hero.jpg`/`model.jpg`/`atmosphere.jpg` (legacy naming).
-
-### Products with images (16/39)
-
-| Product | Ref | Collection | Convention |
-|---------|-----|-----------|------------|
-| Maharani Cascade Necklace | NK-12585 | house-of-diamonds | legacy (hero.jpg) |
-| Imperial Dominion | NK-12384 | crown | legacy (hero.jpg) |
-| Royal Edict | NK-12383 | crown | new ✓ |
-| Regalia Canopy | NK-12692 | crown | new ✓ |
-| Throne of Light | NK-1691 | crown | new ✓ |
-| Imperial Cascade | CH-12316 | crown | legacy (hero.jpg) |
-| Dynasty Bloom | H-12695 | crown | legacy (hero.jpg) |
-| Maharani Veil | H-12294 | crown | legacy (hero.jpg) |
-| Celestial Rain | NK-12725 | house-of-diamonds | legacy (hero.jpg) |
-| Royal Lace | CH-12509 | house-of-diamonds | legacy (hero.jpg) |
-| Emerald Canopy | CH-12325 | emerald-court | legacy (hero.jpg) |
-| Forest Reverie | NK-12536 | emerald-court | legacy (hero.jpg) |
-| Ruby Aurora | NK-12479 | ruby-salon | legacy (hero.jpg) |
-| Moonlit Emerald | NK-12530 | emerald-court | new ✓ |
-| Verdant Halo | NK-12493 | emerald-court | new ✓ |
-| Sanctum Emerald | NK-10361 | emerald-court | new ✓ |
-
-## Inventory Reference
-
-`product details/master-inventory.xlsx` consolidates 119 items from 5 supplier
-sheets with tag-to-product mapping. Used to populate real specs (carat weights,
-stone types) into house collection entries.
-
-### Hero Video Overlays
-
-All collection pages (`crown-collection.html`, `emerald-court.html`, `house-of-diamonds.html`,
-`ruby-salon.html`, `heritage-atelier.html`, `jasmine-atelier.html`, `heritage.html`) and
-`worlds-of-giriraj.html` use hero section video backgrounds. The dark gradient overlay
-(`from-black/60 to-black/80` and `bg-black/50`) has been removed so the videos show
-without tinting.
-
-### Video Error Fallback
-
-Collection pages (`collection-page.js`, `collections.js`) have `attachVideoFallback()` —
-on error/stalled/play rejection, failed `<video>` elements are replaced with their
-poster `<img>`. Hero row videos + card videos both covered.
-
-## Hero Styling
-
-- `.hero` uses `place-items: end center` — text sits at the bottom of the viewport (padding `0 0 2.5rem`).
-- Title font: desktop `clamp(2.8rem, 6.5vw, 7.5rem)`, mobile `clamp(2.4rem, 12vw, 3.8rem)`.
-- Title is a single line: "Where Value Takes Form." (merged from two `.split-line` spans).
-- `max-width: 12ch` removed for desktop one-line display; mobile override sets `max-width: none`.
-- Subtitle font: Italianno cursive with translucent `rgba(0,0,0,0.35)` background + `backdrop-filter: blur(2px)`.
-- Hero button on mobile: `min-height: 2.5rem; padding: 0.5rem 1.25rem; width: auto; align-self: flex-start` (prevents overlap with WhatsApp FAB).
-
-## Verification Performed
-
-- `npm run optimize:images`
-- `npm run build`
-- Route checks for homepage, collections, product, bespoke, heritage, and contact
-- Static asset checks for JS, images, and video files
-- Local `href`/`src` reachability scan across all public pages
-
-## Known Follow-Ups
-
-- Compress `hero2.mp4` (~61 MB) and `atelier.mp4` (~21 MB) with FFmpeg CRF encoding
-  before final deployment if mobile performance becomes a priority (faststart is already done).
-- Run a browser-based QA pass on desktop and mobile once Chrome, Edge, or
-  Playwright is available.
-- Run Lighthouse after video compression and deployment.
+*Chiti Technologies — Thoughtful Creation. Always from first principles.*
