@@ -5,7 +5,7 @@ const yaml = require("js-yaml");
 const PRODUCTS_DIR = path.join(__dirname, "..", "products");
 const OUTPUT_PATH = path.join(__dirname, "..", "src", "data.js");
 const SITEMAP_PATH = path.join(__dirname, "..", "public", "sitemap.xml");
-const BASE_URL = "https://houseofgiriraj.vercel.app";
+const BASE_URL = "https://www.houseofgiriraj.com";
 
 function parseFrontmatter(content) {
   const match = content.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
@@ -156,6 +156,20 @@ const catOrder = ["chokers", "necklaces", "chandeliers", "bracelets", "bangles",
 const urls = [...staticPages];
 for (const p of products) {
   urls.push({ url: `/product.html?id=${p.id}`, priority: "0.8", changefreq: "weekly" });
+}
+
+// Add house-collection entries (39 high jewellery pieces)
+const HOUSE_COLLECTION_PATH = path.join(__dirname, "..", "src", "data", "house-collection.js");
+if (fs.existsSync(HOUSE_COLLECTION_PATH)) {
+  const hcContent = fs.readFileSync(HOUSE_COLLECTION_PATH, "utf-8");
+  const idMatches = hcContent.match(/"id":\s*"([^"]+)"/g);
+  if (idMatches) {
+    for (const match of idMatches) {
+      const id = match.match(/"id":\s*"([^"]+)"/)[1];
+      urls.push({ url: `/product.html?id=${id}`, priority: "0.8", changefreq: "weekly" });
+      urls.push({ url: `/house-piece.html?id=${id}`, priority: "0.7", changefreq: "weekly" });
+    }
+  }
 }
 
 const now = new Date().toISOString();
