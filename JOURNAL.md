@@ -478,3 +478,81 @@
 | Products with empty folders | 23 |
 | Products with trailer video wired | 12 |
 | **Total active products** | **39** |
+
+## 2026-06-26
+
+### SEO Quick Wins — Canonical, Geo, OG:url, Brand Consistency
+
+- **Canonical tags**: Added `<link rel="canonical">` to 8 pages that were missing it (index, worlds-of-giriraj, all 6 collection pages).
+- **OG:url fix**: All 6 collection pages had `og:url` pointing to `collections.html?category=...` — corrected to their actual page URLs.
+- **Brand suffix**: Standardized title tags from "Giriraj Jewellery" → "House of Giriraj" on bespoke, heritage, contact pages (OG and Twitter tags too).
+- **Geo meta**: Added `geo.region=IN-TG`, `geo.placename=Hyderabad, Telangana`, `geo.position`, `ICBM` to all pages (were only on 3).
+- **robots.txt sitemap**: Fixed from Vercel staging domain to production (`www.houseofgiriraj.com`).
+- **Server redirects**: Added 301 redirects for `signature-collection.html`, `collections.html` → `crown-collection.html` (vercel.json + netlify.toml).
+- **Generator**: Updated `generate-collection-pages.mjs` to include canonical, OG:url, geo, OG image, Twitter tags.
+
+### Shimmer Skeleton Loader for Product Cards
+
+- **Problem**: Product cards showed white flash before images loaded (especially on collection pages where cards had no video).
+- **CSS**: Added `@keyframes shimmer` animation, `.image-wrapper::after` and `.card-images::after` pseudo-elements with dark gradient sweep.
+- **Dark background**: Added `background: #000` to `.card-images` and `video.card-img` to eliminate white flash.
+- **JS**: `createHouseCard()` (main.js) and `connectAutoPlay()` (collection-page.js) add `.loaded` class on first image `load`/`error` to remove skeleton.
+- **Hero poster**: Extracted exact first video frame via ffmpeg-static as `hero-first-frame.jpg` (1920×1080, 75KB). Replaced Instagram screenshot poster.
+
+### Security Hardening — Full Audit & Fix
+
+- **OAuth (api/oauth.js)**:
+  - Fixed `postMessage` wildcard origin `"*"` → restricted to site origin
+  - Added CSRF `state` parameter (`crypto.randomUUID()`) to GitHub OAuth flow
+  - Fixed Host header injection: uses `VERCEL_URL` env var, not `req.headers.host`
+  - Added origin whitelist validation
+- **Security headers (vercel.json + netlify.toml)**:
+  - Added `Content-Security-Policy` (restricts scripts, styles, fonts, media, connections)
+  - Added `Strict-Transport-Security` (HSTS, 1 year, includeSubDomains, preload)
+  - Added `Permissions-Policy` (blocks camera, mic, geolocation, FLoC)
+  - Added `Cross-Origin-Resource-Policy: same-origin`
+  - Added `Cross-Origin-Opener-Policy: same-origin`
+  - Added `X-XSS-Protection: 1; mode=block`
+- **Analytics (js/analytics.js)**:
+  - Removed all PII tracking: no more `name`, `email`, `phone` captured
+  - Removed localStorage PII storage (`saveToLocal`, `getLocalLeads`, `clearLocalLeads`)
+  - Fixed GA measurement ID placeholder (was hardcoded `"GA_MEASUREMENT_ID"`, now reads from HTML snippet)
+  - Removed dead webhook code and silent fetch errors
+- **WhatsApp (js/whatsapp.js)**: Removed `userName` from `trackLead()` call — anonymized
+- **XSS prevention**: Extended `esc()` sanitization to cover `` ` `` (backtick) and `$` (dollar sign) characters in all 3 files (collection-page.js, house-piece.js, collections.js)
+- **Dev server**: Removed `--host 0.0.0.0` from `vite dev` and `vite preview` commands
+- **Sitemap**: Removed `/admin/index.html` and legacy `collections.html?category=` URLs from sitemap generation
+- **.gitignore**: Added `.env`, `*.log`, `.DS_Store`, `Thumbs.db`
+- **robots.txt**: Added `Disallow: /admin/` and `Disallow: /api/`
+- **Audit script**: Added `npm run security:audit` to package.json
+
+## 2026-06-26
+
+### Performance Fixes — Video Playback & Poster Images
+
+**Issues reported**: Homepage hero video intermittently goes black; Imperial Cascade video fails to play on worlds-of-giriraj.
+
+**Root causes found & fixed**:
+
+1. **Hero fallback bug** (`src/main.js:initVideoFallbacks()`):
+   - The hero-video code path removed the `<video>` element from the DOM *before* inserting the poster image. Since `video.parentNode` became null, the poster `img` was never created — leaving the hero section empty (black).
+   - **Fix**: Removed the destructive `.remove()` path. The fallback now directly replaces the video with the poster image in a single step. Reduced-motion/data-saver path now also uses the poster fallback instead of removing the element.
+
+2. **Missing faststart on product trailers** (`public/assets/videos/products/*.mp4`):
+   - All 9 product trailer videos (Imperial Cascade, Imperial Dominion, Maharani Cascade, etc.) lacked the `moov` atom at the file beginning. Firefox/Safari require faststart to begin playback before downloading the entire file — without it, these browsers show a black frame until the full 10–27 MB file downloads.
+   - **Fix**: Processed all 9 `.mp4` files with `ffmpeg -c copy -movflags +faststart` (stream copy, no quality loss).
+
+3. **Oversized poster images** (`public/assets/images/products/**/hero.jpg`):
+   - Several `hero.jpg` poster images were 2.0–2.4 MB despite being only ~1085px wide. These were actually PNG-format files with `.jpg` extension. Slow poster load meant fallback images appeared late.
+   - **Fix**: Compressed 6 largest poster images with ffmpeg (resize to 1200px max, JPEG quality 5). Results: 2.3→0.19 MB (imperial-cascade), 2.4→0.35 MB (maharani-veil), 2.0→0.15 MB (dynasty-bloom), 2.5→0.27 MB (forest-reverie), 2.3→0.18 MB (emerald-canopy), 0.5→0.20 MB (imperial-dominion). Average 87% reduction.
+
+4. **Simultaneous autoplay of 6 gallery videos** (`src/pages/collections.js`):
+   - All 6 `.worlds-video` elements attempted `play()` simultaneously on page load. Browsers throttle autoplay to 1–2 muted videos; the rest would reject, triggering the fallback unnecessarily.
+   - **Fix**: Replaced `autoplay` attribute + `forEach play()` with an IntersectionObserver (threshold 0.4). Videos only attempt playback when their scroll-snap slide enters viewport. Already-played videos are unobserved. Added `preload="metadata"` to page hero background video.
+
+**Files changed**:
+- `src/main.js` — Rewrote `initVideoFallbacks()` (fixed hero poster insertion)
+- `src/pages/collections.js` — Removed `autoplay` from template, added IntersectionObserver for staggered playback
+- `worlds-of-giriraj.html` — Added `preload="metadata"` to hero background video
+- `public/assets/videos/products/*.mp4` (9 files) — Faststart flag added
+- `public/assets/images/products/*/hero.jpg` (6 files) — Resized and compressed

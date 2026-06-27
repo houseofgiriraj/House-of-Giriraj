@@ -379,24 +379,22 @@ function initVideoFallbacks() {
     window.matchMedia("(prefers-reduced-data: reduce)").matches ||
     reducedMotion;
 
-  if (shouldUseStaticHero) {
-    document.querySelector("[data-hero-video]")?.remove();
-  }
-
   document.querySelectorAll("video").forEach((video) => {
+    const poster = video.poster || video.getAttribute("poster");
     const fallback = () => {
-      if (video.closest(".hero-media") && document.querySelector("[data-hero-video]")) {
-        document.querySelector("[data-hero-video]")?.remove();
-      }
-      const poster = video.poster || video.getAttribute("poster");
-      if (poster && video.parentNode) {
-        const img = document.createElement("img");
-        img.src = poster;
-        img.className = video.className;
-        img.alt = "";
-        video.parentNode.replaceChild(img, video);
-      }
+      if (!video.parentNode) return;
+      const img = document.createElement("img");
+      img.src = poster || "";
+      img.className = video.className;
+      img.alt = "";
+      video.parentNode.replaceChild(img, video);
     };
+
+    if (video.matches("[data-hero-video]") && shouldUseStaticHero) {
+      fallback();
+      return;
+    }
+
     video.addEventListener("error", fallback);
     video.addEventListener("stalled", fallback);
     video.play().catch(fallback);

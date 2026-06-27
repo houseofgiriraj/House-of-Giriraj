@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="worlds-media">
           <div class="worlds-gradient"></div>
           ${piece.trailer ? `
-          <video class="worlds-video" autoplay muted loop playsinline poster="${esc(piece.images?.[0] || "")}">
+          <video class="worlds-video" muted loop playsinline poster="${esc(piece.images?.[0] || "")}">
             <source src="${esc(piece.trailer)}" type="video/mp4" />
           </video>
           ` : `
@@ -93,19 +93,29 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
   }).join("");
 
-  gallery.querySelectorAll("video").forEach(v => {
-    const fallback = () => {
-      const poster = v.poster || v.getAttribute("poster");
-      if (poster && v.parentNode) {
-        const img = document.createElement("img");
-        img.src = poster;
-        img.className = v.className;
-        img.alt = "";
-        v.parentNode.replaceChild(img, v);
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        if (video.dataset.videoStarted) return;
+        video.dataset.videoStarted = "true";
+        const fallback = () => {
+          const poster = video.poster || video.getAttribute("poster");
+          if (poster && video.parentNode) {
+            const img = document.createElement("img");
+            img.src = poster;
+            img.className = video.className;
+            img.alt = "";
+            video.parentNode.replaceChild(img, video);
+          }
+        };
+        video.addEventListener("error", fallback, { once: true });
+        video.addEventListener("stalled", fallback, { once: true });
+        video.play().catch(fallback);
+        videoObserver.unobserve(video);
       }
-    };
-    v.addEventListener("error", fallback);
-    v.addEventListener("stalled", fallback);
-    v.play().catch(fallback);
-  });
+    });
+  }, { threshold: 0.4 });
+
+  gallery.querySelectorAll("video.worlds-video").forEach(v => videoObserver.observe(v));
 });
